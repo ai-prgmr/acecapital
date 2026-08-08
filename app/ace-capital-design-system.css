@@ -1,0 +1,195 @@
+/*
+ * Ace Capital — Design System
+ * Import after globals.css.
+ * Controls cards, sections, layout spacing, surfaces and decorative gradients.
+ */
+
+:root {
+  --ace-space-1: 8px;
+  --ace-space-2: 12px;
+  --ace-space-3: 16px;
+  --ace-space-4: 24px;
+  --ace-space-5: 32px;
+  --ace-space-6: 48px;
+  --ace-space-7: 64px;
+  --ace-space-8: 96px;
+
+  --ace-card-radius: 20px;
+  --ace-card-radius-sm: 14px;
+  --ace-section-radius: 28px;
+
+  --ace-shadow-soft: 0 12px 40px rgba(45, 76, 101, 0.07);
+  --ace-shadow-hover: 0 18px 48px rgba(45, 76, 101, 0.11);
+}
+
+/* Page rhythm */
+.ace-container {
+  width: min(calc(100% - 48px), 1280px);
+  margin-inline: auto;
+}
+
+.ace-section {
+  padding-block: var(--spacing-section-v-space);
+}
+
+.ace-section-sm {
+  padding-block: var(--ace-space-7);
+}
+
+/* Main card */
+.ace-card {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(63, 111, 143, 0.13);
+  border-radius: var(--ace-card-radius);
+  box-shadow: var(--ace-shadow-soft);
+  transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+}
+
+.ace-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--ace-shadow-hover);
+  border-color: rgba(63, 111, 143, 0.25);
+}
+
+/* Smaller information/stat card */
+.ace-card-sm {
+  padding: var(--ace-space-5);
+  border-radius: var(--ace-card-radius-sm);
+}
+
+/* Elevated feature card */
+.ace-card-feature {
+  padding: var(--ace-space-6);
+  background: linear-gradient(135deg, #EAF5FB 0%, #FBFDFF 55%, #E5F0F7 100%);
+}
+
+/* Pastel gradient panels */
+.ace-gradient-blue {
+  background: linear-gradient(135deg, #EDF7FC 0%, #FFFFFF 55%, #E7F2F9 100%);
+}
+
+.ace-gradient-green {
+  background: linear-gradient(135deg, #EDF7FC 0%, #FFFFFF 55%, #E7F2F9 100%);
+}
+
+.ace-gradient-warm {
+  background: linear-gradient(135deg, #EAF5FB 0%, #FBFDFF 55%, #E5F0F7 100%);
+}
+
+.ace-gradient-lavender {
+  background: linear-gradient(135deg, #EDF7FC 0%, #FFFFFF 55%, #E7F2F9 100%);
+}
+
+/* Soft decorative glow — use on hero/large sections */
+.ace-glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.ace-glow::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  top: -180px;
+  right: -120px;
+  border-radius: 999px;
+  background: rgba(184, 218, 226, 0.28);
+  filter: blur(30px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Section heading */
+.ace-section-heading {
+  max-width: 760px;
+  margin-bottom: var(--ace-space-6);
+}
+
+.ace-section-heading>p {
+  max-width: 680px;
+  color: var(--muted-foreground);
+}
+
+/* Common card grid */
+.ace-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ace-space-4);
+}
+
+/* Two-column content */
+.ace-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ace-space-6);
+  align-items: center;
+}
+
+/* Pills / labels */
+.ace-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: #E8F3FA;
+  color: #315D7A;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Stat/value treatment */
+.ace-stat {
+  padding: var(--ace-space-5);
+  background: linear-gradient(145deg, #ffffff, #f2f7f8);
+  border: 1px solid rgba(91, 119, 137, 0.12);
+  border-radius: var(--ace-card-radius-sm);
+}
+
+.ace-stat-value {
+  font-size: clamp(28px, 3vw, 44px);
+  line-height: 1;
+  font-weight: 800;
+  color: #315D7A;
+}
+
+.ace-stat-label {
+  margin-top: 8px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .ace-section {
+    padding-block: var(--spacing-section-v-space-mobile);
+  }
+
+  .ace-card-grid,
+  .ace-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ace-section-heading {
+    margin-bottom: var(--ace-space-5);
+  }
+}
+
+@media (max-width: 640px) {
+  .ace-container {
+    width: min(calc(100% - 32px), 1280px);
+  }
+
+  .ace-card-feature {
+    padding: var(--ace-space-5);
+  }
+
+  .ace-card-grid {
+    gap: var(--ace-space-3);
+  }
+}
