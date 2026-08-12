@@ -24,6 +24,46 @@ export default function Home() {
       question: "How can I get started with Ace Capital?",
       answer: "Institutional clients and high-net-worth individuals can begin by clicking 'Connect Now' or 'Contact Us' to schedule a consultation with our relationship management team. We follow a rigorous onboarding process to ensure alignment with your financial objectives.",
     },
+    {
+      question: "How do I start?",
+      answer: "Just get in touch. We'll understand what you're saving for, help you finish a quick one-time sign-up, and you can start the same day — all online, no paperwork.",
+    },
+    {
+      question: "What is this “KYC” I have to do?",
+      answer: "It's a simple, one-time ID check that every investor does once. You'll just need your PAN card, an address proof and a bank account — and we'll help you finish it online in minutes.",
+    },
+    {
+      question: "How much do I need to start?",
+      answer: "Not much at all. You can begin with as little as ₹500 a month, or put in a larger amount whenever you like. Start small and grow it as you get comfortable.",
+    },
+    {
+      question: "Can I take my money out whenever I want?",
+      answer: "With most funds, yes — take out part or all of it whenever you need, and it reaches your bank in a few working days. A few funds ask you to stay invested for a fixed period, and we'll always tell you that before you invest.",
+    },
+    {
+      question: "Is my money safe with you?",
+      answer: "Your money never stays with us. It goes straight to the fund company, and your investment is recorded in your name with an official record-keeper. We help you invest and look after it — but it always belongs to you. Do keep in mind that funds move up and down with the market, so their value can change.",
+    },
+    {
+      question: "Do you charge me anything?",
+      answer: "No, you don't pay us a fee. We earn a small commission from the fund company when you invest — so our help and support cost you nothing extra.",
+    },
+    {
+      question: "Which funds should I pick?",
+      answer: "We'll help you shortlist funds that match what you're saving for, how long you can stay invested, and how much ups-and-downs you're okay with — explained in plain words. The final call is always yours.",
+    },
+    {
+      question: "What returns will I get?",
+      answer: "No one can promise a number — and it's wise to be careful of anyone who does. Your returns depend on the market and the funds you choose. What we promise is to help you invest sensibly and stay on track. (How a fund did in the past isn't a guarantee for the future.)",
+    },
+    {
+      question: "How do I keep an eye on my investments?",
+      answer: "You'll see everything in one simple view and get regular statements. And you can always call us for a quick, plain-English update on how things are going.",
+    },
+    {
+      question: "What if I have a question or a complaint?",
+      answer: "Just write to us at support@acecapital.com — we're always happy to help. If something stays unresolved, you can take it further to the fund company, and then to the regulators (AMFI and SEBI).",
+    },
   ]
 
   // AEO/SEO Organization Schema
@@ -96,21 +136,21 @@ export default function Home() {
         <div className="relative z-10 ace-container text-center space-y-8">
           <div className="inline-block px-4 py-1 border-l-2 border-secondary bg-primary-container">
             <span className="font-section-label text-section-label uppercase tracking-[0.3em] text-secondary">
-              Institutional Alpha
+              Wealth Management
             </span>
           </div>
           <h1 className="font-display-hero text-5xl md:text-6xl lg:text-7xl uppercase leading-tight text-foreground max-w-5xl mx-auto">
-            LEADING A WAY IN <span className="text-secondary italic">PROPRIETARY</span> TRADING
+            LEADING <span className="text-secondary italic">MUTUAL FUND</span> DISTRIBUTOR IN INDIA
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Precision-engineered capital strategies and institutional-grade infrastructure for modern market participants. Experience the edge of Ace Capital Enterprise.
+            Empowering your financial journey with expert mutual fund distribution and personalized wealth strategies for modern market participants.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
             <Link
-              href="/mutual-funds"
+              href="https://mf.acecapitalenterprise.com" target="_blank"
               className="w-full sm:w-auto bg-secondary text-on-secondary-fixed px-6 py-3.5 md:px-8 md:py-4 font-section-label text-xs md:text-sm uppercase font-bold tracking-widest hover:brightness-110 active:scale-95 transition-all text-center rounded-sm"
             >
-              Transact Online
+              Start Investing
             </Link>
             <Link
               href="/contact"
@@ -121,6 +161,28 @@ export default function Home() {
           </div>
         </div>
       </header>
+
+      {/* Statistics Section */}
+      <section className="bg-surface-container-lowest border-y border-border py-12">
+        <div className="ace-container grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div className="space-y-2">
+            <h4 className="font-display-hero text-4xl text-secondary">150Cr+</h4>
+            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Total AUM</p>
+          </div>
+          <div className="space-y-2">
+            <h4 className="font-display-hero text-4xl text-secondary">1000+</h4>
+            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Happy Clients</p>
+          </div>
+          <div className="space-y-2">
+            <h4 className="font-display-hero text-4xl text-secondary">18%</h4>
+            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Fund Growth Rate</p>
+          </div>
+          <div className="space-y-2">
+            <h4 className="font-display-hero text-4xl text-secondary">100%</h4>
+            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Client Satisfaction</p>
+          </div>
+        </div>
+      </section>
 
       {/* The ACE Mandate - Bento Grid */}
       <section className="ace-section ace-container">
@@ -136,10 +198,10 @@ export default function Home() {
           <div className="md:col-span-2 ace-card p-12 relative overflow-hidden group">
             <div className="relative z-10 space-y-6">
               <h3 className="font-headline-lg text-headline-lg uppercase text-secondary">
-                Institutional Legacy
+                Wealth Management Legacy
               </h3>
               <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-                Founded on the principles of mathematical rigor and market efficiency, Ace Capital Enterprise provides the foundation for traders and investors to excel in volatile global environments.
+                Founded on the principles of deep market research and disciplined asset allocation, Ace Capital Enterprise provides the foundation for investors to build and preserve wealth across market cycles.
               </p>
             </div>
             <div className="absolute right-0 bottom-0 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -155,9 +217,9 @@ export default function Home() {
               monitoring
             </span>
             <div className="space-y-2 mt-6">
-              <h4 className="font-headline-lg text-xl uppercase">Alpha Precision</h4>
+              <h4 className="font-headline-lg text-xl uppercase">Smart Asset Allocation</h4>
               <p className="font-body-md text-on-surface-variant">
-                Real-time risk management and execution excellence across desks.
+                Data-driven fund selection and rebalancing to optimize long-term returns.
               </p>
             </div>
           </div>
@@ -168,9 +230,9 @@ export default function Home() {
               security
             </span>
             <div className="space-y-2 mt-6">
-              <h4 className="font-headline-lg text-xl uppercase">Secure Desks</h4>
+              <h4 className="font-headline-lg text-xl uppercase">Secure Investments</h4>
               <p className="font-body-md text-on-surface-variant">
-                Redundant infrastructure for zero-downtime algorithmic trading.
+                Regulated, transparent, and compliant investment frameworks for peace of mind.
               </p>
             </div>
           </div>
@@ -179,12 +241,12 @@ export default function Home() {
           <div className="md:col-span-2 ace-card p-12 bg-primary-container">
             <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex-1 space-y-6">
-                <h4 className="font-headline-lg text-headline-lg uppercase">Global Reach</h4>
+                <h4 className="font-headline-lg text-headline-lg uppercase">Diversified Portfolio</h4>
                 <p className="font-body-md text-on-surface-variant">
-                  Connecting local expertise with global liquidity across **40+ international markets**.
+                  Building resilient portfolios across equity, debt, hybrid, and alternative mutual funds.
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
-                  {["NYSE", "NSE", "LSE", "HKEX"].map((market) => (
+                  {["Equity", "Debt", "Hybrid", "Index Funds"].map((market) => (
                     <span
                       key={market}
                       className="px-3 py-1 bg-surface-container-highest font-data-point text-data-point text-primary text-xs"
@@ -196,7 +258,7 @@ export default function Home() {
               </div>
               <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border border-outline-variant/30 flex items-center justify-center p-4">
                 <span className="material-symbols-outlined text-6xl text-secondary animate-pulse">
-                  language
+                  pie_chart
                 </span>
               </div>
             </div>
@@ -221,80 +283,11 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Service 1: Prop Trading */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Service 1: Mutual Funds & Investments */}
             <Link
-              href="/proprietary"
-              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block"
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK0Idnd2zSyXrl390wnGakpUtRxug7HIHIQFjYAugO2QkHSLyKoV2Ghfki9GVL-wa88h1xUndU7rXybR6XGx8AYVrurdJB6xUBI8J4IBULBYlQ9rGu242dDFFSvLAJtUJKZhmx_qilkL4KmAgRyztfMhPjRIU5LNKZRWUA6neI0pbzb-3o0kMuvAgfTiF13PzQoUuCfnxfOQKhCj3KYWMEOmqSz8C-pFgigZgZRlCU4lGoWDceHLI')",
-                }}
-              ></div>
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
-                  Prop Trading
-                </h5>
-                <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Leverage our institutional capital for high-frequency and macro strategies.
-                </p>
-                <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
-              </div>
-            </Link>
-
-            {/* Service 2: Auto Desks */}
-            <Link
-              href="/automated"
-              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block"
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuD3IkhtI0Uzj22IX8Hwb8_5WvOhyP1LLRmGqMpVEx47wWjvGoSPZMfZdAf_VwwkPJA5qVKfVQsW8kdm3gGCbSS8Jw0CzLytKG3mrA-E6CBE1txg60_8cmQCnDRa-wi8ijAElNhU3pIVHG28Q-Oyb__VkhK6cYMdpjIEomLmIWJTqwPhqSE5Le5tFbCzRXR9X7FKSdD1FHeA6X03krxGJBaafOhX3k2SGdqr0xx6DGOzMI6Gq7BZGek')",
-                }}
-              ></div>
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
-                  Auto Desks
-                </h5>
-                <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Automated execution engines with ultra-low latency co-location.
-                </p>
-                <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
-              </div>
-            </Link>
-
-            {/* Service 3: Investments */}
-            <Link
-              href="/investments"
-              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block"
-            >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy6mUZlPCy_8_4b6IbDLLdxJFAiIvRKJnfSQpUcEG4FlH211m1oZ9ah62suZnoqBoPHc4BPpD-KpHz6-J05mt4QbL70hwxKbBEjr1dowTVktC7OVI1FXaUK5uCMnKeG4Qr5uOG0IUqUraZszCdGjT8Ep5ouckBs3NfmfF3-BiD8NNyziApff7aUhzGG3SObrO53TtWdI0dPMUKTLcc9jjr07ox76zN1pdSO-lxwcqyP1I8gB-WbBY')",
-                }}
-              ></div>
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
-                  Investments
-                </h5>
-                <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Tailored portfolio construction across equity and debt markets.
-                </p>
-                <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
-              </div>
-            </Link>
-
-            {/* Service 4: Mutual Funds */}
-            <Link
-              href="/mutual-funds"
-              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block"
+              href="/mutual-funds-investments"
+              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block rounded"
             >
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -305,10 +298,33 @@ export default function Home() {
               <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
               <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
                 <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
-                  Mutual Funds
+                  Mutual Funds & Investments
                 </h5>
                 <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  Diversified exposure with professional oversight and risk control.
+                  Diversified exposure and tailored portfolio construction across equity and debt markets with professional risk control.
+                </p>
+                <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
+              </div>
+            </Link>
+
+            {/* Service 2: Prop Trading & Automated */}
+            <Link
+              href="/prop-trading-automated"
+              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block rounded"
+            >
+              <div
+                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                style={{
+                  backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK0Idnd2zSyXrl390wnGakpUtRxug7HIHIQFjYAugO2QkHSLyKoV2Ghfki9GVL-wa88h1xUndU7rXybR6XGx8AYVrurdJB6xUBI8J4IBULBYlQ9rGu242dDFFSvLAJtUJKZhmx_qilkL4KmAgRyztfMhPjRIU5LNKZRWUA6neI0pbzb-3o0kMuvAgfTiF13PzQoUuCfnxfOQKhCj3KYWMEOmqSz8C-pFgigZgZRlCU4lGoWDceHLI')",
+                }}
+              ></div>
+              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
+              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
+                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
+                  Prop Trading & Auto Desks
+                </h5>
+                <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  Leverage our institutional capital and automated execution engines with ultra-low latency co-location.
                 </p>
                 <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
               </div>
@@ -377,6 +393,38 @@ export default function Home() {
 
         <div className="mt-12 text-center text-muted-foreground text-xs tracking-widest hidden md:block select-none">
           ________________________________________________________________________________
+        </div>
+      </section>
+
+      {/* Certifications & Licenses */}
+      <section className="ace-section ace-container">
+        <div className="text-center mb-12">
+          <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
+            04 / COMPLIANCE
+          </span>
+          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
+            LICENSES & REGISTRATIONS
+          </h2>
+          <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto mt-4">
+            We adhere to the highest standards of regulatory compliance, ensuring your investments are secure and transparently managed.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-secondary">
+            <span className="material-symbols-outlined text-4xl text-secondary mb-4">verified</span>
+            <h3 className="font-headline-lg text-xl uppercase mb-2">SEBI Registered</h3>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: SEBI-XXXXX</p>
+          </div>
+          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-primary">
+            <span className="material-symbols-outlined text-4xl text-primary mb-4">gavel</span>
+            <h3 className="font-headline-lg text-xl uppercase mb-2">AMFI Certified</h3>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: AMFI-XXXXX</p>
+          </div>
+          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-secondary">
+            <span className="material-symbols-outlined text-4xl text-secondary mb-4">policy</span>
+            <h3 className="font-headline-lg text-xl uppercase mb-2">ARN License</h3>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">ARN: XXXXX</p>
+          </div>
         </div>
       </section>
 

@@ -6,15 +6,14 @@ import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight, Menu, X } from "lucide-react"
 import Image from "next/image"
+import Script from "next/script"
 export default function Header() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
 
   const navLinks = [
-    { name: "Mutual Funds", path: "/mutual-funds" },
-    { name: "Investments", path: "/investments" },
-    { name: "Prop Trading", path: "/proprietary" },
-    { name: "Auto Desks", path: "/automated" },
+    { name: "Mutual Funds & Investments", path: "/mutual-funds-investments" },
+    { name: "Prop Trading & Auto Desks", path: "/prop-trading-automated" },
     { name: "Careers", path: "/careers" },
     { name: "Blogs", path: "/blogs" },
     { name: "Contact Us", path: "/contact" },
@@ -44,7 +43,7 @@ export default function Header() {
                     key={link.path}
                     href={link.path}
                     className={cn(
-                      "font-section-label text-[10px] uppercase tracking-[0.14em] transition-colors duration-200 py-2 border-b",
+                      "font-section-label text-xs uppercase tracking-[0.14em] transition-colors duration-200 py-2 border-b",
                       isActive
                         ? "text-secondary border-secondary"
                         : "text-on-surface-variant border-transparent hover:text-foreground hover:border-border"
@@ -59,7 +58,7 @@ export default function Header() {
 
           {/* Desktop Right Actions */}
           <div className="hidden xl:flex items-center gap-3">
-            <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary px-4 py-2.5 text-[10px]">
+            <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary px-4 py-2.5 text-xs">
               Portal login <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>
@@ -87,7 +86,7 @@ export default function Header() {
                     href={link.path}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "font-section-label text-xs uppercase tracking-[0.16em] transition-colors duration-200 py-4 border-b border-border",
+                      "font-section-label text-sm uppercase tracking-[0.16em] transition-colors duration-200 py-4 border-b border-border",
                       isActive ? "text-secondary font-bold" : "text-on-surface-variant hover:text-foreground"
                     )}
                   >
@@ -99,20 +98,31 @@ export default function Header() {
                 <a
                   href="#footer-contact"
                   onClick={() => setIsOpen(false)}
-                  className="w-full text-center py-3 border border-border text-primary uppercase tracking-[0.16em] font-section-label text-xs font-bold hover:bg-muted transition-colors"
+                  className="w-full text-center py-3 border border-border text-primary uppercase tracking-[0.16em] font-section-label text-sm font-bold hover:bg-muted transition-colors"
                 >
                   CONTACT US
                 </a>
-                <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary w-full py-3 justify-center text-xs" onClick={() => setIsOpen(false)}>
+                <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary w-full py-3 justify-center text-sm" onClick={() => setIsOpen(false)}>
                   PORTAL LOGIN
                 </a>
               </div>
             </div>
           </div>
         )}
+
+        {/* TradingView Marquee */}
+        <div className="w-full border-t border-border">
+
+          <Script src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js" type="module" strategy="lazyOnload" />
+          <div
+            dangerouslySetInnerHTML={{
+              __html: `<tv-ticker-tape symbols="BSE:RELIANCE,BSE:TCS,BSE:HDFCBANK,BSE:ICICIBANK,BSE:INFY,BSE:ITC,BSE:SBIN,BSE:LT,BSE:BHARTIARTL" display-mode="adaptive" color-theme="dark" is-transparent="true" attribution="false"></tv-ticker-tape>`
+            }}
+          />
+        </div>
       </nav>
       {/* Spacer to push page content below fixed navbar */}
-      <div className="h-[76px]"></div>
+      <div className="h-[122px]"></div>
     </>
   )
 }

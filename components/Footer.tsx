@@ -105,13 +105,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/proprietary" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Prop Trading
-                </a>
-              </li>
-              <li>
-                <a href="/automated" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Auto Desks
+                <a href="/prop-trading-automated" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                  Prop Trading & Auto Desks
                 </a>
               </li>
               <li>
@@ -132,13 +127,8 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/investments" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Investments
-                </a>
-              </li>
-              <li>
-                <a href="/mutual-funds" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Mutual Funds
+                <a href="/mutual-funds-investments" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                  Mutual Funds & Investments
                 </a>
               </li>
             </ul>
@@ -204,25 +194,37 @@ export default function Footer() {
 
       </div>
 
-      {/* Bottom Disclaimer & Copyright */}
-      <div className="ace-container mt-12 pt-8 border-t border-border/30 flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="text-center md:text-left space-y-2">
-          <p className="font-body-md text-xs text-outline">
-            Disclaimer: Proprietary trading involves substantial risk of loss and is not suitable for all investors. Fiduciary references pertain to compliance frameworks across global liquidity nodes.
-          </p>
-          <p className="font-body-md text-xs text-outline">
-            Copyright © 2026 ACE CAPITAL ENTERPRISE. All rights reserved.
-          </p>
+      {/* Links and Copyright (Left / Right) */}
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-body-md text-outline border-t border-border/10 pt-6 max-w-7xl mx-auto">
+        <div className="text-center md:text-left flex flex-wrap justify-center md:justify-start gap-2">
+          <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
+          <span>&middot;</span>
+          <a href="#" className="hover:text-secondary transition-colors">Terms</a>
+          <span>&middot;</span>
+          <a href="#" className="hover:text-secondary transition-colors">Disclaimer</a>
+          <span>&middot;</span>
+          <a href="#" className="hover:text-secondary transition-colors">Disclosure</a>
+          <span>&middot;</span>
+          <a href="#" className="hover:text-secondary transition-colors">Help & Support</a>
         </div>
-        <div className="text-center md:text-right text-xs">
-          <a
-            href="https://aiprgmr.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body-md text-outline hover:text-secondary transition-colors"
-          >
-            Designed & Developed by AI PRGMR.
-          </a>
+        <div className="text-center md:text-right">
+          Copyright &copy; Ace Capital Enterprise &middot; All rights reserved.
+        </div>
+      </div>
+      {/* Bottom Disclaimer & Copyright */}
+      <div className="ace-container mt-12 pt-8 border-t border-border/30 flex flex-col gap-8 pb-8">
+
+        {/* Centered Disclaimer */}
+        <div className="text-center space-y-2 max-w-4xl mx-auto">
+          <p className="font-body-md text-xs text-outline">
+            SEBI/AMFI Disclaimer: Mutual fund investments are subject to market risks. Please read all scheme-related documents carefully before investing.
+          </p>
+          <p className="font-body-md text-xs text-outline">
+            Past performance is not indicative of future results. This website does not constitute investment advice. For personalised guidance, please reach out to us.
+          </p>
+          <p className="font-body-md text-xs text-outline font-bold">
+            AMFI Registered Mutual Fund Distributor | ARN-113576.
+          </p>
         </div>
       </div>
     </footer>
