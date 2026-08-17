@@ -43,7 +43,7 @@ export default function Header() {
                     key={link.path}
                     href={link.path}
                     className={cn(
-                      "font-section-label text-xs uppercase tracking-[0.14em] transition-colors duration-200 py-2 border-b",
+                      "font-section-label text-sm  transition-colors duration-200 py-2 border-b-2",
                       isActive
                         ? "text-secondary border-secondary"
                         : "text-on-surface-variant border-transparent hover:text-foreground hover:border-border"
@@ -109,17 +109,6 @@ export default function Header() {
             </div>
           </div>
         )}
-
-        {/* TradingView Marquee */}
-        <div className="w-full border-t border-border">
-
-          <Script src="https://widgets.tradingview-widget.com/w/en/tv-ticker-tape.js" type="module" strategy="lazyOnload" />
-          <div
-            dangerouslySetInnerHTML={{
-              __html: `<tv-ticker-tape symbols="BSE:RELIANCE,BSE:TCS,BSE:HDFCBANK,BSE:ICICIBANK,BSE:INFY,BSE:ITC,BSE:SBIN,BSE:LT,BSE:BHARTIARTL" display-mode="adaptive" color-theme="dark" is-transparent="true" attribution="false"></tv-ticker-tape>`
-            }}
-          />
-        </div>
       </nav>
       {/* Spacer to push page content below fixed navbar */}
       <div className="h-[122px]"></div>

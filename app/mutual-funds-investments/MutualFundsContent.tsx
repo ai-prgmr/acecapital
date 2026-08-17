@@ -227,10 +227,10 @@ export default function MutualFundsContent() {
                     <td className="px-6 py-5 text-on-surface-variant">{fund.type}</td>
                     <td className="px-6 py-5 text-center">
                       <span className={`px-2 py-1 text-[10px] uppercase font-bold rounded-sm ${fund.risk === "High"
-                          ? "bg-error-container text-error"
-                          : fund.risk === "Moderate"
-                            ? "bg-secondary-container/20 text-secondary"
-                            : "bg-primary-container text-primary"
+                        ? "bg-error-container text-error"
+                        : fund.risk === "Moderate"
+                          ? "bg-secondary-container/20 text-secondary"
+                          : "bg-primary-container text-primary"
                         }`}>
                         {fund.risk}
                       </span>
@@ -299,51 +299,7 @@ export default function MutualFundsContent() {
         </div>
       </section>
 
-      {/* Deep Market Research Section */}
-      <section className="ace-section border-t border-border">
-        <div className="ace-container bg-surface-container-low border border-border p-12 rounded relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 blur-[100px] pointer-events-none"></div>
-          <div className="relative z-10 flex flex-col lg:flex-row justify-between items-center gap-8">
-            <div className="max-w-xl space-y-4">
-              <h2 className="font-headline-lg text-3xl uppercase text-foreground">Deep Market Views</h2>
-              <p className="font-body-lg text-on-surface-variant leading-relaxed">
-                Stay ahead of global shifts with our institutional-grade market commentary, updated daily by our chief investment strategists.
-              </p>
-            </div>
-            <button className="inline-flex items-center gap-3 bg-secondary text-on-secondary-fixed px-6 py-3 md:px-8 md:py-4 font-bold uppercase tracking-widest text-xs md:text-sm hover:brightness-110 active:scale-95 transition-all rounded">
-              Access Research
-              <span className="material-symbols-outlined">description</span>
-            </button>
-          </div>
-        </div>
-      </section>
 
-      {/* Document downloads */}
-      <section className="ace-section bg-surface-container-lowest border-y border-border">
-        <div className="ace-container">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {reports.map((rep, idx) => (
-              <div key={idx} className="ace-card p-8 group hover:border-secondary transition-all rounded cursor-pointer">
-                <p className="font-section-label text-secondary mb-2 text-xs">{rep.tag}</p>
-                <h4 className="font-headline-lg text-lg uppercase mb-4 text-foreground group-hover:text-secondary transition-colors">
-                  {rep.title}
-                </h4>
-                <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">{rep.desc}</p>
-                <span className="text-muted-foreground group-hover:text-secondary transition-colors material-symbols-outlined">
-                  download
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Products Grid */}
-      <section className="ace-section bg-background border-t border-border">
-        <div className="ace-container">
-          <ProductsGrid />
-        </div>
-      </section>
 
       {/* Mutual Funds FAQ Accordion */}
       <FAQSection

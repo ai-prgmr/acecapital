@@ -184,6 +184,49 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Partnered AMCs Marquee */}
+      <section className="border-b border-border py-8 bg-background overflow-hidden relative">
+        <div className="text-center mb-6">
+          <p className="font-section-label text-xs uppercase tracking-widest text-muted-foreground">
+            Trusted by Top Asset Management Companies
+          </p>
+        </div>
+        
+        <div className="flex w-full overflow-hidden group">
+          <div className="flex animate-marquee whitespace-nowrap items-center gap-16 px-8">
+            {["SBI Mutual Fund", "HDFC Mutual Fund", "ICICI Prudential", "Nippon India", "Axis Mutual Fund", "Kotak Mutual Fund", "DSP Mutual Fund", "Tata Mutual Fund"].map((amc, idx) => (
+              <span key={`amc1-${idx}`} className="font-headline-lg text-xl md:text-2xl text-outline-variant hover:text-secondary transition-colors cursor-default select-none uppercase">
+                {amc}
+              </span>
+            ))}
+          </div>
+          <div className="flex animate-marquee whitespace-nowrap items-center gap-16 px-8" aria-hidden="true">
+            {["SBI Mutual Fund", "HDFC Mutual Fund", "ICICI Prudential", "Nippon India", "Axis Mutual Fund", "Kotak Mutual Fund", "DSP Mutual Fund", "Tata Mutual Fund"].map((amc, idx) => (
+              <span key={`amc2-${idx}`} className="font-headline-lg text-xl md:text-2xl text-outline-variant hover:text-secondary transition-colors cursor-default select-none uppercase">
+                {amc}
+              </span>
+            ))}
+          </div>
+        </div>
+        
+        {/* Gradients for smooth fade on edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-background to-transparent z-10"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-background to-transparent z-10"></div>
+        
+        <style dangerouslySetInnerHTML={{__html: `
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-100%); }
+          }
+          .animate-marquee {
+            animation: marquee 25s linear infinite;
+          }
+          .group:hover .animate-marquee {
+            animation-play-state: paused;
+          }
+        `}} />
+      </section>
+
       {/* The ACE Mandate - Bento Grid */}
       <section className="ace-section ace-container">
         <div className="mb-16">
@@ -409,12 +452,7 @@ export default function Home() {
             We adhere to the highest standards of regulatory compliance, ensuring your investments are secure and transparently managed.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-secondary">
-            <span className="material-symbols-outlined text-4xl text-secondary mb-4">verified</span>
-            <h3 className="font-headline-lg text-xl uppercase mb-2">SEBI Registered</h3>
-            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: SEBI-XXXXX</p>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
           <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-primary">
             <span className="material-symbols-outlined text-4xl text-primary mb-4">gavel</span>
             <h3 className="font-headline-lg text-xl uppercase mb-2">AMFI Certified</h3>
