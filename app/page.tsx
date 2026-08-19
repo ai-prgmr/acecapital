@@ -178,7 +178,7 @@ export default function Home() {
         <div className="flex w-full overflow-hidden group">
           <div className="flex animate-marquee whitespace-nowrap items-center gap-6 px-4">
             {[
-              { file: "UTI.webp", alt: "UTI", full: "UTI Mutual Fund" },
+              { file: "uti.webp", alt: "UTI", full: "UTI Mutual Fund" },
               { file: "nippon.png", alt: "NIMF", full: "Nippon India Mutual Fund" },
               { file: "axis.svg", alt: "AXIS", full: "Axis Mutual Fund" },
               { file: "absl.png", alt: "ABSL", full: "Aditya Birla Sun Life Mutual Fund" },
@@ -203,7 +203,7 @@ export default function Home() {
           </div>
           <div className="flex animate-marquee whitespace-nowrap items-center gap-6 px-4" aria-hidden="true">
             {[
-              { file: "UTI.webp", alt: "UTI", full: "UTI Mutual Fund" },
+              { file: "uti.webp", alt: "UTI", full: "UTI Mutual Fund" },
               { file: "nippon.png", alt: "NIMF", full: "Nippon India Mutual Fund" },
               { file: "axis.svg", alt: "AXIS", full: "Axis Mutual Fund" },
               { file: "absl.png", alt: "ABSL", full: "Aditya Birla Sun Life Mutual Fund" },
