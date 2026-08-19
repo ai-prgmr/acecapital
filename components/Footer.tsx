@@ -57,6 +57,26 @@ export default function Footer() {
               <span className="material-symbols-outlined text-lg">share</span>
             </a>
           </div>
+
+          <div className="pt-4 flex flex-col gap-3">
+            <h3 className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">Download Our App</h3>
+            <div className="flex gap-3">
+              <a href="#" className="bg-black text-white px-3 py-2 rounded-md flex items-center gap-2 hover:bg-gray-800 transition-colors w-full justify-center shadow-sm">
+                <span className="material-symbols-outlined text-xl">apple</span>
+                <div className="text-left flex flex-col">
+                  <span className="text-[7px] leading-none uppercase tracking-wider text-gray-300">Download on the</span>
+                  <span className="text-xs font-bold leading-none mt-0.5">App Store</span>
+                </div>
+              </a>
+              <a href="#" className="bg-black text-white px-3 py-2 rounded-md flex items-center gap-2 hover:bg-gray-800 transition-colors w-full justify-center shadow-sm">
+                <span className="material-symbols-outlined text-xl">shop</span>
+                <div className="text-left flex flex-col">
+                  <span className="text-[7px] leading-none uppercase tracking-wider text-gray-300">GET IT ON</span>
+                  <span className="text-xs font-bold leading-none mt-0.5">Google Play</span>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
 
         {/* Contact Information & Hours */}

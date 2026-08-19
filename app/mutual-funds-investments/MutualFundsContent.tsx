@@ -3,6 +3,14 @@ import MutualFundsCalculator from "@/components/MutualFundsCalculator"
 import TopFundsTabbed from "@/components/TopFundsTabbed"
 import ProductsGrid from "@/components/ProductsGrid"
 import Link from "next/link"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
 export default function MutualFundsContent() {
   const fundsFAQs = [
     {
@@ -56,53 +64,94 @@ export default function MutualFundsContent() {
 
   return (
     <>
-      {/* Hero section */}
-      <section className="relative ace-section bg-background overflow-hidden pt-12">
-        <div className="ace-container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-container border border-primary/20 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-success-green animate-pulse"></span>
-              <span className="font-section-label text-xs uppercase tracking-widest text-primary">
-                Managed Wealth Portfolios
-              </span>
-            </div>
-            <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground uppercase">
-              Institutional <span className="text-secondary italic">Precision.</span>
-            </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Leverage ACE Capital’s proprietary algorithmic frameworks and institutional-grade asset allocation for long-term wealth growth. Build your portfolio with absolute metrics.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <button className="px-6 py-3 md:px-8 md:py-4 bg-secondary text-on-secondary-fixed font-bold font-section-label tracking-widest text-xs md:text-sm hover:brightness-110 active:scale-95 transition-all uppercase rounded">
-                <Link
-                  href="https://mf.acecapitalenterprise.com" target="_blank"
-                  className="w-full sm:w-auto bg-secondary text-on-secondary-fixed px-6 py-3.5 md:px-8 md:py-4 font-section-label text-xs md:text-sm uppercase font-bold tracking-widest hover:brightness-110 active:scale-95 transition-all text-center rounded-sm"
+      {/* Hero Carousel section */}
+      <section className="relative w-full overflow-hidden">
+        <Carousel
+          opts={{ loop: true, align: "start" }}
+          className="w-full"
+        >
+          <CarouselContent>
+            {/* Slide 1 */}
+            <CarouselItem>
+              <div className="relative w-full h-150 flex items-center">
+                {/* Background Image Placeholder - Replace url() with your image path */}
+                <div
+                  className="absolute inset-0 bg-slate-900 bg-cover bg-center"
+                  style={{ backgroundImage: "url('/placeholder-slide-1.jpg')" }}
                 >
-                  Start Investing
-                </Link>
-              </button>
-              <button className="px-6 py-3 md:px-8 md:py-4 border border-outline text-muted-foreground font-bold font-section-label tracking-widest text-xs md:text-sm hover:bg-muted active:scale-95 transition-all uppercase rounded">
-                View Market Insights
-              </button>
-            </div>
-          </div>
-          <div className="relative hidden lg:block">
-            <div className="aspect-video ace-card border border-border rounded flex items-center justify-center p-8 bg-[radial-gradient(ellipse_at_center,rgba(233,195,73,0.05),transparent)]">
-              <div className="text-center space-y-4">
-                <span className="material-symbols-outlined text-secondary text-7xl animate-bounce">
-                  finance_mode
-                </span>
-                <p className="font-data-point text-xl text-foreground uppercase tracking-wider">
-                  Global Strategy Yield
-                </p>
-                <div className="flex justify-center gap-8 font-mono text-xs text-outline">
-                  <span>YTD: <strong className="text-success-green">+12.4%</strong></span>
-                  <span>NAV: <strong className="text-foreground">₹156.90</strong></span>
+                  <div className="absolute inset-0 bg-black/60"></div>
+                </div>
+                {/* Content */}
+                <div className="ace-container relative z-10 w-full text-white">
+                  <div className="space-y-8 max-w-3xl">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm">
+                      <span className="w-2 h-2 rounded-full bg-success-green animate-pulse"></span>
+                      <span className="font-section-label text-xs uppercase tracking-widest text-white">
+                        Managed Wealth Portfolios
+                      </span>
+                    </div>
+                    <h1 className="font-display-hero text-4xl md:text-5xl lg:text-7xl leading-tight uppercase">
+                      Institutional <span className="text-[#a88945] italic">Precision.</span>
+                    </h1>
+                    <p className="font-body-lg text-gray-200 max-w-xl leading-relaxed">
+                      Leverage ACE Capital’s proprietary algorithmic frameworks and institutional-grade asset allocation for long-term wealth growth.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      <Link
+                        href="https://mf.acecapitalenterprise.com" target="_blank"
+                        className="bg-secondary text-on-secondary-fixed px-6 py-3.5 md:px-8 md:py-4 font-section-label text-xs md:text-sm uppercase font-bold tracking-widest hover:brightness-110 active:scale-95 transition-all text-center rounded-sm"
+                      >
+                        Start Investing
+                      </Link>
+                      <button className="px-6 py-3 md:px-8 md:py-4 border border-white/30 text-white font-bold font-section-label tracking-widest text-xs md:text-sm hover:bg-white/10 active:scale-95 transition-all uppercase rounded">
+                        View Market Insights
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </CarouselItem>
+
+            {/* Slide 2 */}
+            <CarouselItem>
+              <div className="relative w-full h-150 flex items-center">
+                {/* Background Image Placeholder - Replace url() with your image path */}
+                <div
+                  className="absolute inset-0 bg-[#1b365d] bg-cover bg-center"
+                  style={{ backgroundImage: "url('/placeholder-slide-2.jpg')" }}
+                >
+                  <div className="absolute inset-0 bg-black/50"></div>
+                </div>
+                {/* Content */}
+                <div className="ace-container relative z-10 w-full text-white">
+                  <div className="space-y-8 max-w-3xl">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full backdrop-blur-sm">
+                      <span className="font-section-label text-xs uppercase tracking-widest text-white">
+                        Global Reach
+                      </span>
+                    </div>
+                    <h1 className="font-display-hero text-4xl md:text-5xl lg:text-7xl leading-tight uppercase">
+                      Expand Your <span className="text-[#329671] italic">Horizons.</span>
+                    </h1>
+                    <p className="font-body-lg text-gray-200 max-w-xl leading-relaxed">
+                      Invest seamlessly across borders with our integrated NRI solutions and global market access platforms.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      <button className="px-6 py-3 md:px-8 md:py-4 bg-[#329671] text-white font-bold font-section-label tracking-widest text-xs md:text-sm hover:brightness-110 active:scale-95 transition-all uppercase rounded">
+                        Discover NRI Desk
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          </CarouselContent>
+          <div className="absolute bottom-8 right-16 flex gap-2">
+            {/* Custom styled Next/Prev buttons to override shadcn defaults */}
+            <CarouselPrevious className="relative inset-0 translate-x-0 translate-y-0 h-12 w-12 bg-white/10 text-white border-white/20 hover:bg-white/30" />
+            <CarouselNext className="relative inset-0 translate-x-0 translate-y-0 h-12 w-12 bg-white/10 text-white border-white/20 hover:bg-white/30" />
           </div>
-        </div>
+        </Carousel>
       </section>
 
       {/* What We Can Do For You Section */}

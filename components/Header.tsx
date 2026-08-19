@@ -23,7 +23,7 @@ export default function Header() {
   return (
     <>
       <nav className="fixed top-0 left-0 w-full z-50 border-b border-border bg-background/90 backdrop-blur-xl">
-        <div className="ace-container h-[76px] flex justify-between items-center">
+        <div className="ace-container h-19 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-8">
             <Link
@@ -111,7 +111,7 @@ export default function Header() {
         )}
       </nav>
       {/* Spacer to push page content below fixed navbar */}
-      <div className="h-[122px]"></div>
+      <div className="h-30.5"></div>
     </>
   )
 }

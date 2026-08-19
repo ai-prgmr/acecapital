@@ -125,7 +125,7 @@ export default function Home() {
       <header className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
           <div
-            className="absolute inset-0 bg-cover bg-center opacity-30 scale-105"
+            className="absolute inset-0 bg-cover bg-center opacity-90 scale-105"
             style={{
               backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-Ltn-GH1h9YRQht4CbsnepFyYMrnkpQNwiELBKYhp0n-tJLmXLGpSmACasxyD4akik_tet8JWpn50FMGXk8bysG2STeqmGpWF_RuxVzRQdWx1JKXl_ZcTrMfOxrgaP7lsXsYofbJyypvYTCHptSSCo9dPiAAihZoVYOcYD6e7q8YkEsI8LowmXK2OxX2BpjWAg2MCXCKrohRpWlNEV5ibFw-rsV364Iy5ukM13qwBxxZs87svxPo')",
             }}
@@ -133,56 +133,39 @@ export default function Home() {
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
 
-        <div className="relative z-10 ace-container text-center space-y-8">
-          <div className="inline-block px-4 py-1 border-l-2 border-secondary bg-primary-container">
-            <span className="font-section-label text-section-label uppercase tracking-[0.3em] text-secondary">
-              Wealth Management
+        <div className="relative z-10 ace-container text-left space-y-6 pt-8">
+          <div className="inline-block px-4 py-1.5 border border-[#e8dfc8] bg-[#fcfbfa] rounded-full">
+            <span className="font-section-label text-[10px] font-bold uppercase tracking-widest text-[#9d8349]">
+              Systematic, Simple, Personal
             </span>
           </div>
-          <h1 className="font-display-hero text-5xl md:text-6xl lg:text-7xl uppercase leading-tight text-foreground max-w-5xl mx-auto">
-            LEADING <span className="text-secondary italic">MUTUAL FUND</span> DISTRIBUTOR IN INDIA
+          <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight text-[#111827] font-bold">
+            Invest with clarity — your <span className="text-[#329671]">trusted</span><br className="hidden md:block" /> mutual fund distributor in India.
           </h1>
-          <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
-            Empowering your financial journey with expert mutual fund distribution and personalized wealth strategies for modern market participants.
+          <p className="font-body-lg text-base md:text-lg text-[#4b5563] max-w-3xl">
+            New-age mutual fund investing with an old-fashioned personal touch. We help you choose<br className="hidden md:block" /> funds that fit your goals and guide you, in plain language, at every step.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+          <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4">
             <Link
               href="https://mf.acecapitalenterprise.com" target="_blank"
-              className="w-full sm:w-auto bg-secondary text-on-secondary-fixed px-6 py-3.5 md:px-8 md:py-4 font-section-label text-xs md:text-sm uppercase font-bold tracking-widest hover:brightness-110 active:scale-95 transition-all text-center rounded-sm"
+              className="w-full sm:w-auto bg-[#1e3a5f] text-white px-8 py-3.5 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md"
             >
               Start Investing
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto border border-silver px-6 py-3.5 md:px-8 md:py-4 font-section-label text-xs md:text-sm uppercase font-bold tracking-widest text-silver hover:bg-silver hover:text-background transition-all active:scale-95 text-center rounded-sm"
+              className="w-full sm:w-auto bg-white border border-gray-200 text-[#1e3a5f] px-8 py-3.5 font-semibold text-sm hover:bg-gray-50 transition-all active:scale-95 text-center rounded-md shadow-sm"
             >
-              Contact Us
+              Talk to Us
             </Link>
+          </div>
+          <div className="pt-4">
+            <p className="text-xs text-[#6b7280] font-medium">
+              AMFI-registered Mutual Fund Distributor (ARN-113576) &bull; Trusted by 150+ families since 2016
+            </p>
           </div>
         </div>
       </header>
-
-      {/* Statistics Section */}
-      <section className="bg-surface-container-lowest border-y border-border py-12">
-        <div className="ace-container grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="space-y-2">
-            <h4 className="font-display-hero text-4xl text-secondary">150Cr+</h4>
-            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Total AUM</p>
-          </div>
-          <div className="space-y-2">
-            <h4 className="font-display-hero text-4xl text-secondary">1000+</h4>
-            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Happy Clients</p>
-          </div>
-          <div className="space-y-2">
-            <h4 className="font-display-hero text-4xl text-secondary">18%</h4>
-            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Fund Growth Rate</p>
-          </div>
-          <div className="space-y-2">
-            <h4 className="font-display-hero text-4xl text-secondary">100%</h4>
-            <p className="font-section-label text-xs uppercase tracking-widest text-on-surface-variant">Client Satisfaction</p>
-          </div>
-        </div>
-      </section>
 
       {/* Partnered AMCs Marquee */}
       <section className="border-b border-border py-8 bg-background overflow-hidden relative">
@@ -191,35 +174,72 @@ export default function Home() {
             Trusted by Top Asset Management Companies
           </p>
         </div>
-        
+
         <div className="flex w-full overflow-hidden group">
-          <div className="flex animate-marquee whitespace-nowrap items-center gap-16 px-8">
-            {["SBI Mutual Fund", "HDFC Mutual Fund", "ICICI Prudential", "Nippon India", "Axis Mutual Fund", "Kotak Mutual Fund", "DSP Mutual Fund", "Tata Mutual Fund"].map((amc, idx) => (
-              <span key={`amc1-${idx}`} className="font-headline-lg text-xl md:text-2xl text-outline-variant hover:text-secondary transition-colors cursor-default select-none uppercase">
-                {amc}
-              </span>
+          <div className="flex animate-marquee whitespace-nowrap items-center gap-6 px-4">
+            {[
+              { file: "UTI.webp", alt: "UTI", full: "UTI Mutual Fund" },
+              { file: "nippon.png", alt: "NIMF", full: "Nippon India Mutual Fund" },
+              { file: "axis.svg", alt: "AXIS", full: "Axis Mutual Fund" },
+              { file: "absl.png", alt: "ABSL", full: "Aditya Birla Sun Life Mutual Fund" },
+              { file: "franklin.png", alt: "FT", full: "Franklin Templeton Mutual Fund" },
+              { file: "kotak.svg", alt: "KOTAK", full: "Kotak Mahindra Mutual Fund" },
+              { file: "dsp.svg", alt: "DSP", full: "DSP Mutual Fund" },
+              { file: "tata.svg", alt: "TATA", full: "Tata Mutual Fund" },
+              { file: "bandhan.svg", alt: "BANDHAN", full: "Bandhan Mutual Fund (formerly IDFC)" },
+              { file: "hdfc.svg", alt: "HDFC", full: "HDFC Mutual Fund" },
+              { file: "sbi.svg", alt: "SBI", full: "SBI Mutual Fund" },
+              { file: "icici.jpeg", alt: "ICICI", full: "ICICI Prudential Mutual Fund" },
+              { file: "hsbc.svg", alt: "HSBC", full: "HSBC Mutual Fund" },
+              { file: "ppfas.svg", alt: "PPFAS", full: "PPFAS Mutual Fund (Parag Parikh)" },
+            ].map((amc, idx) => (
+              <div key={`amc1-${idx}`} className="flex flex-col items-center justify-center w-56 p-3  hover:border-secondary transition-colors select-none">
+                <img src={`/acecapital/logo/${amc.file}`} alt={amc.alt} className="w-full h-12 object-contain mb-2" />
+                {/* <div className="text-[10px] text-center text-foreground font-semibold whitespace-normal leading-tight">
+                  {amc.full}
+                </div> */}
+              </div>
             ))}
           </div>
-          <div className="flex animate-marquee whitespace-nowrap items-center gap-16 px-8" aria-hidden="true">
-            {["SBI Mutual Fund", "HDFC Mutual Fund", "ICICI Prudential", "Nippon India", "Axis Mutual Fund", "Kotak Mutual Fund", "DSP Mutual Fund", "Tata Mutual Fund"].map((amc, idx) => (
-              <span key={`amc2-${idx}`} className="font-headline-lg text-xl md:text-2xl text-outline-variant hover:text-secondary transition-colors cursor-default select-none uppercase">
-                {amc}
-              </span>
+          <div className="flex animate-marquee whitespace-nowrap items-center gap-6 px-4" aria-hidden="true">
+            {[
+              { file: "UTI.webp", alt: "UTI", full: "UTI Mutual Fund" },
+              { file: "nippon.png", alt: "NIMF", full: "Nippon India Mutual Fund" },
+              { file: "axis.svg", alt: "AXIS", full: "Axis Mutual Fund" },
+              { file: "absl.png", alt: "ABSL", full: "Aditya Birla Sun Life Mutual Fund" },
+              { file: "franklin.png", alt: "FT", full: "Franklin Templeton Mutual Fund" },
+              { file: "kotak.svg", alt: "KOTAK", full: "Kotak Mahindra Mutual Fund" },
+              { file: "dsp.svg", alt: "DSP", full: "DSP Mutual Fund" },
+              { file: "tata.svg", alt: "TATA", full: "Tata Mutual Fund" },
+              { file: "bandhan.svg", alt: "BANDHAN", full: "Bandhan Mutual Fund (formerly IDFC)" },
+              { file: "hdfc.svg", alt: "HDFC", full: "HDFC Mutual Fund" },
+              { file: "sbi.svg", alt: "SBI", full: "SBI Mutual Fund" },
+              { file: "icici.jpeg", alt: "ICICI", full: "ICICI Prudential Mutual Fund" },
+              { file: "hsbc.svg", alt: "HSBC", full: "HSBC Mutual Fund" },
+              { file: "ppfas.svg", alt: "PPFAS", full: "PPFAS Mutual Fund (Parag Parikh)" },
+            ].map((amc, idx) => (
+              <div key={`amc2-${idx}`} className="flex flex-col items-center justify-center w-56  p-3 hover:border-secondary transition-colors select-none">
+                <img src={`/acecapital/logo/${amc.file}`} alt={amc.alt} className="w-full h-12 object-contain mb-2" />
+                {/* <div className="text-[10px] text-center text-foreground font-semibold whitespace-normal leading-tight">
+                  {amc.full}
+                </div> */}
+              </div>
             ))}
           </div>
         </div>
-        
+
         {/* Gradients for smooth fade on edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-gradient-to-r from-background to-transparent z-10"></div>
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-gradient-to-l from-background to-transparent z-10"></div>
-        
-        <style dangerouslySetInnerHTML={{__html: `
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/6 bg-linear-to-r from-background to-transparent z-10"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/6 bg-linear-to-l from-background to-transparent z-10"></div>
+
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-100%); }
           }
           .animate-marquee {
-            animation: marquee 25s linear infinite;
+            animation: marquee 35s linear infinite;
           }
           .group:hover .animate-marquee {
             animation-play-state: paused;
@@ -376,6 +396,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* NRI Investors Section */}
+      <section className="ace-section bg-[#1b365d] text-white">
+        <div className="ace-container">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 space-y-8">
+              <div>
+                <span className="font-section-label text-xs uppercase tracking-widest text-[#a88945] font-bold">
+                  NRI Desk
+                </span>
+                <h2 className="font-display-hero text-4xl md:text-5xl uppercase leading-tight mt-4">
+                  Global Wealth, <br /><span className="text-[#329671]">Indian Roots</span>
+                </h2>
+              </div>
+              <p className="font-body-lg text-gray-300 max-w-xl">
+                Distance shouldn't distance you from India's growth story. Our specialized NRI desk simplifies mutual fund investing, ensuring your cross-border wealth grows with trust, simplicity, and absolute ease.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                <div className="space-y-3">
+                  <span className="material-symbols-outlined text-3xl text-[#a88945]">public</span>
+                  <h4 className="font-headline-lg text-lg uppercase">100% Digital Onboarding</h4>
+                  <p className="font-body-sm text-gray-400">Complete your KYC and start investing from anywhere in the world without a single physical document.</p>
+                </div>
+                <div className="space-y-3">
+                  <span className="material-symbols-outlined text-3xl text-[#a88945]">account_balance</span>
+                  <h4 className="font-headline-lg text-lg uppercase">NRE & NRO Ready</h4>
+                  <p className="font-body-sm text-gray-400">Seamless integration with your repatriable and non-repatriable bank accounts for smooth transfers.</p>
+                </div>
+                <div className="space-y-3">
+                  <span className="material-symbols-outlined text-3xl text-[#a88945]">support_agent</span>
+                  <h4 className="font-headline-lg text-lg uppercase">Global Timezone Support</h4>
+                  <p className="font-body-sm text-gray-400">Dedicated relationship managers available at times that work for you, not just IST.</p>
+                </div>
+                <div className="space-y-3">
+                  <span className="material-symbols-outlined text-3xl text-[#a88945]">security</span>
+                  <h4 className="font-headline-lg text-lg uppercase">Tax-Optimized Guidance</h4>
+                  <p className="font-body-sm text-gray-400">Navigate DTAA and cross-border taxation complexities with our expert advisory network.</p>
+                </div>
+              </div>
+
+              <div className="pt-6">
+                <Link
+                  href="/contact"
+                  className="inline-block bg-[#329671] text-white px-8 py-4 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md"
+                >
+                  Speak to an NRI Advisor
+                </Link>
+              </div>
+            </div>
+
+            <div className="flex-1 w-full relative">
+              <div className="aspect-square max-w-md mx-auto relative group perspective-1000">
+                {/* Visual Graphic */}
+                <div className="absolute inset-0 bg-linear-to-tr from-[#329671] to-[#a88945] rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                <div className="w-full h-full border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-sm p-8 flex flex-col items-center justify-center relative overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700 shadow-2xl">
+                  <span className="material-symbols-outlined text-9xl text-white/50 mb-8 group-hover:-translate-y-4 transition-transform duration-700">flight_takeoff</span>
+                  <div className="text-center space-y-2 relative z-10">
+                    <div className="text-5xl font-display-hero text-white">15+</div>
+                    <div className="text-sm uppercase tracking-widest text-gray-400">Countries Served</div>
+                  </div>
+                  {/* Decorative Elements */}
+                  <div className="absolute top-10 left-10 w-24 h-24 border border-[#329671]/30 rounded-full"></div>
+                  <div className="absolute bottom-10 right-10 w-40 h-40 border border-[#a88945]/30 rounded-full"></div>
+                  <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Customer Testimonials Section */}
       <section className="ace-section ace-container bg-background">
         <div className="text-center mb-16">
@@ -466,6 +557,106 @@ export default function Home() {
         </div>
       </section>
 
+      {/* App Download - Bento Style */}
+      <section className="ace-section ace-container">
+        <div className="text-center mb-12">
+          <span className="font-section-label text-section-label uppercase tracking-widest text-[#a88945]">
+            05 / PLATFORM
+          </span>
+          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
+            THE ACE EXPERIENCE
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Main App CTA Card */}
+          <div className="md:col-span-2 bg-[#fcfbfa] border border-[#e8dfc8] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between overflow-hidden relative group">
+            {/* Text content */}
+            <div className="z-10 flex-1 space-y-6">
+              <h2 className="font-display-hero text-3xl md:text-5xl uppercase leading-tight text-foreground">
+                Invest Anywhere,<br></br> <span className="text-[#329671]">Anytime</span>
+              </h2>
+              <p className="font-body-md text-on-surface-variant max-w-md">
+                Download the Ace Capital app to track your mutual funds, automate SIPs, and access institutional-grade insights on the go.
+              </p>
+              <div className="flex flex-wrap gap-4 pt-4">
+                <button className="bg-black text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                  <span className="material-symbols-outlined text-3xl">apple</span>
+                  <div className="text-left flex flex-col">
+                    <span className="text-[9px] leading-none uppercase tracking-wider">Download on the</span>
+                    <span className="text-sm font-bold leading-none mt-1">App Store</span>
+                  </div>
+                </button>
+                <button className="bg-black text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                  <span className="material-symbols-outlined text-3xl">shop</span>
+                  <div className="text-left flex flex-col">
+                    <span className="text-[9px] leading-none uppercase tracking-wider">GET IT ON</span>
+                    <span className="text-sm font-bold leading-none mt-1">Google Play</span>
+                  </div>
+                </button>
+              </div>
+            </div>
+            {/* Mockup Placeholder */}
+            <div className="w-full md:w-auto h-64 md:h-full relative mt-10 md:mt-0 flex justify-center md:justify-end">
+              <div className="w-56 h-125 bg-white border-8 border-gray-900 rounded-[2.5rem] shadow-2xl absolute -bottom-32 md:-bottom-48 md:right-0 group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-6 bg-gray-900 rounded-b-2xl opacity-10 mx-auto w-32 z-20"></div>
+                <div className="p-4 bg-[#fbf9f1] h-full flex flex-col gap-4 relative z-10">
+                  <div className="h-32 bg-linear-to-br from-[#1b365d] to-[#329671] rounded-xl flex flex-col justify-end p-4 text-white">
+                    <span className="text-xs opacity-80 uppercase tracking-widest">Total Value</span>
+                    <span className="text-2xl font-bold">₹12,45,000</span>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="h-16 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center p-3 gap-3">
+                      <div className="w-10 h-10 bg-red-100 rounded-full"></div>
+                      <div className="flex-1">
+                        <div className="h-3 w-20 bg-gray-200 rounded mb-2"></div>
+                        <div className="h-2 w-12 bg-gray-100 rounded"></div>
+                      </div>
+                    </div>
+                    <div className="h-16 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center p-3 gap-3">
+                      <div className="w-10 h-10 bg-blue-100 rounded-full"></div>
+                      <div className="flex-1">
+                        <div className="h-3 w-16 bg-gray-200 rounded mb-2"></div>
+                        <div className="h-2 w-14 bg-gray-100 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Side Bento Card 1 */}
+          <div className="bg-[#1b365d] text-white rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
+            <div className="z-10 space-y-4">
+              <span className="material-symbols-outlined text-4xl text-[#329671] group-hover:scale-110 transition-transform">insights</span>
+              <h3 className="font-headline-lg text-2xl uppercase">Live Analytics</h3>
+              <p className="font-body-sm text-gray-300">Monitor your investments with real-time data and advanced charting directly on your phone.</p>
+            </div>
+            <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <span className="material-symbols-outlined text-9xl">monitoring</span>
+            </div>
+          </div>
+
+          {/* Side Bento Card 2 */}
+          <div className="bg-white border border-[#e8dfc8] rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
+            <div className="z-10 space-y-4">
+              <span className="material-symbols-outlined text-4xl text-[#a88945] group-hover:scale-110 transition-transform">verified_user</span>
+              <h3 className="font-headline-lg text-2xl uppercase text-[#111827]">Bank-level Security</h3>
+              <p className="font-body-sm text-[#4b5563]">Biometric authentication and 256-bit encryption keep your wealth strictly confidential.</p>
+            </div>
+          </div>
+
+          {/* Bottom Card */}
+          <div className="md:col-span-2 bg-[#fbf9f1] border border-[#e8dfc8] rounded-3xl p-8 flex items-center justify-between overflow-hidden relative group">
+            <div className="z-10 space-y-4 max-w-lg">
+              <span className="material-symbols-outlined text-4xl text-[#329671] group-hover:rotate-180 transition-transform duration-700">sync</span>
+              <h3 className="font-headline-lg text-2xl uppercase text-[#111827]">Smart SIP Automations</h3>
+              <p className="font-body-sm text-[#4b5563]">Set up and modify your systematic investment plans with just two taps. Never miss an investment cycle again.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Connect Section */}
       <section className="bg-primary-container ace-section relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-gutter text-center relative z-10 space-y-8">
@@ -477,7 +668,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
             <input
-              className="flex-grow bg-background border border-border text-foreground font-data-point px-4 py-3 focus:border-secondary outline-none rounded uppercase placeholder:text-muted-foreground text-sm"
+              className="grow bg-background border border-border text-foreground font-data-point px-4 py-3 focus:border-secondary outline-none rounded uppercase placeholder:text-muted-foreground text-sm"
               placeholder="ENTER WORK EMAIL"
               type="email"
             />
