@@ -124,43 +124,37 @@ export default function Home() {
       {/* Hero Section */}
       <header className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-90 scale-105"
-            style={{
-              backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA-Ltn-GH1h9YRQht4CbsnepFyYMrnkpQNwiELBKYhp0n-tJLmXLGpSmACasxyD4akik_tet8JWpn50FMGXk8bysG2STeqmGpWF_RuxVzRQdWx1JKXl_ZcTrMfOxrgaP7lsXsYofbJyypvYTCHptSSCo9dPiAAihZoVYOcYD6e7q8YkEsI8LowmXK2OxX2BpjWAg2MCXCKrohRpWlNEV5ibFw-rsV364Iy5ukM13qwBxxZs87svxPo')",
-            }}
-          ></div>
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
 
         <div className="relative z-10 ace-container text-left space-y-6 pt-8">
-          <div className="inline-block px-4 py-1.5 border border-[#e8dfc8] bg-[#fcfbfa] rounded-full">
-            <span className="font-section-label text-[10px] font-bold uppercase tracking-widest text-[#9d8349]">
+          <div className="inline-block px-4 py-1.5 border border-secondary/20 bg-secondary/5 rounded-full">
+            <span className="font-section-label text-[10px] font-bold uppercase tracking-widest text-secondary">
               Systematic, Simple, Personal
             </span>
           </div>
-          <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight text-[#111827] font-bold">
-            Invest with clarity — your <span className="text-[#329671]">trusted</span><br className="hidden md:block" /> mutual fund distributor in India.
+          <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground font-bold">
+            Invest with clarity — your <span className="text-primary">trusted</span><br className="hidden md:block" /> mutual fund distributor in India.
           </h1>
-          <p className="font-body-lg text-base md:text-lg text-[#4b5563] max-w-3xl">
+          <p className="font-body-lg text-base md:text-lg text-muted-foreground max-w-3xl">
             New-age mutual fund investing with an old-fashioned personal touch. We help you choose<br className="hidden md:block" /> funds that fit your goals and guide you, in plain language, at every step.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4">
             <Link
               href="https://mf.acecapitalenterprise.com" target="_blank"
-              className="w-full sm:w-auto bg-[#1e3a5f] text-white px-8 py-3.5 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md"
+              className="w-full sm:w-auto button-primary px-8 py-3.5 text-sm text-center rounded-md hover:brightness-110 active:scale-95 transition-all"
             >
               Start Investing
             </Link>
             <Link
               href="/contact"
-              className="w-full sm:w-auto bg-white border border-gray-200 text-[#1e3a5f] px-8 py-3.5 font-semibold text-sm hover:bg-gray-50 transition-all active:scale-95 text-center rounded-md shadow-sm"
+              className="w-full sm:w-auto bg-card border border-border text-foreground px-8 py-3.5 font-semibold text-sm hover:bg-muted transition-all active:scale-95 text-center rounded-md shadow-sm"
             >
               Talk to Us
             </Link>
           </div>
           <div className="pt-4">
-            <p className="text-xs text-[#6b7280] font-medium">
+            <p className="text-xs text-muted-foreground font-medium">
               AMFI-registered Mutual Fund Distributor (ARN-113576) &bull; Trusted by 150+ families since 2016
             </p>
           </div>
@@ -170,8 +164,8 @@ export default function Home() {
       {/* Partnered AMCs Marquee */}
       <section className="border-b border-border py-8 bg-background overflow-hidden relative">
         <div className="text-center mb-6">
-          <p className="font-section-label text-xs uppercase tracking-widest text-muted-foreground">
-            Trusted by Top Asset Management Companies
+          <p className="font-section-label text-sm tracking-widest text-muted-foreground">
+            Empanelled with Leading Mutual Fund Houses
           </p>
         </div>
 
@@ -337,7 +331,7 @@ export default function Home() {
               <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
                 02 / SERVICES
               </span>
-              <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
+              <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
                 Specialized Solutions
               </h2>
             </div>
@@ -350,46 +344,38 @@ export default function Home() {
             {/* Service 1: Mutual Funds & Investments */}
             <Link
               href="/mutual-funds-investments"
-              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block rounded"
+              className="group relative h-72 flex flex-col justify-between overflow-hidden border border-border bg-card hover:border-secondary transition-colors duration-500 rounded p-8 glass-card shadow-sm hover:shadow-md"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuDWjN5adXnTzNeNduCADSKX9qxmoDJW60Vcs5EdjvQv1nSkNaQk177KMXTk0ae8M-c9wDjuWdGv4ub5VDMbFHF-i2NQUMlsT2f2L0dURoiCA8aeWRdjnxuwm7iz8SP2MwasrAVGG5ip37ovSjZXBbyttCxnOB3-kCPREpBAsePX8CYxkoAP7xfKvz6cU00zJTSfLR4Ye0pbeStIrS8AVktkFUK7x4vjo4zD-lEj0TkoNfPfJ04ZzQs')",
-                }}
-              ></div>
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                <span className="material-symbols-outlined text-2xl">monitoring</span>
+              </div>
+              <div>
+                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-foreground mb-4">
                   Mutual Funds & Investments
                 </h5>
-                <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="font-body-md text-muted-foreground">
                   Diversified exposure and tailored portfolio construction across equity and debt markets with professional risk control.
                 </p>
-                <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
+                <div className="h-1 w-8 bg-secondary mt-6 group-hover:w-full transition-all duration-700"></div>
               </div>
             </Link>
 
             {/* Service 2: Prop Trading & Automated */}
             <Link
               href="/prop-trading-automated"
-              className="group relative h-96 overflow-hidden border border-outline-variant/30 hover:border-secondary transition-colors duration-500 block rounded"
+              className="group relative h-72 flex flex-col justify-between overflow-hidden border border-border bg-card hover:border-secondary transition-colors duration-500 rounded p-8 glass-card shadow-sm hover:shadow-md"
             >
-              <div
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
-                style={{
-                  backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBK0Idnd2zSyXrl390wnGakpUtRxug7HIHIQFjYAugO2QkHSLyKoV2Ghfki9GVL-wa88h1xUndU7rXybR6XGx8AYVrurdJB6xUBI8J4IBULBYlQ9rGu242dDFFSvLAJtUJKZhmx_qilkL4KmAgRyztfMhPjRIU5LNKZRWUA6neI0pbzb-3o0kMuvAgfTiF13PzQoUuCfnxfOQKhCj3KYWMEOmqSz8C-pFgigZgZRlCU4lGoWDceHLI')",
-                }}
-              ></div>
-              <div className="absolute inset-0 bg-black/60 group-hover:bg-black/40 transition-colors"></div>
-              <div className="absolute bottom-0 left-0 p-8 w-full translate-y-12 group-hover:translate-y-0 transition-transform duration-500">
-                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-white mb-4">
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 text-primary">
+                <span className="material-symbols-outlined text-2xl">memory</span>
+              </div>
+              <div>
+                <h5 className="font-headline-lg text-headline-lg-mobile uppercase text-foreground mb-4">
                   Prop Trading & Auto Desks
                 </h5>
-                <p className="font-body-md text-on-surface-variant opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <p className="font-body-md text-muted-foreground">
                   Leverage our institutional capital and automated execution engines with ultra-low latency co-location.
                 </p>
-                <div className="h-1 w-0 bg-secondary mt-4 group-hover:w-full transition-all duration-700"></div>
+                <div className="h-1 w-8 bg-secondary mt-6 group-hover:w-full transition-all duration-700"></div>
               </div>
             </Link>
           </div>
@@ -397,49 +383,49 @@ export default function Home() {
       </section>
 
       {/* NRI Investors Section */}
-      <section className="ace-section bg-[#1b365d] text-white">
+      <section className="ace-section bg-primary text-primary-foreground">
         <div className="ace-container">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="flex-1 space-y-8">
               <div>
-                <span className="font-section-label text-xs uppercase tracking-widest text-[#a88945] font-bold">
+                <span className="font-section-label text-xs uppercase tracking-widest text-secondary font-bold">
                   NRI Desk
                 </span>
                 <h2 className="font-display-hero text-4xl md:text-5xl uppercase leading-tight mt-4">
-                  Global Wealth, <br /><span className="text-[#329671]">Indian Roots</span>
+                  Global Wealth, <br /><span className="text-secondary">Indian Roots</span>
                 </h2>
               </div>
-              <p className="font-body-lg text-gray-300 max-w-xl">
+              <p className="font-body-lg text-primary-foreground/80 max-w-xl">
                 Distance shouldn't distance you from India's growth story. Our specialized NRI desk simplifies mutual fund investing, ensuring your cross-border wealth grows with trust, simplicity, and absolute ease.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
                 <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-[#a88945]">public</span>
+                  <span className="material-symbols-outlined text-3xl text-secondary">public</span>
                   <h4 className="font-headline-lg text-lg uppercase">100% Digital Onboarding</h4>
-                  <p className="font-body-sm text-gray-400">Complete your KYC and start investing from anywhere in the world without a single physical document.</p>
+                  <p className="font-body-sm text-primary-foreground/70">Complete your KYC and start investing from anywhere in the world without a single physical document.</p>
                 </div>
                 <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-[#a88945]">account_balance</span>
+                  <span className="material-symbols-outlined text-3xl text-secondary">account_balance</span>
                   <h4 className="font-headline-lg text-lg uppercase">NRE & NRO Ready</h4>
-                  <p className="font-body-sm text-gray-400">Seamless integration with your repatriable and non-repatriable bank accounts for smooth transfers.</p>
+                  <p className="font-body-sm text-primary-foreground/70">Seamless integration with your repatriable and non-repatriable bank accounts for smooth transfers.</p>
                 </div>
                 <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-[#a88945]">support_agent</span>
+                  <span className="material-symbols-outlined text-3xl text-secondary">support_agent</span>
                   <h4 className="font-headline-lg text-lg uppercase">Global Timezone Support</h4>
-                  <p className="font-body-sm text-gray-400">Dedicated relationship managers available at times that work for you, not just IST.</p>
+                  <p className="font-body-sm text-primary-foreground/70">Dedicated relationship managers available at times that work for you, not just IST.</p>
                 </div>
                 <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-[#a88945]">security</span>
+                  <span className="material-symbols-outlined text-3xl text-secondary">security</span>
                   <h4 className="font-headline-lg text-lg uppercase">Tax-Optimized Guidance</h4>
-                  <p className="font-body-sm text-gray-400">Navigate DTAA and cross-border taxation complexities with our expert advisory network.</p>
+                  <p className="font-body-sm text-primary-foreground/70">Navigate DTAA and cross-border taxation complexities with our expert advisory network.</p>
                 </div>
               </div>
 
               <div className="pt-6">
                 <Link
                   href="/contact"
-                  className="inline-block bg-[#329671] text-white px-8 py-4 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md"
+                  className="inline-block bg-secondary text-primary-foreground px-8 py-4 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md"
                 >
                   Speak to an NRI Advisor
                 </Link>
@@ -449,16 +435,16 @@ export default function Home() {
             <div className="flex-1 w-full relative">
               <div className="aspect-square max-w-md mx-auto relative group perspective-1000">
                 {/* Visual Graphic */}
-                <div className="absolute inset-0 bg-linear-to-tr from-[#329671] to-[#a88945] rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-secondary rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
                 <div className="w-full h-full border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-sm p-8 flex flex-col items-center justify-center relative overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700 shadow-2xl">
                   <span className="material-symbols-outlined text-9xl text-white/50 mb-8 group-hover:-translate-y-4 transition-transform duration-700">flight_takeoff</span>
                   <div className="text-center space-y-2 relative z-10">
                     <div className="text-5xl font-display-hero text-white">15+</div>
-                    <div className="text-sm uppercase tracking-widest text-gray-400">Countries Served</div>
+                    <div className="text-sm uppercase tracking-widest text-primary-foreground/70">Countries Served</div>
                   </div>
                   {/* Decorative Elements */}
-                  <div className="absolute top-10 left-10 w-24 h-24 border border-[#329671]/30 rounded-full"></div>
-                  <div className="absolute bottom-10 right-10 w-40 h-40 border border-[#a88945]/30 rounded-full"></div>
+                  <div className="absolute top-10 left-10 w-24 h-24 border border-secondary/30 rounded-full"></div>
+                  <div className="absolute bottom-10 right-10 w-40 h-40 border border-secondary/30 rounded-full"></div>
                   <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
                 </div>
               </div>
@@ -560,33 +546,33 @@ export default function Home() {
       {/* App Download - Bento Style */}
       <section className="ace-section ace-container">
         <div className="text-center mb-12">
-          <span className="font-section-label text-section-label uppercase tracking-widest text-[#a88945]">
+          <span className="font-section-label text-section-label uppercase tracking-widest text-secondary">
             05 / PLATFORM
           </span>
-          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
+          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
             THE ACE EXPERIENCE
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main App CTA Card */}
-          <div className="md:col-span-2 bg-[#fcfbfa] border border-[#e8dfc8] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between overflow-hidden relative group">
+          <div className="md:col-span-2 bg-card border border-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between overflow-hidden relative group">
             {/* Text content */}
             <div className="z-10 flex-1 space-y-6">
               <h2 className="font-display-hero text-3xl md:text-5xl uppercase leading-tight text-foreground">
-                Invest Anywhere,<br></br> <span className="text-[#329671]">Anytime</span>
+                Invest Anywhere,<br></br> <span className="text-primary">Anytime</span>
               </h2>
-              <p className="font-body-md text-on-surface-variant max-w-md">
+              <p className="font-body-md text-muted-foreground max-w-md">
                 Download the Ace Capital app to track your mutual funds, automate SIPs, and access institutional-grade insights on the go.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <button className="bg-black text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                <button className="button-primary px-5 py-2.5 rounded-lg flex items-center gap-2">
                   <span className="material-symbols-outlined text-3xl">apple</span>
                   <div className="text-left flex flex-col">
                     <span className="text-[9px] leading-none uppercase tracking-wider">Download on the</span>
                     <span className="text-sm font-bold leading-none mt-1">App Store</span>
                   </div>
                 </button>
-                <button className="bg-black text-white px-5 py-2.5 rounded-lg flex items-center gap-2 hover:bg-gray-800 transition-colors">
+                <button className="bg-foreground text-background px-5 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition-colors">
                   <span className="material-symbols-outlined text-3xl">shop</span>
                   <div className="text-left flex flex-col">
                     <span className="text-[9px] leading-none uppercase tracking-wider">GET IT ON</span>
@@ -597,26 +583,26 @@ export default function Home() {
             </div>
             {/* Mockup Placeholder */}
             <div className="w-full md:w-auto h-64 md:h-full relative mt-10 md:mt-0 flex justify-center md:justify-end">
-              <div className="w-56 h-125 bg-white border-8 border-gray-900 rounded-[2.5rem] shadow-2xl absolute -bottom-32 md:-bottom-48 md:right-0 group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
-                <div className="absolute top-0 inset-x-0 h-6 bg-gray-900 rounded-b-2xl opacity-10 mx-auto w-32 z-20"></div>
-                <div className="p-4 bg-[#fbf9f1] h-full flex flex-col gap-4 relative z-10">
-                  <div className="h-32 bg-linear-to-br from-[#1b365d] to-[#329671] rounded-xl flex flex-col justify-end p-4 text-white">
+              <div className="w-56 h-125 bg-background border-8 border-foreground/90 rounded-[2.5rem] shadow-2xl absolute -bottom-32 md:-bottom-48 md:right-0 group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
+                <div className="absolute top-0 inset-x-0 h-6 bg-foreground/90 rounded-b-2xl opacity-10 mx-auto w-32 z-20"></div>
+                <div className="p-4 bg-muted h-full flex flex-col gap-4 relative z-10">
+                  <div className="h-32 bg-primary rounded-xl flex flex-col justify-end p-4 text-primary-foreground">
                     <span className="text-xs opacity-80 uppercase tracking-widest">Total Value</span>
                     <span className="text-2xl font-bold">₹12,45,000</span>
                   </div>
                   <div className="space-y-3">
-                    <div className="h-16 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center p-3 gap-3">
-                      <div className="w-10 h-10 bg-red-100 rounded-full"></div>
+                    <div className="h-16 bg-card rounded-xl border border-border shadow-sm flex items-center p-3 gap-3">
+                      <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
                       <div className="flex-1">
-                        <div className="h-3 w-20 bg-gray-200 rounded mb-2"></div>
-                        <div className="h-2 w-12 bg-gray-100 rounded"></div>
+                        <div className="h-3 w-20 bg-muted-foreground/30 rounded mb-2"></div>
+                        <div className="h-2 w-12 bg-muted-foreground/20 rounded"></div>
                       </div>
                     </div>
-                    <div className="h-16 bg-white rounded-xl border border-gray-200 shadow-sm flex items-center p-3 gap-3">
-                      <div className="w-10 h-10 bg-blue-100 rounded-full"></div>
+                    <div className="h-16 bg-card rounded-xl border border-border shadow-sm flex items-center p-3 gap-3">
+                      <div className="w-10 h-10 bg-secondary/20 rounded-full"></div>
                       <div className="flex-1">
-                        <div className="h-3 w-16 bg-gray-200 rounded mb-2"></div>
-                        <div className="h-2 w-14 bg-gray-100 rounded"></div>
+                        <div className="h-3 w-16 bg-muted-foreground/30 rounded mb-2"></div>
+                        <div className="h-2 w-14 bg-muted-foreground/20 rounded"></div>
                       </div>
                     </div>
                   </div>
@@ -626,11 +612,11 @@ export default function Home() {
           </div>
 
           {/* Side Bento Card 1 */}
-          <div className="bg-[#1b365d] text-white rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
+          <div className="bg-primary text-primary-foreground rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
             <div className="z-10 space-y-4">
-              <span className="material-symbols-outlined text-4xl text-[#329671] group-hover:scale-110 transition-transform">insights</span>
+              <span className="material-symbols-outlined text-4xl text-secondary group-hover:scale-110 transition-transform">insights</span>
               <h3 className="font-headline-lg text-2xl uppercase">Live Analytics</h3>
-              <p className="font-body-sm text-gray-300">Monitor your investments with real-time data and advanced charting directly on your phone.</p>
+              <p className="font-body-sm text-primary-foreground/80">Monitor your investments with real-time data and advanced charting directly on your phone.</p>
             </div>
             <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
               <span className="material-symbols-outlined text-9xl">monitoring</span>
@@ -638,20 +624,20 @@ export default function Home() {
           </div>
 
           {/* Side Bento Card 2 */}
-          <div className="bg-white border border-[#e8dfc8] rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
+          <div className="bg-card border border-border rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
             <div className="z-10 space-y-4">
-              <span className="material-symbols-outlined text-4xl text-[#a88945] group-hover:scale-110 transition-transform">verified_user</span>
-              <h3 className="font-headline-lg text-2xl uppercase text-[#111827]">Bank-level Security</h3>
-              <p className="font-body-sm text-[#4b5563]">Biometric authentication and 256-bit encryption keep your wealth strictly confidential.</p>
+              <span className="material-symbols-outlined text-4xl text-secondary group-hover:scale-110 transition-transform">verified_user</span>
+              <h3 className="font-headline-lg text-2xl uppercase text-foreground">Bank-level Security</h3>
+              <p className="font-body-sm text-muted-foreground">Biometric authentication and 256-bit encryption keep your wealth strictly confidential.</p>
             </div>
           </div>
 
           {/* Bottom Card */}
-          <div className="md:col-span-2 bg-[#fbf9f1] border border-[#e8dfc8] rounded-3xl p-8 flex items-center justify-between overflow-hidden relative group">
+          <div className="md:col-span-2 bg-muted border border-border rounded-3xl p-8 flex items-center justify-between overflow-hidden relative group">
             <div className="z-10 space-y-4 max-w-lg">
-              <span className="material-symbols-outlined text-4xl text-[#329671] group-hover:rotate-180 transition-transform duration-700">sync</span>
-              <h3 className="font-headline-lg text-2xl uppercase text-[#111827]">Smart SIP Automations</h3>
-              <p className="font-body-sm text-[#4b5563]">Set up and modify your systematic investment plans with just two taps. Never miss an investment cycle again.</p>
+              <span className="material-symbols-outlined text-4xl text-primary group-hover:rotate-180 transition-transform duration-700">sync</span>
+              <h3 className="font-headline-lg text-2xl uppercase text-foreground">Smart SIP Automations</h3>
+              <p className="font-body-sm text-muted-foreground">Set up and modify your systematic investment plans with just two taps. Never miss an investment cycle again.</p>
             </div>
           </div>
         </div>

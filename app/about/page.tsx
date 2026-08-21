@@ -13,7 +13,7 @@ export default function About() {
   const aboutFAQs = [
     {
       question: "Firm History & Legacy",
-      answer: "ACE CAPITAL ENTERPRISE was founded in 2008 during the global financial crisis with a singular focus on systematic risk management. Over the last 15 years, we have evolved from a boutique quant desk into a global multi-asset proprietary trading powerhouse.",
+      answer: "ACE CAPITAL ENTERPRISE was founded in 2016 during the global financial crisis with a singular focus on systematic risk management. Over the last 15 years, we have evolved from a boutique quant desk into a global multi-asset proprietary trading powerhouse.",
     },
     {
       question: "Regulatory Compliance Framework",
@@ -47,26 +47,7 @@ export default function About() {
     },
   ]
 
-  const hubs = [
-    {
-      name: "MUMBAI",
-      role: "Strategic Operations & Tech HQ",
-      icon: "explore",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuDSwCqbh3TNssiIogz5TupcSKYXLCknDT699t1U6DIwskqB_CvDQ321nGGx1-lhW3sUJzqNelqwu0j4_9vmxrbd0HHCZ8Acw4zjQ91zNPFo4K6lagOYyyPIVlguBEQbfVcKkQ_oh_0P8I1xccGEyene_pXh1_8KoQdqjrjIdTFOJCjvmmqZ9Q2Sg3S8WXy72FL72pL3J9A7gGKjSpH9kYbpS8-YF5KbjGch-bNtyG6Xtf92IYilYOI",
-    },
-    {
-      name: "LONDON",
-      role: "Global Market Arbitrage Desk",
-      icon: "explore",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAtiMdI--4r_UhTigknPjf874dyRVisWzpQQEEYg5OQu4BYvNdMYwaLLAcB_51KPB6WGxtv1DADjkM9o5DNbM3R062bne05ihSAPEDf1a6uBJbDX6VAR3MX_Srx1FOiTJ12ae_U87IDeYR_RL5RM0Cy1m9cznkNmU_t5IlXBJQX_BK8ILqdtEyCH4e1uossSM_MHl9Ma-gATHzxdd2mqke-QeToWH0CtXkIqShRLeHQ1Msl90ImH3Q",
-    },
-    {
-      name: "SINGAPORE",
-      role: "APAC Regulatory & Compliance",
-      icon: "explore",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAW4Khilx0iLMgXrdF_fXsmL8886K184oXpBN-JZ6frQz4ucNMmN-U7i1iaESsS_z55wIl9w4OPR20rReuiyl9KuqjDHoxX48HsXQTi_gNCWNt8mo6gn2sm7YC9Y12Elgo4_pv05aBRkbLidHpi69JVWYMl-Yofjnp0eGXZEbeQb6dm8rz4NTE1pO97GzZmPWDre_Ldxq7cjTPsfDrjn-C2GNgmyHksFeayByCxuAQJHENsrOQf34A",
-    },
-  ]
+
 
   const leaders = [
     {
@@ -207,68 +188,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Footprint / Hubs Section */}
-      <section className="ace-section ace-container bg-surface-container-lowest border-border">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="space-y-8">
-            <div>
-              <span className="font-section-label text-section-label text-secondary uppercase tracking-[0.3em] block mb-4">
-                Global Network
-              </span>
-              <h2 className="font-headline-lg text-headline-lg text-foreground mb-6 uppercase">
-                Strategic Presence in Global Liquidity Hubs
-              </h2>
-              <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                Our decentralized infrastructure allows for localized execution with global oversight. We maintain active desks in the world's most critical financial centers.
-              </p>
-            </div>
 
-            <div className="space-y-4">
-              {hubs.map((hub, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center justify-between p-6 border-l-2 border-border bg-surface-container-high rounded-r hover:border-secondary transition-all duration-300"
-                >
-                  <div>
-                    <h4 className="font-headline-lg text-lg text-foreground uppercase tracking-wider">{hub.name}</h4>
-                    <p className="text-on-surface-variant text-xs mt-1">{hub.role}</p>
-                  </div>
-                  <span className="material-symbols-outlined text-secondary text-2xl">
-                    {hub.icon}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Pictures Grid */}
-          <div className="grid grid-cols-2 gap-4 h-[500px]">
-            <div className="h-full rounded overflow-hidden border border-outline-variant/30">
-              <img
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                alt="Mumbai Skyline"
-                src={hubs[0].image}
-              />
-            </div>
-            <div className="grid grid-rows-2 gap-4">
-              <div className="rounded overflow-hidden border border-outline-variant/30">
-                <img
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  alt="London Skyline"
-                  src={hubs[1].image}
-                />
-              </div>
-              <div className="rounded overflow-hidden border border-outline-variant/30">
-                <img
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                  alt="Singapore Skyline"
-                  src={hubs[2].image}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Leadership Section */}
       <section className="ace-section ace-container">

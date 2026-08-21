@@ -110,7 +110,7 @@ export default function Careers() {
       />
 
       {/* Hero section */}
-      <section className="relative min-h-[600px] flex items-center overflow-hidden px-gutter bg-background pt-12">
+      <section className="relative min-h-150 flex items-center overflow-hidden px-gutter bg-background pt-12">
         <div className="absolute inset-0 z-0 opacity-30 border border-border/30 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
         <div className="ace-container w-full relative z-10">
           <div className="max-w-3xl space-y-8">
@@ -139,18 +139,6 @@ export default function Careers() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Stats Divider */}
-      <section className="bg-surface-container-low py-16 border-y border-border">
-        <div className="ace-container grid grid-cols-2 md:grid-cols-4 gap-8">
-          {stats.map((st, idx) => (
-            <div key={idx} className="text-center space-y-1">
-              <div className="font-data-point text-3xl text-secondary">{st.value}</div>
-              <div className="font-section-label text-xs text-outline uppercase tracking-widest">{st.label}</div>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -260,23 +248,6 @@ export default function Careers() {
         subtitle="Inquiries regarding recruitment stages, frameworks, and bonuses."
         items={candidateFAQs}
       />
-
-      {/* General resume drop */}
-      <section className="ace-section relative overflow-hidden bg-primary-container border-t border-border">
-        <div className="ace-container text-center relative z-10 space-y-8">
-          <h2 className="font-headline-lg text-4xl md:text-5xl text-foreground uppercase">
-            Ready to scale the next frontier?
-          </h2>
-          <p className="text-primary font-body-lg max-w-xl mx-auto leading-relaxed">
-            We are always looking for the exceptional. If you believe your talent belongs at the pinnacle of finance, let's talk.
-          </p>
-          <div>
-            <button className="bg-secondary text-on-secondary-fixed px-8 py-4 md:px-12 md:py-5 font-section-label text-xs md:text-sm uppercase tracking-widest font-bold hover:brightness-110 active:scale-95 transition-all rounded">
-              Submit General Resume
-            </button>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

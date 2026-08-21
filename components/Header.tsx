@@ -14,7 +14,6 @@ export default function Header() {
   const navLinks = [
     { name: "Mutual Funds & Investments", path: "/mutual-funds-investments" },
     { name: "Prop Trading & Auto Desks", path: "/prop-trading-automated" },
-    { name: "Careers", path: "/careers" },
     { name: "Blogs", path: "/blogs" },
     { name: "Contact Us", path: "/contact" },
     { name: "About", path: "/about" },

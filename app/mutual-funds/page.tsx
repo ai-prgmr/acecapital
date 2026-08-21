@@ -3,6 +3,7 @@ import FAQSection from "@/components/FAQSection"
 import MutualFundsCalculator from "@/components/MutualFundsCalculator"
 import TopFundsTabbed from "@/components/TopFundsTabbed"
 import ProductsGrid from "@/components/ProductsGrid"
+import MutualFundsBanners from "@/components/MutualFundsBanners"
 
 export const metadata: Metadata = {
   title: "Mutual Funds & Growth Projection | ACE CAPITAL",
@@ -121,45 +122,8 @@ export default function MutualFunds() {
 
       {/* Hero section */}
       <section className="relative ace-section bg-background overflow-hidden pt-12">
-        <div className="ace-container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary-container border border-primary/20 rounded-full">
-              <span className="w-2 h-2 rounded-full bg-success-green animate-pulse"></span>
-              <span className="font-section-label text-xs uppercase tracking-widest text-primary">
-                Managed Wealth Portfolios
-              </span>
-            </div>
-            <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground uppercase">
-              Institutional <span className="text-secondary italic">Precision.</span>
-            </h1>
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl leading-relaxed">
-              Leverage ACE Capital’s proprietary algorithmic frameworks and institutional-grade asset allocation for long-term wealth growth. Build your portfolio with absolute metrics.
-            </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <button className="px-6 py-3 md:px-8 md:py-4 bg-secondary text-on-secondary-fixed font-bold font-section-label tracking-widest text-xs md:text-sm hover:brightness-110 active:scale-95 transition-all uppercase rounded">
-                Start Investing
-              </button>
-              <button className="px-6 py-3 md:px-8 md:py-4 border border-outline text-muted-foreground font-bold font-section-label tracking-widest text-xs md:text-sm hover:bg-muted active:scale-95 transition-all uppercase rounded">
-                View Market Insights
-              </button>
-            </div>
-          </div>
-          <div className="relative hidden lg:block">
-            <div className="aspect-video ace-card border border-border rounded flex items-center justify-center p-8 bg-[radial-gradient(ellipse_at_center,rgba(233,195,73,0.05),transparent)]">
-              <div className="text-center space-y-4">
-                <span className="material-symbols-outlined text-secondary text-7xl animate-bounce">
-                  finance_mode
-                </span>
-                <p className="font-data-point text-xl text-foreground uppercase tracking-wider">
-                  Global Strategy Yield
-                </p>
-                <div className="flex justify-center gap-8 font-mono text-xs text-outline">
-                  <span>YTD: <strong className="text-success-green">+12.4%</strong></span>
-                  <span>NAV: <strong className="text-foreground">₹156.90</strong></span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="ace-container">
+          <MutualFundsBanners />
         </div>
       </section>
 
