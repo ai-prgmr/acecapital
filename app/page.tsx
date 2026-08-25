@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
+import InvestmentGoals from "@/components/InvestmentGoals"
 
 export const metadata: Metadata = {
   title: "ACE CAPITAL ENTERPRISE | Leading Proprietary Trading Firm",
@@ -453,6 +454,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Investment Goals Bento Box */}
+      <InvestmentGoals />
+
       {/* Customer Testimonials Section */}
       <section className="ace-section ace-container bg-background">
         <div className="text-center mb-16">
@@ -533,12 +537,12 @@ export default function Home() {
           <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-primary">
             <span className="material-symbols-outlined text-4xl text-primary mb-4">gavel</span>
             <h3 className="font-headline-lg text-xl uppercase mb-2">AMFI Certified</h3>
-            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: AMFI-XXXXX</p>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: ARN-113576</p>
           </div>
           <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-secondary">
             <span className="material-symbols-outlined text-4xl text-secondary mb-4">policy</span>
-            <h3 className="font-headline-lg text-xl uppercase mb-2">ARN License</h3>
-            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">ARN: XXXXX</p>
+            <h3 className="font-headline-lg text-xl uppercase mb-2">EUIN Number(AMFI)</h3>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">E199470</p>
           </div>
         </div>
       </section>

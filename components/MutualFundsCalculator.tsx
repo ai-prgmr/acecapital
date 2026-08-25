@@ -197,8 +197,8 @@ export default function MutualFundsCalculator() {
               </div>
 
               {chartData.map((data, idx) => {
-                const investedHeight = (data.invested / maxTotal) * 100
-                const gainsHeight = (data.gains / maxTotal) * 100
+                const investedHeight = ((data.invested / maxTotal) * 100).toFixed(2);
+                const gainsHeight = ((data.gains / maxTotal) * 100).toFixed(2);
 
                 return (
                   <div key={idx} className="flex-1 flex flex-col justify-end items-center group relative h-full z-10">
