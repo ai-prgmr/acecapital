@@ -27,42 +27,73 @@ jobs:
           const fs = require("fs");
           async function run() {
             try {
+              console.log("Fetching AMFI NAV file...");
               const res = await fetch("https://www.amfiindia.com/spages/NAVAll.txt");
               if (!res.ok) throw new Error("Failed to fetch AMFI file: " + res.statusText);
+              
               const text = await res.text();
               const lines = text.split("\n");
               const funds = [];
-              let cat = "Other", house = "Other";
+              let currentCategory = "Other";
+              let currentFundHouse = "Other";
 
-              for (let line of lines) {
-                line = line.trim();
+              for (let rawLine of lines) {
+                const line = rawLine.trim();
                 if (!line) continue;
+
+                // Track Category header lines
                 if (line.includes("Open Ended Schemes") || line.includes("Close Ended Schemes")) {
-                  cat = line.replace(/Open Ended Schemes\s*\(/i, "").replace(/\)/, "").trim();
+                  currentCategory = line.replace(/Open Ended Schemes\s*\(/i, "").replace(/\)/, "").trim();
                   continue;
                 }
+
+                // Track AMC / Fund House header lines
                 if (line.includes("Mutual Fund") && !line.includes(";")) {
-                  house = line.trim();
+                  currentFundHouse = line.trim();
                   continue;
                 }
-                const parts = line.split(line.includes(";") ? ";" : "|");
-                if (parts.length >= 5) {
-                  const code = parseInt(parts[0], 10);
-                  const name = parts[3] ? parts[3].trim() : "";
-                  const nav = parseFloat(parts[4]);
+
+                // Parse standard semicolon-separated data rows
+                const parts = line.split(";");
+                if (parts.length >= 6) {
+                  const code = parseInt(parts[0].trim(), 10);
+                  const schemeName = parts[3] ? parts[3].trim() : "";
+                  const navStr = parts[4] ? parts[4].trim() : "";
                   const date = parts[5] ? parts[5].trim() : "";
-                  
-                  if (!isNaN(code) && !isNaN(nav) && name) {
-                    const n = name.toLowerCase();
-                    if (n.includes("growth") && !n.includes("idcw") && !n.includes("dividend") && !n.includes("fmp")) {
-                      funds.push({ schemeCode: code, schemeName: name, nav, date, category: cat, fundHouse: house });
+                  const nav = parseFloat(navStr);
+
+                  if (!isNaN(code) && !isNaN(nav) && schemeName) {
+                    const lower = schemeName.toLowerCase();
+
+                    // Flexible match for Direct Growth schemes
+                    const isDirect = lower.includes("direct");
+                    const isGrowth = lower.includes("growth");
+                    const isDividendOrIDCW = lower.includes("idcw") || lower.includes("dividend") || lower.includes("div");
+                    const isFmp = lower.includes("fmp") || lower.includes("fixed maturity");
+
+                    if (isDirect && isGrowth && !isDividendOrIDCW && !isFmp) {
+                      funds.push({
+                        schemeCode: code,
+                        schemeName: schemeName,
+                        nav: nav,
+                        date: date,
+                        category: currentCategory,
+                        fundHouse: currentFundHouse
+                      });
                     }
                   }
                 }
               }
+
+              console.log("Parsed " + funds.length + " schemes.");
+              if (funds.length === 0) {
+                throw new Error("Parsing resulted in 0 schemes. Check parsing filters.");
+              }
+
               if (!fs.existsSync("./public")) fs.mkdirSync("./public");
-              fs.writeFileSync("./public/amfi-data.json", JSON.stringify(funds));
-              console.log("Successfully wrote " + funds.length + " schemes to public/amfi-data.json");
+              fs.writeFileSync("./public/amfi-data.json", JSON.stringify(funds, null, 2));
+              console.log("Successfully saved public/amfi-data.json");
+
             } catch (err) {
               console.error(err);
               process.exit(1);
