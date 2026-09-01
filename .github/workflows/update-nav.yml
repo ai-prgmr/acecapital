@@ -32,7 +32,7 @@ jobs:
               if (!res.ok) throw new Error("Failed to fetch AMFI file: " + res.statusText);
               
               const text = await res.text();
-              const lines = text.split("\n");
+              const lines = text.split(/\r?\n/);
               const funds = [];
               let currentCategory = "Other";
               let currentFundHouse = "Other";
@@ -53,46 +53,48 @@ jobs:
                   continue;
                 }
 
-                // Parse standard semicolon-separated data rows
-                const parts = line.split(";");
-                if (parts.length >= 6) {
-                  const code = parseInt(parts[0].trim(), 10);
-                  const schemeName = parts[3] ? parts[3].trim() : "";
-                  const navStr = parts[4] ? parts[4].trim() : "";
-                  const date = parts[5] ? parts[5].trim() : "";
-                  const nav = parseFloat(navStr);
+                // Parse semicolon delimited data rows (Scheme Code; ISIN1; ISIN2; Scheme Name; NAV; Date)
+                if (line.includes(";")) {
+                  const parts = line.split(";");
+                  if (parts.length >= 5) {
+                    const code = parseInt(parts[0].trim(), 10);
+                    const schemeName = parts[3] ? parts[3].trim() : "";
+                    const navStr = parts[4] ? parts[4].trim() : "";
+                    const date = parts[5] ? parts[5].trim() : "";
+                    const nav = parseFloat(navStr);
 
-                  if (!isNaN(code) && !isNaN(nav) && schemeName) {
-                    const lower = schemeName.toLowerCase();
+                    if (!isNaN(code) && !isNaN(nav) && schemeName) {
+                      const lower = schemeName.toLowerCase();
 
-                    // Flexible match for Direct Growth schemes
-                    const isDirect = lower.includes("direct");
-                    const isGrowth = lower.includes("growth");
-                    const isDividendOrIDCW = lower.includes("idcw") || lower.includes("dividend") || lower.includes("div");
-                    const isFmp = lower.includes("fmp") || lower.includes("fixed maturity");
+                      // Robust check for Direct Growth schemes
+                      const isDirect = lower.includes("direct");
+                      const isGrowth = lower.includes("growth");
+                      const isIDCW = lower.includes("idcw") || lower.includes("dividend") || lower.includes("div ");
+                      const isFmp = lower.includes("fmp") || lower.includes("fixed maturity");
 
-                    if (isDirect && isGrowth && !isDividendOrIDCW && !isFmp) {
-                      funds.push({
-                        schemeCode: code,
-                        schemeName: schemeName,
-                        nav: nav,
-                        date: date,
-                        category: currentCategory,
-                        fundHouse: currentFundHouse
-                      });
+                      if (isDirect && isGrowth && !isIDCW && !isFmp) {
+                        funds.push({
+                          schemeCode: code,
+                          schemeName: schemeName,
+                          nav: nav,
+                          date: date,
+                          category: currentCategory,
+                          fundHouse: currentFundHouse
+                        });
+                      }
                     }
                   }
                 }
               }
 
-              console.log("Parsed " + funds.length + " schemes.");
+              console.log("Parsed " + funds.length + " schemes successfully.");
               if (funds.length === 0) {
                 throw new Error("Parsing resulted in 0 schemes. Check parsing filters.");
               }
 
               if (!fs.existsSync("./public")) fs.mkdirSync("./public");
               fs.writeFileSync("./public/amfi-data.json", JSON.stringify(funds, null, 2));
-              console.log("Successfully saved public/amfi-data.json");
+              console.log("Successfully written to public/amfi-data.json");
 
             } catch (err) {
               console.error(err);
