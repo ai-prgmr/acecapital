@@ -1,0 +1,77 @@
+name: Update AMFI NAV Data Weekdays
+
+on:
+  schedule:
+    # Runs Monday to Friday at 11:50 PM IST (6:20 PM UTC)
+    - cron: '20 18 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  sync-nav:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch and Parse AMFI Data
+        run: |
+          node -e '
+          const fs = require("fs");
+          async function run() {
+            try {
+              const res = await fetch("https://www.amfiindia.com/spages/NAVAll.txt");
+              if (!res.ok) throw new Error("Failed to fetch AMFI file: " + res.statusText);
+              const text = await res.text();
+              const lines = text.split("\n");
+              const funds = [];
+              let cat = "Other", house = "Other";
+
+              for (let line of lines) {
+                line = line.trim();
+                if (!line) continue;
+                if (line.includes("Open Ended Schemes") || line.includes("Close Ended Schemes")) {
+                  cat = line.replace(/Open Ended Schemes\s*\(/i, "").replace(/\)/, "").trim();
+                  continue;
+                }
+                if (line.includes("Mutual Fund") && !line.includes(";")) {
+                  house = line.trim();
+                  continue;
+                }
+                const parts = line.split(line.includes(";") ? ";" : "|");
+                if (parts.length >= 5) {
+                  const code = parseInt(parts[0], 10);
+                  const name = parts[3] ? parts[3].trim() : "";
+                  const nav = parseFloat(parts[4]);
+                  const date = parts[5] ? parts[5].trim() : "";
+                  
+                  if (!isNaN(code) && !isNaN(nav) && name) {
+                    const n = name.toLowerCase();
+                    if (n.includes("growth") && !n.includes("idcw") && !n.includes("dividend") && !n.includes("fmp")) {
+                      funds.push({ schemeCode: code, schemeName: name, nav, date, category: cat, fundHouse: house });
+                    }
+                  }
+                }
+              }
+              if (!fs.existsSync("./public")) fs.mkdirSync("./public");
+              fs.writeFileSync("./public/amfi-data.json", JSON.stringify(funds));
+              console.log("Successfully wrote " + funds.length + " schemes to public/amfi-data.json");
+            } catch (err) {
+              console.error(err);
+              process.exit(1);
+            }
+          }
+          run();
+          '
+
+      - name: Commit & Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/amfi-data.json
+          git commit -m "chore: auto-update weekday AMFI NAV data" || exit 0
+          git push
