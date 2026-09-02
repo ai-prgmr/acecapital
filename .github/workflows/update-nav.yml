@@ -1,7 +1,5 @@
 name: Update AMFI NAV Data Weekdays
 
-name: Nightly Mutual Fund NAV Sync
-
 on:
   schedule:
     # Runs at 18:00 UTC (11:30 PM IST) every night
