@@ -1,113 +1,35 @@
 name: Update AMFI NAV Data Weekdays
 
+name: Nightly Mutual Fund NAV Sync
+
 on:
   schedule:
-    # Runs Monday to Friday at 11:50 PM IST (6:20 PM UTC)
-    - cron: '20 18 * * 1-5'
-  workflow_dispatch:
+    # Runs at 18:00 UTC (11:30 PM IST) every night
+    - cron: '0 18 * * 1-5'
+  workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:
-  contents: write
+  contents: write # Grants GitHub Actions bot permission to commit changes
 
 jobs:
-  sync-nav:
+  update-nav-data:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Setup Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: '20'
 
-      - name: Fetch and Parse AMFI Data
+      - name: Fetch and Process 14 AMC Mutual Funds
+        run: node scripts/update-funds.js
+
+      - name: Commit and Push Updated Funds JSON
         run: |
-          node -e '
-          const fs = require("fs");
-          async function run() {
-            try {
-              console.log("Fetching AMFI NAV file...");
-              const res = await fetch("https://www.amfiindia.com/spages/NAVAll.txt");
-              if (!res.ok) throw new Error("Failed to fetch AMFI file: " + res.statusText);
-              
-              const text = await res.text();
-              const lines = text.split(/\r?\n/);
-              const funds = [];
-              let currentCategory = "Other";
-              let currentFundHouse = "Other";
-
-              for (let rawLine of lines) {
-                const line = rawLine.trim();
-                if (!line) continue;
-
-                // Track Category header lines
-                if (line.includes("Open Ended Schemes") || line.includes("Close Ended Schemes")) {
-                  currentCategory = line.replace(/Open Ended Schemes\s*\(/i, "").replace(/\)/, "").trim();
-                  continue;
-                }
-
-                // Track AMC / Fund House header lines
-                if (line.includes("Mutual Fund") && !line.includes(";")) {
-                  currentFundHouse = line.trim();
-                  continue;
-                }
-
-                // Parse semicolon delimited data rows (Scheme Code; ISIN1; ISIN2; Scheme Name; NAV; Date)
-                if (line.includes(";")) {
-                  const parts = line.split(";");
-                  if (parts.length >= 5) {
-                    const code = parseInt(parts[0].trim(), 10);
-                    const schemeName = parts[3] ? parts[3].trim() : "";
-                    const navStr = parts[4] ? parts[4].trim() : "";
-                    const date = parts[5] ? parts[5].trim() : "";
-                    const nav = parseFloat(navStr);
-
-                    if (!isNaN(code) && !isNaN(nav) && schemeName) {
-                      const lower = schemeName.toLowerCase();
-
-                      // Robust check for Direct Growth schemes
-                      const isDirect = lower.includes("direct");
-                      const isGrowth = lower.includes("growth");
-                      const isIDCW = lower.includes("idcw") || lower.includes("dividend") || lower.includes("div ");
-                      const isFmp = lower.includes("fmp") || lower.includes("fixed maturity");
-
-                      if (isDirect && isGrowth && !isIDCW && !isFmp) {
-                        funds.push({
-                          schemeCode: code,
-                          schemeName: schemeName,
-                          nav: nav,
-                          date: date,
-                          category: currentCategory,
-                          fundHouse: currentFundHouse
-                        });
-                      }
-                    }
-                  }
-                }
-              }
-
-              console.log("Parsed " + funds.length + " schemes successfully.");
-              if (funds.length === 0) {
-                throw new Error("Parsing resulted in 0 schemes. Check parsing filters.");
-              }
-
-              if (!fs.existsSync("./public")) fs.mkdirSync("./public");
-              fs.writeFileSync("./public/amfi-data.json", JSON.stringify(funds, null, 2));
-              console.log("Successfully written to public/amfi-data.json");
-
-            } catch (err) {
-              console.error(err);
-              process.exit(1);
-            }
-          }
-          run();
-          '
-
-      - name: Commit & Push Changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add public/amfi-data.json
-          git commit -m "chore: auto-update weekday AMFI NAV data" || exit 0
-          git push
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/data/funds.json
+          git diff-index --quiet HEAD || (git commit -m "chore: nightly NAV & performance sync [skip ci]" && git push)
