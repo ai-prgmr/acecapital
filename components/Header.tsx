@@ -57,6 +57,9 @@ export default function Header() {
 
           {/* Desktop Right Actions */}
           <div className="hidden xl:flex items-center gap-3">
+            <Link href="/screener" className="px-4 py-2.5 text-xs font-bold text-foreground border border-border rounded-full hover:bg-muted transition-colors">
+              Fund Screener
+            </Link>
             <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary px-4 py-2.5 text-xs">
               Portal login <ArrowUpRight size={14} aria-hidden="true" />
             </a>
@@ -94,6 +97,13 @@ export default function Header() {
                 )
               })}
               <div className="flex flex-col gap-3 pt-5">
+                <Link
+                  href="/screener"
+                  onClick={() => setIsOpen(false)}
+                  className="w-full text-center py-3 border border-border text-foreground uppercase tracking-[0.16em] font-section-label text-sm font-bold hover:bg-muted transition-colors"
+                >
+                  FUND SCREENER
+                </Link>
                 <a
                   href="#footer-contact"
                   onClick={() => setIsOpen(false)}

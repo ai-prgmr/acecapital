@@ -23,9 +23,9 @@ const LIST_ENDPOINT = 'https://api.mfapi.in/mf';
 const DETAILS_ENDPOINT = 'https://api.mfapi.in/mf/';
 const CONCURRENCY_LIMIT = 15;
 
-async function mapConcurrent<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
-    const results: Promise<R>[] = [];
-    const executing = new Set<Promise<R>>();
+async function mapConcurrent(items, limit, fn) {
+    const results = [];
+    const executing = new Set();
 
     for (const item of items) {
         const p = Promise.resolve().then(() => fn(item));
@@ -40,19 +40,14 @@ async function mapConcurrent<T, R>(items: T[], limit: number, fn: (item: T) => P
     return Promise.all(results);
 }
 
-interface NavEntry {
-    date: string;
-    nav: string;
-}
-
-function computeReturns(navData: NavEntry[]) {
+function computeReturns(navData) {
     if (!navData || navData.length === 0) return null;
     const latestNAV = parseFloat(navData[0].nav);
 
-    const getPastNAV = (daysAgo: number) => {
+    const getPastNAV = (daysAgo) => {
         const target = new Date();
         target.setDate(target.getDate() - daysAgo);
-        const record = navData.find((entry: NavEntry) => {
+        const record = navData.find((entry) => {
             const [d, m, y] = entry.date.split('-');
             return new Date(`${y}-${m}-${d}`) <= target;
         });
@@ -72,24 +67,19 @@ function computeReturns(navData: NavEntry[]) {
     };
 }
 
-interface Scheme {
-    schemeCode: number;
-    schemeName: string;
-}
-
 async function run() {
     console.log('Fetching master scheme list...');
     const listRes = await fetch(LIST_ENDPOINT);
-    const allSchemes: Scheme[] = await listRes.json();
+    const allSchemes = await listRes.json();
 
     // Filter scheme list by AMC keywords in scheme names first to avoid unnecessary requests
-    const filteredSchemes = allSchemes.filter((scheme: Scheme) =>
+    const filteredSchemes = allSchemes.filter((scheme) =>
         TARGET_AMCS.some((amc) => scheme.schemeName.toLowerCase().includes(amc.split(' ')[0].toLowerCase()))
     );
 
     console.log(`Matched ${filteredSchemes.length} schemes for targeted AMCs. Processing NAV data...`);
 
-    const dataset = await mapConcurrent(filteredSchemes, CONCURRENCY_LIMIT, async (scheme: Scheme) => {
+    const dataset = await mapConcurrent(filteredSchemes, CONCURRENCY_LIMIT, async (scheme) => {
         try {
             const res = await fetch(`${DETAILS_ENDPOINT}${scheme.schemeCode}`);
             const json = await res.json();

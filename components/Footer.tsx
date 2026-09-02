@@ -120,19 +120,19 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2">
               <li>
-                <a href="/about" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                <Link href="/about" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/prop-trading-automated" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                <Link href="/prop-trading-automated" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
                   Prop Trading & Auto Desks
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/careers" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                <Link href="/careers" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

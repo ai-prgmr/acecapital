@@ -49,7 +49,7 @@ export default function InvestmentGoals() {
         <div className="bg-muted border border-border rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hover:border-secondary transition-colors duration-500">
           <div className="z-10 space-y-4">
             <div className="relative w-full h-48 mb-4">
-              <Image src="/acecapital/images/goals/child_marriage_goal.jpg" alt="Child's Marriage" layout="fill" objectFit="cover" className="rounded-lg" />
+              <Image src="/acecapital/images/goals/indian_marriage_goal.jpg" alt="Child's Marriage" layout="fill" objectFit="cover" className="rounded-lg" />
             </div>
             <h3 className="font-headline-lg text-2xl uppercase text-foreground">Child's Marriage</h3>
             <p className="font-body-sm text-muted-foreground">
@@ -62,19 +62,35 @@ export default function InvestmentGoals() {
         </div>
 
         {/* Goal 4: Portfolio Diversification */}
-        <div className="md:col-span-2 bg-muted border border-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between overflow-hidden relative group hover:border-secondary transition-colors duration-500">
-
-          <div className="relative w-full md:w-1/2 h-48 mb-4 md:mb-0">
-            <Image src="/acecapital/images/goals/diversification_goal.jpg" alt="Portfolio Diversification" layout="fill" objectFit="cover" className="rounded-lg" />
-          </div>
-
-          <div className="z-10 flex-1 md:w-1/2 space-y-4">
-            <h3 className="font-headline-lg text-3xl uppercase text-foreground">Portfolio Diversification</h3>
-            <p className="font-body-md text-muted-foreground max-w-lg">
+        <div className="bg-muted border border-border rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hover:border-secondary transition-colors duration-500">
+          <div className="z-10 space-y-4">
+            <div className="relative w-full h-48 mb-4">
+              <Image src="/acecapital/images/goals/diversification_goal.jpg" alt="Portfolio Diversification" layout="fill" objectFit="cover" className="rounded-lg" />
+            </div>
+            <h3 className="font-headline-lg text-2xl uppercase text-foreground">Portfolio Diversification</h3>
+            <p className="font-body-sm text-muted-foreground">
               Spread your risk across different asset classes, sectors, and geographies to create an all-weather investment portfolio.
             </p>
           </div>
+          <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span className="material-symbols-outlined text-8xl">donut_large</span>
+          </div>
+        </div>
 
+        {/* Goal 5: Wealth Creation */}
+        <div className="bg-muted border border-border rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group hover:border-secondary transition-colors duration-500">
+          <div className="z-10 space-y-4">
+            <div className="relative w-full h-48 mb-4">
+              <Image src="/acecapital/images/goals/wealth_creation_goal.jpg" alt="Wealth Creation" layout="fill" objectFit="cover" className="rounded-lg" />
+            </div>
+            <h3 className="font-headline-lg text-2xl uppercase text-foreground">Wealth Creation</h3>
+            <p className="font-body-sm text-muted-foreground">
+              Grow your money for the long run. Diversified equity and hybrid funds built for long-term growth, matched to your risk comfort.
+            </p>
+          </div>
+          <div className="absolute -bottom-4 -right-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <span className="material-symbols-outlined text-8xl">account_balance_wallet</span>
+          </div>
         </div>
       </div>
     </section >
