@@ -42,28 +42,48 @@ async function mapConcurrent(items, limit, fn) {
 
 function computeReturns(navData) {
     if (!navData || navData.length === 0) return null;
-    const latestNAV = parseFloat(navData[0].nav);
 
-    const getPastNAV = (daysAgo) => {
-        const target = new Date();
-        target.setDate(target.getDate() - daysAgo);
+    const latestEntry = navData[0];
+    const latestNAV = parseFloat(latestEntry.nav);
+    if (isNaN(latestNAV) || latestNAV === 0) return null;
+
+    // Helper: Find the closest valid NAV on or immediately prior to (targetDate)
+    const getHistoricalNAV = (daysAgo) => {
+        const [d, m, y] = latestEntry.date.split('-');
+        const latestDate = new Date(`${y}-${m}-${d}`);
+
+        const targetDate = new Date(latestDate);
+        targetDate.setDate(targetDate.getDate() - daysAgo);
+
+        // Search for closest entry on or before target date
         const record = navData.find((entry) => {
-            const [d, m, y] = entry.date.split('-');
-            return new Date(`${y}-${m}-${d}`) <= target;
+            const [ed, em, ey] = entry.date.split('-');
+            const entryDate = new Date(`${ey}-${em}-${ed}`);
+            return entryDate <= targetDate;
         });
-        return record ? parseFloat(record.nav) : null;
+
+        if (!record) return null;
+        const navVal = parseFloat(record.nav);
+        return isNaN(navVal) || navVal === 0 ? null : navVal;
     };
 
-    const nav1Y = getPastNAV(365);
-    const nav3Y = getPastNAV(365 * 3);
-    const nav5Y = getPastNAV(365 * 5);
+    const nav1Y = getHistoricalNAV(365);
+    const nav3Y = getHistoricalNAV(365 * 3);
+    const nav5Y = getHistoricalNAV(365 * 5);
+
+    // 1-Year Simple Absolute Return
+    const r1y = nav1Y ? (((latestNAV - nav1Y) / nav1Y) * 100) : null;
+
+    // 3-Year & 5-Year Annualized CAGR
+    const r3y = nav3Y ? ((Math.pow(latestNAV / nav3Y, 1 / 3) - 1) * 100) : null;
+    const r5y = nav5Y ? ((Math.pow(latestNAV / nav5Y, 1 / 5) - 1) * 100) : null;
 
     return {
         nav: latestNAV,
-        date: navData[0].date,
-        r1y: nav1Y ? parseFloat((((latestNAV - nav1Y) / nav1Y) * 100).toFixed(2)) : null,
-        r3y: nav3Y ? parseFloat(((Math.pow(latestNAV / nav3Y, 1 / 3) - 1) * 100).toFixed(2)) : null,
-        r5y: nav5Y ? parseFloat(((Math.pow(latestNAV / nav5Y, 1 / 5) - 1) * 100).toFixed(2)) : null,
+        date: latestEntry.date,
+        r1y: r1y !== null ? parseFloat(r1y.toFixed(2)) : null,
+        r3y: r3y !== null ? parseFloat(r3y.toFixed(2)) : null,
+        r5y: r5y !== null ? parseFloat(r5y.toFixed(2)) : null,
     };
 }
 
