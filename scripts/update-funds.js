@@ -109,7 +109,10 @@ async function run() {
 
             const fundHouse = json.meta?.fund_house || '';
             // Strict check against meta.fund_house
-            const isTargetAMC = TARGET_AMCS.some(amc => fundHouse.toLowerCase().includes(amc.toLowerCase().split(' ')[0]));
+            const isTargetAMC = TARGET_AMCS.some(amc => {
+                const keyword = amc.toLowerCase().split(' ')[0];
+                return fundHouse.toLowerCase().includes(keyword) || (keyword === 'parag' && fundHouse.toLowerCase().includes('ppfas'));
+            });
 
             if (!isTargetAMC) return null;
 
