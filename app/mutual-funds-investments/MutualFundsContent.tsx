@@ -225,74 +225,34 @@ export default function MutualFundsContent() {
 
 
 
-      {/* Fund Performance Index Table */}
-      <section className="ace-section ace-container border-t border-border">
-        <div className="mb-12 border-l-4 border-secondary pl-6">
-          <h2 className="font-headline-lg text-headline-lg uppercase text-foreground">
-            Fund Performance Index
+      {/* Screener Promotional Section */}
+      <section className="ace-section ace-container border-t border-border pt-16 pb-16">
+        <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center border border-primary/20">
+          <h2 className="font-headline-lg text-3xl md:text-4xl uppercase text-foreground mb-4">
+            Discover Top Mutual Funds
           </h2>
-          <p className="font-body-md text-on-surface-variant mt-2">
-            Real-time performance metrics across our flagship portfolios.
+          <p className="font-body-lg text-on-surface-variant max-w-2xl mx-auto mb-8 text-lg">
+            Explore our advanced screener to filter, analyze, and compare the best mutual funds tailored to your investment goals.
           </p>
-        </div>
-
-        <div className="ace-card rounded overflow-hidden border border-outline-variant/20">
-          <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
-              <thead>
-                <tr className="bg-primary-container text-muted-foreground uppercase font-section-label text-xs tracking-wider border-b border-border">
-                  <th className="px-6 py-4">Fund Name</th>
-                  <th className="px-6 py-4">Type</th>
-                  <th className="px-6 py-4 text-center">Risk Profile</th>
-                  <th className="px-6 py-4 text-right">NAV</th>
-                  <th className="px-6 py-4 text-right">YTD Return</th>
-                  <th className="px-6 py-4 text-center">Action</th>
-                </tr>
-              </thead>
-              <tbody className="font-body-md text-sm">
-                {funds.map((fund, idx) => (
-                  <tr
-                    key={idx}
-                    className="border-b border-border hover:bg-muted transition-colors"
-                  >
-                    <td className="px-6 py-5 font-bold text-foreground">{fund.name}</td>
-                    <td className="px-6 py-5 text-on-surface-variant">{fund.type}</td>
-                    <td className="px-6 py-5 text-center">
-                      <span className={`px-2 py-1 text-[10px] uppercase font-bold rounded-sm ${fund.risk === "High"
-                        ? "bg-error-container text-error"
-                        : fund.risk === "Moderate"
-                          ? "bg-secondary-container/20 text-secondary"
-                          : "bg-primary-container text-primary"
-                        }`}>
-                        {fund.risk}
-                      </span>
-                    </td>
-                    <td className="px-6 py-5 text-right font-data-point text-muted-foreground">{fund.nav}</td>
-                    <td className="px-6 py-5 text-right font-data-point text-success-green">{fund.ytd}</td>
-                    <td className="px-6 py-5 text-center">
-                      <button className="text-secondary hover:underline font-section-label text-xs uppercase tracking-widest">
-                        Explore
-                      </button>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Top Performing Funds Tabbed */}
-      <section className="ace-section bg-background">
-        <div className="ace-container">
-          <TopFundsTabbed />
+          <Link href="/screener" className="button-secondary px-8 py-3.5 rounded-full font-bold shadow-sm hover:shadow-md inline-flex items-center gap-2 bg-white text-primary border border-primary transition-all hover:bg-primary hover:text-white">
+            Explore Screener
+            <span className="text-xl leading-none">→</span>
+          </Link>
         </div>
       </section>
 
       {/* Interactive Growth Projection Tool */}
-      <section className="ace-section bg-surface-container-lowest border-y border-border">
+      <section className="ace-section bg-surface-container-lowest border-y border-border py-16">
         <div className="ace-container">
           <MutualFundsCalculator />
+          
+          <div className="mt-16 text-center">
+            <h3 className="font-headline-md text-2xl uppercase text-foreground mb-4">Ready to start your journey?</h3>
+            <Link href="https://mf.acecapitalenterprise.com/" target="_blank" className="button-primary px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl inline-flex items-center gap-2 text-lg bg-primary text-primary-foreground transition-all">
+              Start investing now
+              <span className="text-2xl leading-none">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 

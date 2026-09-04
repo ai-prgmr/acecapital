@@ -4,7 +4,7 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { parseFullAMFIData, AMFIFund } from "@/lib/amfi-parser";
 
-type SortKey = "scheme" | "category" | "nav" | "r1y" | "r3y" | "r5y";
+type SortKey = "scheme" | "category" | "nav" | "r1m" | "r1y" | "r3y" | "r5y";
 type SortDirection = "asc" | "desc";
 
 export default function FullAMFIScreener() {
@@ -12,7 +12,7 @@ export default function FullAMFIScreener() {
     const [loading, setLoading] = useState<boolean>(true);
     const [search, setSearch] = useState<string>("");
     const [selectedCategory, setSelectedCategory] = useState<string>("All");
-    const [planType, setPlanType] = useState<"Direct" | "Regular" | "All">("Direct");
+    const [selectedAMC, setSelectedAMC] = useState<string>("All");
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [sortConfig, setSortConfig] = useState<{ key: SortKey; direction: SortDirection } | null>(null);
     const PAGE_SIZE = 25;
@@ -50,6 +50,12 @@ export default function FullAMFIScreener() {
         return Array.from(cats).filter(Boolean);
     }, [allFunds]);
 
+    // Filter Unique AMCs for Dropdown
+    const amcs = useMemo(() => {
+        const amcSet = new Set(allFunds.map((f) => f.amc));
+        return Array.from(amcSet).filter(Boolean);
+    }, [allFunds]);
+
     const handleSort = (key: SortKey) => {
         let direction: SortDirection = "asc";
         if (sortConfig && sortConfig.key === key && sortConfig.direction === "asc") {
@@ -63,9 +69,8 @@ export default function FullAMFIScreener() {
         let result = allFunds.filter((fund) => {
             const nameLower = fund.scheme.toLowerCase();
 
-            // Plan Type Filter
-            if (planType === "Direct" && !nameLower.includes("direct")) return false;
-            if (planType === "Regular" && nameLower.includes("direct")) return false;
+            // AMC Filter
+            if (selectedAMC !== "All" && fund.amc !== selectedAMC) return false;
 
             // Category Filter
             if (selectedCategory !== "All" && !fund.category.includes(selectedCategory)) return false;
@@ -104,7 +109,7 @@ export default function FullAMFIScreener() {
         }
 
         return result;
-    }, [allFunds, search, selectedCategory, planType, sortConfig]);
+    }, [allFunds, search, selectedCategory, selectedAMC, sortConfig]);
 
     // Pagination Slice
     const paginatedFunds = useMemo(() => {
@@ -127,16 +132,9 @@ export default function FullAMFIScreener() {
                 <div>
                     <h1 className="text-2xl font-bold text-gray-900">Mutual Fund Screener</h1>
                     <p className="text-sm text-gray-500">
-                        Showing <span className="font-semibold text-blue-600">{allFunds.length.toLocaleString()}</span> active schemes parsed directly from AMFI.
+                        Showing <span className="font-semibold text-blue-600">{filteredAndSortedFunds.length.toLocaleString()}</span> active schemes parsed directly from AMFI.
                     </p>
                 </div>
-                <button
-                    onClick={() => loadData(true)}
-                    disabled={loading}
-                    className="px-4 py-2 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 disabled:opacity-50 transition-colors flex items-center gap-2 text-sm"
-                >
-                    {loading ? "Syncing..." : "🔄 Refresh Live AMFI Data"}
-                </button>
             </div>
 
             {/* Filter Controls */}
@@ -169,16 +167,19 @@ export default function FullAMFIScreener() {
                 </select>
 
                 <select
-                    value={planType}
+                    value={selectedAMC}
                     onChange={(e) => {
-                        setPlanType(e.target.value as "Direct" | "Regular" | "All");
+                        setSelectedAMC(e.target.value);
                         setCurrentPage(1);
                     }}
                     className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm"
                 >
-                    <option value="Direct">Direct Plans Only</option>
-                    <option value="Regular">Regular Plans Only</option>
-                    <option value="All">All Plans</option>
+                    <option value="All">All AMCs ({amcs.length})</option>
+                    {amcs.map((amc) => (
+                        <option key={amc} value={amc}>
+                            {amc}
+                        </option>
+                    ))}
                 </select>
             </div>
 
@@ -199,6 +200,9 @@ export default function FullAMFIScreener() {
                                 </th>
                                 <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("nav")}>
                                     NAV (₹) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("nav") || <span className="invisible">↑</span>}</span>
+                                </th>
+                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r1m")}>
+                                    1M (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r1m") || <span className="invisible">↑</span>}</span>
                                 </th>
                                 <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r1y")}>
                                     1Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r1y") || <span className="invisible">↑</span>}</span>
@@ -224,6 +228,9 @@ export default function FullAMFIScreener() {
                                         <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded border">{fund.category}</span>
                                     </td>
                                     <td className="p-4 font-bold text-gray-900">₹{fund.nav?.toFixed(2)}</td>
+                                    <td className={`p-4 font-medium text-xs ${fund.r1m !== null && fund.r1m > 0 ? 'text-green-600' : fund.r1m !== null && fund.r1m < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                        {fund.r1m !== null ? `${fund.r1m}%` : '-'}
+                                    </td>
                                     <td className={`p-4 font-medium text-xs ${fund.r1y !== null && fund.r1y > 0 ? 'text-green-600' : fund.r1y !== null && fund.r1y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
                                         {fund.r1y !== null ? `${fund.r1y}%` : '-'}
                                     </td>

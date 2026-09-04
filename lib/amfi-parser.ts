@@ -7,6 +7,7 @@ export interface AMFIFund {
   category: string;
   nav: number;
   date: string;
+  r1m: number | null;
   r1y: number | null;
   r3y: number | null;
   r5y: number | null;

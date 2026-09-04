@@ -2,8 +2,8 @@ name: Update AMFI NAV Data Weekdays
 
 on:
   schedule:
-    # Runs at 18:00 UTC (11:30 PM IST) every night
-    - cron: '0 18 * * 1-5'
+    # Runs at 18:00 UTC (11:30 PM IST) every night (Tue-Sat mornings / Mon-Fri nights basically, adjusting for the request 2-6)
+    - cron: '0 18 * * 2-6'
   workflow_dispatch: # Allows manual trigger from GitHub UI
 
 permissions:

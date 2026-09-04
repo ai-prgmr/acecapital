@@ -16,7 +16,7 @@ const TARGET_AMCS = [
     'SBI Mutual Fund',
     'ICICI Prudential Mutual Fund',
     'HSBC Mutual Fund',
-    'PPFAS Mutual Fund'
+    'Parag Parikh Mutual Fund'
 ];
 
 const LIST_ENDPOINT = 'https://api.mfapi.in/mf';
@@ -67,11 +67,13 @@ function computeReturns(navData) {
         return isNaN(navVal) || navVal === 0 ? null : navVal;
     };
 
+    const nav1M = getHistoricalNAV(30);
     const nav1Y = getHistoricalNAV(365);
     const nav3Y = getHistoricalNAV(365 * 3);
     const nav5Y = getHistoricalNAV(365 * 5);
 
-    // 1-Year Simple Absolute Return
+    // 1-Month & 1-Year Simple Absolute Return
+    const r1m = nav1M ? (((latestNAV - nav1M) / nav1M) * 100) : null;
     const r1y = nav1Y ? (((latestNAV - nav1Y) / nav1Y) * 100) : null;
 
     // 3-Year & 5-Year Annualized CAGR
@@ -81,6 +83,7 @@ function computeReturns(navData) {
     return {
         nav: latestNAV,
         date: latestEntry.date,
+        r1m: r1m !== null ? parseFloat(r1m.toFixed(2)) : null,
         r1y: r1y !== null ? parseFloat(r1y.toFixed(2)) : null,
         r3y: r3y !== null ? parseFloat(r3y.toFixed(2)) : null,
         r5y: r5y !== null ? parseFloat(r5y.toFixed(2)) : null,
@@ -110,12 +113,20 @@ async function run() {
 
             if (!isTargetAMC) return null;
 
+            const schemeName = json.meta.scheme_name || scheme.schemeName;
+            const nameLower = schemeName.toLowerCase();
+            
+            // Filter out direct and IDCW plans
+            if (nameLower.includes('direct') || nameLower.includes('idcw')) {
+                return null;
+            }
+
             const metrics = computeReturns(json.data);
             if (!metrics) return null;
 
             return {
                 code: scheme.schemeCode,
-                scheme: json.meta.scheme_name || scheme.schemeName,
+                scheme: schemeName,
                 amc: json.meta.fund_house,
                 category: json.meta.scheme_category,
                 ...metrics
@@ -125,7 +136,20 @@ async function run() {
         }
     });
 
-    const finalDataset = dataset.filter(Boolean);
+    let finalDataset = dataset.filter(Boolean);
+
+    if (finalDataset.length > 0) {
+        // Find the absolute maximum date in the format dd-mm-yyyy
+        const parseDate = (dStr) => {
+            const [d, m, y] = dStr.split('-');
+            return new Date(`${y}-${m}-${d}`).getTime();
+        };
+
+        const maxDateTs = Math.max(...finalDataset.map(f => parseDate(f.date)));
+        
+        // Convert back to string if needed, or just filter by maxDateTs
+        finalDataset = finalDataset.filter(f => parseDate(f.date) === maxDateTs);
+    }
 
     const outputPath = path.join(__dirname, '../public/data/funds.json');
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
