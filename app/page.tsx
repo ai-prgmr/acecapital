@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
 import InvestmentGoals from "@/components/InvestmentGoals"
+import { HomepageCarousel } from "@/components/HomepageCarousel"
 
 export const metadata: Metadata = {
   title: "ACE CAPITAL ENTERPRISE | Leading Proprietary Trading Firm",
@@ -122,8 +123,11 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homeSchema) }}
       />
 
+      {/* Homepage Carousel */}
+      <HomepageCarousel />
+
       {/* Hero Section */}
-      <header className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-background">
+      <header className="relative flex items-center justify-center pt-12 overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 hero-gradient"></div>
         </div>

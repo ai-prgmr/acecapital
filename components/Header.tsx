@@ -120,7 +120,7 @@ export default function Header() {
         )}
       </nav>
       {/* Spacer to push page content below fixed navbar */}
-      <div className="h-30.5"></div>
+      <div className="h-19.5"></div>
     </>
   )
 }
