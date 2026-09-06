@@ -162,7 +162,18 @@ async function run() {
 
     let finalDataset = dataset.filter(Boolean);
 
-    // Removed maxDateTs filter to ensure equity funds aren't dropped on weekends
+    // Filter out inactive/closed funds (latest NAV older than 14 days)
+    const FOURTEEN_DAYS_MS = 14 * 24 * 60 * 60 * 1000;
+    const nowTs = Date.now();
+    const parseDate = (dStr) => {
+        const [d, m, y] = dStr.split('-');
+        return new Date(`${y}-${m}-${d}`).getTime();
+    };
+
+    finalDataset = finalDataset.filter(f => {
+        const fundTs = parseDate(f.date);
+        return (nowTs - fundTs) <= FOURTEEN_DAYS_MS;
+    });
 
     const outputPath = path.join(__dirname, '../public/data/funds.json');
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });

@@ -23,18 +23,18 @@ export default function FloatingButtons() {
     e.preventDefault()
     setLoading(true)
     try {
-      const response = await fetch("/api/submit-ace-form", {
+      // With static exports, we must hit Google Apps Script directly bypassing Next.js API routes.
+      // We use mode: 'no-cors' to avoid preflight OPTIONS issues.
+      await fetch("https://script.google.com/macros/s/AKfycbx0KwN2YiGndA0opr1Xk9KCS-lvnHAqmpll7aVVQNhRWCJydbqZXK9-2GlbEb2ucrdV/exec", {
         method: "POST",
+        mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
-      if (response.ok) {
-        setSubmitted(true)
-      } else {
-        console.error("Submission failed")
-      }
+      // When mode is no-cors, we don't get an ok response, so we assume success if no network error
+      setSubmitted(true)
     } catch (error) {
-      console.error(error)
+      console.error("Submission error:", error)
     } finally {
       setLoading(false)
     }
@@ -80,26 +80,26 @@ export default function FloatingButtons() {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 z-60 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
-          <div className="bg-background border border-charcoal/30 w-full max-w-md rounded-lg shadow-2xl relative animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col max-h-[90vh]">
+          <div className="bg-[#111315]/90 backdrop-blur-xl border border-white/10 w-full max-w-md rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative animate-in zoom-in-95 duration-200 overflow-hidden flex flex-col max-h-[90vh]">
             {/* Header */}
-            <div className="p-6 pb-4 border-b border-charcoal/30 flex justify-between items-center bg-slate-gray/10 shrink-0">
-              <h2 className="font-headline-lg text-xl text-white uppercase">ACE Form</h2>
+            <div className="p-6 pb-4 border-b border-white/10 flex justify-between items-center bg-white/5 shrink-0">
+              <h2 className="font-headline-lg text-xl text-white uppercase tracking-wider">ACE Form</h2>
               <button
                 onClick={() => setIsOpen(false)}
-                className="text-outline hover:text-white transition-colors"
+                className="text-outline hover:text-white transition-colors bg-white/5 hover:bg-white/10 rounded-full p-1"
                 aria-label="Close modal"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
             </div>
 
             {/* Content */}
             <div className="p-6 overflow-y-auto">
               {submitted ? (
-                <div className="text-center py-8 space-y-4">
-                  <span className="material-symbols-outlined text-success-green text-5xl">check_circle</span>
-                  <h3 className="font-headline-lg text-xl text-white uppercase">Inquiry Logged</h3>
-                  <p className="text-on-surface-variant font-body-md">
+                <div className="text-center py-10 space-y-4">
+                  <span className="material-symbols-outlined text-success-green text-6xl drop-shadow-[0_0_15px_rgba(74,222,128,0.3)]">check_circle</span>
+                  <h3 className="font-headline-lg text-2xl text-white uppercase">Inquiry Logged</h3>
+                  <p className="text-outline font-body-md pb-4">
                     Thank you. We will connect with you shortly.
                   </p>
                   <button
@@ -107,101 +107,102 @@ export default function FloatingButtons() {
                       setIsOpen(false);
                       setTimeout(() => setSubmitted(false), 300);
                     }}
-                    className="mt-4 px-6 py-2 bg-secondary text-on-secondary-fixed font-bold font-section-label tracking-widest text-xs hover:brightness-110 uppercase rounded transition-all"
+                    className="mt-4 px-8 py-3 bg-white/10 text-white border border-white/20 font-bold font-section-label tracking-widest text-xs hover:bg-white/20 uppercase rounded-xl transition-all"
                   >
                     Close
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   {/* Name */}
-                  <div className="relative">
+                  <div className="relative group">
                     <input
                       required
                       type="text"
                       id="ace-name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Full Name"
-                      className="w-full bg-slate-gray/10 border-t-0 border-x-0 border-b border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-3 px-2 transition-all font-body-md placeholder-transparent peer text-sm rounded-t"
+                      placeholder=" "
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer"
                     />
                     <label
                       htmlFor="ace-name"
-                      className="absolute left-2 -top-3 text-outline text-[10px] transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-outline peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-secondary peer-focus:text-[10px] font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Full Name
                     </label>
                   </div>
 
-
-
                   {/* Email */}
-                  <div className="relative">
+                  <div className="relative group">
                     <input
                       required
                       type="email"
                       id="ace-email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Corporate Email"
-                      className="w-full bg-slate-gray/10 border-t-0 border-x-0 border-b border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-3 px-2 transition-all font-body-md placeholder-transparent peer text-sm rounded-t"
+                      placeholder=" "
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer"
                     />
                     <label
                       htmlFor="ace-email"
-                      className="absolute left-2 -top-3 text-outline text-[10px] transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-outline peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-secondary peer-focus:text-[10px] font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Corporate Email
                     </label>
                   </div>
 
                   {/* Type */}
-                  <div className="relative">
+                  <div className="relative group">
                     <select
                       required
                       id="ace-type"
                       value={formData.type}
                       onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full bg-slate-gray/10 border-t-0 border-x-0 border-b border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-3 px-2 transition-all font-section-label uppercase cursor-pointer text-sm rounded-t"
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-section-label uppercase focus:outline-none focus:border-secondary focus:ring-0 transition-all appearance-none cursor-pointer"
                     >
-                      <option value="" disabled className="bg-background">Inquiry Type</option>
-                      <option value="nri" className="bg-background">NRI Enquiry</option>
-                      <option value="prop" className="bg-background">Proprietary Trading</option>
-                      <option value="mutual" className="bg-background">Mutual Funds</option>
-                      <option value="careers" className="bg-background">Institutional Careers</option>
-                      <option value="other" className="bg-background">General Partnership</option>
+                      <option value="" disabled className="bg-[#111315]">Select Inquiry Type</option>
+                      <option value="nri" className="bg-[#111315]">NRI Enquiry</option>
+                      <option value="prop" className="bg-[#111315]">Proprietary Trading</option>
+                      <option value="mutual" className="bg-[#111315]">Mutual Funds</option>
+                      <option value="careers" className="bg-[#111315]">Institutional Careers</option>
+                      <option value="other" className="bg-[#111315]">General Partnership</option>
                     </select>
                     <label
                       htmlFor="ace-type"
-                      className="absolute left-2 -top-3 text-secondary text-[10px] font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Inquiry Type
                     </label>
+                    <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">
+                      <span className="material-symbols-outlined text-sm">expand_more</span>
+                    </div>
                   </div>
 
                   {/* Message */}
-                  <div className="relative">
+                  <div className="relative group">
                     <textarea
                       required
                       id="ace-message"
                       rows={3}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Message"
-                      className="w-full bg-slate-gray/10 border-t-0 border-x-0 border-b border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-3 px-2 transition-all font-body-md placeholder-transparent peer text-sm rounded-t"
+                      placeholder=" "
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer resize-none"
                     />
                     <label
                       htmlFor="ace-message"
-                      className="absolute left-2 -top-3 text-outline text-[10px] transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-outline peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-secondary peer-focus:text-[10px] font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Message
                     </label>
                   </div>
 
-                  <div className="pt-2">
+                  <div className="pt-4 flex justify-center">
                     <button
                       type="submit"
                       disabled={loading}
-                      className="w-full py-4 bg-secondary text-on-secondary-fixed font-bold font-section-label tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all uppercase rounded disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="button-primary px-16 py-4 uppercase font-bold text-xs justify-center rounded-xl w-full"
                     >
                       {loading ? "Submitting..." : "Submit Inquiry"}
                     </button>

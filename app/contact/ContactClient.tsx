@@ -10,6 +10,7 @@ export default function ContactClient() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [loading, setLoading] = useState(false)
 
   const [clocks, setClocks] = useState({
     mumbai: "--:-- IST",
@@ -54,9 +55,25 @@ export default function ContactClient() {
     return () => clearInterval(interval)
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
+    setLoading(true)
+    try {
+      // With static exports, we must hit Google Apps Script directly bypassing Next.js API routes.
+      // We use mode: 'no-cors' to avoid preflight OPTIONS issues.
+      await fetch("https://script.google.com/macros/s/AKfycbx0KwN2YiGndA0opr1Xk9KCS-lvnHAqmpll7aVVQNhRWCJydbqZXK9-2GlbEb2ucrdV/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+      // When mode is no-cors, we don't get an ok response, so we assume success if no network error
+      setSubmitted(true)
+    } catch (error) {
+      console.error("Submission error:", error)
+    } finally {
+      setLoading(false)
+    }
   }
 
   // Schema for Contact Us Page
@@ -219,20 +236,17 @@ export default function ContactClient() {
                       id="name"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Full Name"
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-4 px-0 transition-all font-body-md placeholder-transparent peer"
+                      placeholder=" "
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer"
                     />
                     <label
                       htmlFor="name"
-                      className="absolute left-0 -top-3.5 text-outline text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-outline peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-xs font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Full Name
                     </label>
                   </div>
 
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="relative">
                     <input
                       required
@@ -240,35 +254,37 @@ export default function ContactClient() {
                       id="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="Corporate Email"
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-4 px-0 transition-all font-body-md placeholder-transparent peer"
+                      placeholder=" "
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer"
                     />
                     <label
                       htmlFor="email"
-                      className="absolute left-0 -top-3.5 text-outline text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-outline peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-xs font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Email
                     </label>
                   </div>
+                </div>
 
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="relative">
                     <select
-                      required
-                      id="type"
-                      value={formData.type}
-                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-4 px-0 transition-all font-section-label uppercase cursor-pointer"
-                    >
-                      <option value="" disabled className="bg-background">Inquiry Type</option>
-                      <option value="nri" className="bg-background">NRI Enquiry</option>
-                      <option value="prop" className="bg-background">Proprietary Trading</option>
-                      <option value="mutual" className="bg-background">Mutual Funds</option>
-                      <option value="careers" className="bg-background">Institutional Careers</option>
-                      <option value="other" className="bg-background">General Partnership</option>
-                    </select>
-                    <label
+                    required
+                    id="type"
+                    value={formData.type}
+                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                    className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-section-label uppercase focus:outline-none focus:border-secondary focus:ring-0 transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled className="bg-[#111315]">Select Inquiry Type</option>
+                    <option value="nri" className="bg-[#111315]">NRI Enquiry</option>
+                    <option value="prop" className="bg-[#111315]">Proprietary Trading</option>
+                    <option value="mutual" className="bg-[#111315]">Mutual Funds</option>
+                    <option value="careers" className="bg-[#111315]">Institutional Careers</option>
+                    <option value="other" className="bg-[#111315]">General Partnership</option>
+                  </select>
+                  <label
                       htmlFor="type"
-                      className="absolute left-0 -top-3.5 text-secondary text-xs font-section-label uppercase"
+                      className="absolute left-4 top-1.5 text-[10px] text-secondary font-section-label uppercase pointer-events-none"
                     >
                       Inquiry Type
                     </label>
@@ -282,23 +298,24 @@ export default function ContactClient() {
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Message"
-                    className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-4 px-0 transition-all font-body-md placeholder-transparent peer"
+                    placeholder=" "
+                    className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer resize-none"
                   />
                   <label
                     htmlFor="message"
-                    className="absolute left-0 -top-3.5 text-outline text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-outline peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-xs font-section-label uppercase"
+                    className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                   >
                     Message
                   </label>
                 </div>
 
-                <div className="flex justify-center pt-4">
+                <div className="flex justify-center pt-6">
                   <button
                     type="submit"
-                    className="px-12 py-4 bg-secondary text-on-secondary-fixed font-bold font-section-label tracking-widest text-xs hover:brightness-110 active:scale-95 transition-all uppercase rounded"
+                    disabled={loading}
+                    className="button-primary px-16 py-4 uppercase font-bold text-xs justify-center rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    Submit Inquiry
+                    {loading ? 'Submitting...' : 'Submit Inquiry'}
                   </button>
                 </div>
               </form>

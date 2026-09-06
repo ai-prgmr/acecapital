@@ -21,7 +21,7 @@ export default function FullAMFIScreener() {
         setLoading(true);
 
         const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-        const cacheKey = `clean_amfi_data_v2_${today}`;
+        const cacheKey = `clean_amfi_data_v3_${today}`;
 
         if (!forceRefresh) {
             const cached = localStorage.getItem(cacheKey);
