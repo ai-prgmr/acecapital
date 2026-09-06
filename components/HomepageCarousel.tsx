@@ -33,7 +33,7 @@ export function HomepageCarousel() {
         <CarouselContent>
           {carouselImages.map((src, index) => (
             <CarouselItem key={index}>
-              <div className="relative w-full aspect-[21/9] md:aspect-[21/7] max-h-[600px]">
+              <div className="relative w-full aspect-21/9 md:aspect-21/7 max-h-150">
                 <Image
                   src={src}
                   alt={`Slide ${index + 1}`}

@@ -43,6 +43,27 @@ async function mapConcurrent(items, limit, fn) {
 function computeReturns(navData) {
     if (!navData || navData.length === 0) return null;
 
+    // Adjust for face-value splits (common in ETFs)
+    // navData is sorted newest first. Iterate and find massive 1-day drops.
+    for (let i = 0; i < navData.length - 1; i++) {
+        const newerNAV = parseFloat(navData[i].nav);
+        const olderNAV = parseFloat(navData[i+1].nav);
+        if (newerNAV > 0) {
+            const ratio = olderNAV / newerNAV;
+            // If NAV drops by more than 40% in a single day, it's a split (Growth plans/ETFs don't pay dividends)
+            if (ratio > 1.6) {
+                const splitFactor = Math.round(ratio);
+                // Adjust all older NAVs
+                for (let j = i + 1; j < navData.length; j++) {
+                    const val = parseFloat(navData[j].nav);
+                    if (!isNaN(val)) {
+                        navData[j].nav = (val / splitFactor).toString();
+                    }
+                }
+            }
+        }
+    }
+
     const latestEntry = navData[0];
     const latestNAV = parseFloat(latestEntry.nav);
     if (isNaN(latestNAV) || latestNAV === 0) return null;
@@ -141,18 +162,7 @@ async function run() {
 
     let finalDataset = dataset.filter(Boolean);
 
-    if (finalDataset.length > 0) {
-        // Find the absolute maximum date in the format dd-mm-yyyy
-        const parseDate = (dStr) => {
-            const [d, m, y] = dStr.split('-');
-            return new Date(`${y}-${m}-${d}`).getTime();
-        };
-
-        const maxDateTs = Math.max(...finalDataset.map(f => parseDate(f.date)));
-        
-        // Convert back to string if needed, or just filter by maxDateTs
-        finalDataset = finalDataset.filter(f => parseDate(f.date) === maxDateTs);
-    }
+    // Removed maxDateTs filter to ensure equity funds aren't dropped on weekends
 
     const outputPath = path.join(__dirname, '../public/data/funds.json');
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });

@@ -1,5 +1,6 @@
 import { Metadata } from "next"
 import FAQSection from "@/components/FAQSection"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "About Us | ACE CAPITAL ENTERPRISE",
@@ -51,29 +52,19 @@ export default function About() {
 
   const leaders = [
     {
-      name: "Vikram Malhotra",
-      role: "Chief Executive Officer",
-      tag: "FORMER MD @ GLOBAL TIER-1 BANK",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAncflF-mNxtF2VpqFrIZJdD1_fThmjOcmpNIEpqMndZAsAF0osEUCv9lRiiAgmx_cT39ID1hm5Eu8hjzlnouRZ3ITxpgq8cB4EdtFF4IGYl7if_X3Ox65EaFxp2dnF7zi2lXIPDoOxsCGxQImUwO-YQ_WBL4LswpFW8G-oO6vsQahBn44qThM9YuzC4Bty51z5M7MCkYXyMhdQFogvM5l5gn6I5UNF9vBq9y813y7A0BFVrROPMLs",
+      name: "Rahul Singhal",
+      role: "Partner",
+      tag: "VISIONARY LEADER & WEALTH MANAGEMENT EXPERT",
+      image: "/acecapital/Rahul-Singhal-profile.jpeg",
+      linkedin: "https://www.linkedin.com/in/rahul-singhal-73262217/"
     },
     {
-      name: "Elena Rossi",
-      role: "Chief Risk Officer",
-      tag: "PhD IN MATHEMATICAL FINANCE",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuAomYafepBwGNdOBw9YN_fYOhWBBdGf2-K05s4N0LARYzm-8HNUuT6vtORR9R1ifwoxLQNI2gNm252FJIeVhD3yqg-hBgbbHqJ03SD24CFwhX329zsytGn6y-qp4nGeki3fb4SoLMNGbBe6OU5EZWk279FskssTryZUQPDQ11YEcjEc32Rqd_2KRYYI-kFDOu3ZM-JS0jtPkmwjT5pqyephLzEUs9RR7lNG0-FPeIunEw9Ai1XdddU",
-    },
-    {
-      name: "David Chen",
-      role: "Head of Quant Strategies",
-      tag: "20+ YEARS IN ALGORITHMIC TRADING",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuCGyO3sODz5mL8Xw-o4UkwIdFk3HD5LJ-ToWcNRW2btW3rambv4F1iInUQn-hOOA02CPpeBowSpqikC6M_f6IY_O5Mr7ceolVD4SMRiQwb04QrEuMhkCpssu9NVhnuY9nfJ2wbuSupd-W8umFWi6pHd_nQNazxPlBdnk0ldmrSsZECaE0u4EMdmOKh60loW9p2ZfBeoTAMxo2iwrOF9af8lurAvdZPXDcyNU8zyudSTkG6wUwfEPbk",
-    },
-    {
-      name: "Sarah Jennings",
-      role: "General Counsel",
-      tag: "LEGAL COUNSEL & REGULATORY EXPERT",
-      image: "https://lh3.googleusercontent.com/aida-public/AB6AXuBv_rQSk1QwbDb4zvAsBJnp8f8Zi0l1tWRg0omUveFuMuRptS6GIY8qSzJwq-FfcVaUBtuopO3H_OsQ1dX1QNy76gixsQeRArsWhV4zLfWh-AJ0ai0gIhr7AaIBG9R2NA9x4aw2aFv-vY3yOKC3sG6LjtVtlFbbgyAFRDWjowIMGiSjaKfB0MHV9s5zpEtDWJ6Q7l6oMxJZKbJvVj7TLyuFZKmlzYSyXDEZGbVPOyZbWWryXkmtbUE",
-    },
+      name: "Deepika Singhal",
+      role: "Partner",
+      tag: "LEGAL COUNSEL & STRATEGIC OPERATIONS",
+      image: "/acecapital/Deepika-Singhal-profile.jpeg",
+      linkedin: "https://www.linkedin.com/in/deepika-singhal-81a28313/"
+    }
   ]
 
   const aboutSchema = {
@@ -128,7 +119,7 @@ export default function About() {
       />
 
       {/* Legacy/Hero Section */}
-      <section className="relative min-h-[500px] flex items-center ace-container ace-section bg-background">
+      <section className="relative min-h-125 flex items-center ace-container ace-section bg-background">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <span className="font-section-label text-section-label text-secondary uppercase tracking-[0.3em] block">
@@ -147,12 +138,13 @@ export default function About() {
               </span>
             </div>
           </div>
-          <div className="relative h-[400px] md:h-[500px] group">
-            <div className="absolute -inset-4 border border-secondary/20 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500 rounded"></div>
-            <img
-              className="w-full h-full object-cover rounded grayscale group-hover:grayscale-0 transition-all duration-700"
-              alt="Ace Capital Boardroom"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBD8wVwv_bjtJFrLPlBw4RkUNcdTLBrHxzeNLMwTl1NjHRvrGPvxy9b_SHsUqiJndDMBXiJ9eM7u9vKrG-fFdxlekJCQDD7QruHeCIo2QEwoQ9PhbttiEilz2DsXvjelZOIZEzKJk-uzMdaPtDMQtezWdXmpUl_66eNu1Y8-VJvTWI7qtFrdCNHIZCCsnUISB0sWERTFBhHNDDCxn9m-Zr-n5nzsjrwEeryH6hbOt-MKuySouqf5cY"
+          <div className="relative h-100 md:h-125 group">
+            <Image
+              width={800}
+              height={600}
+              alt="Ace Capital Office"
+              src="/acecapital/Ace-Capital-Enterprise-office.jpeg"
+              className="w-full h-full object-contain rounded transition-all duration-700"
             />
           </div>
         </div>
@@ -203,24 +195,35 @@ export default function About() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {leaders.map((leader, idx) => (
-            <div key={idx} className="group space-y-4">
-              <div className="aspect-[3/4] overflow-hidden bg-muted relative rounded border border-outline-variant/20">
+            <div key={idx} className="group space-y-5">
+              <div className="aspect-3/4 overflow-hidden bg-muted relative rounded border border-outline-variant/20 shadow-sm">
                 <img
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-all duration-500 scale-100 group-hover:scale-105"
                   alt={leader.name}
                   src={leader.image}
                 />
-                <div className="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-secondary text-on-secondary-fixed font-section-label text-[10px] tracking-tighter">
+                <div className="absolute bottom-0 left-0 w-full p-5 translate-y-full group-hover:translate-y-0 transition-transform duration-300 bg-secondary/95 text-white font-section-label text-xs tracking-widest uppercase">
                   {leader.tag}
                 </div>
               </div>
-              <div>
-                <h4 className="font-headline-lg text-lg text-foreground uppercase">{leader.name}</h4>
-                <p className="font-section-label text-secondary uppercase text-xs tracking-widest mt-1">
+              <div className="text-center">
+                <h4 className="font-headline-lg text-xl text-foreground uppercase">{leader.name}</h4>
+                <p className="font-section-label text-secondary uppercase text-sm tracking-widest mt-1">
                   {leader.role}
                 </p>
+                {leader.linkedin && (
+                  <a
+                    href={leader.linkedin}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center gap-2 mt-4 text-muted-foreground hover:text-[#0a66c2] transition-colors text-sm font-semibold"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
+                    Connect on LinkedIn
+                  </a>
+                )}
               </div>
             </div>
           ))}

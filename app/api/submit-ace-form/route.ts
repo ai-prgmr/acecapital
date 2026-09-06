@@ -3,9 +3,9 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    
+
     // The user will set this environment variable for their Google Apps Script Web App
-    const GOOGLE_APP_SCRIPT_URL = process.env.GOOGLE_APP_SCRIPT_URL || '';
+    const GOOGLE_APP_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx0KwN2YiGndA0opr1Xk9KCS-lvnHAqmpll7aVVQNhRWCJydbqZXK9-2GlbEb2ucrdV/exec";
 
     if (!GOOGLE_APP_SCRIPT_URL) {
       console.warn("GOOGLE_APP_SCRIPT_URL is not set. Simulating a successful submission.");

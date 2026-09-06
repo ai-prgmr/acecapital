@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import MutualFundsContent from "./MutualFundsContent"
-import InvestmentsContent from "./InvestmentsContent"
+import { combinedMutualFundsFAQs } from "./data"
 
 export const metadata: Metadata = {
   title: "Mutual Funds & Investments | ACE CAPITAL",
@@ -26,6 +26,17 @@ export default function MutualFundsInvestments() {
           "url": "https://acecapitalenterprise.com",
           "name": "Ace Capital Enterprise"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": combinedMutualFundsFAQs.map((faq) => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
       }
     ]
   }
@@ -36,9 +47,8 @@ export default function MutualFundsInvestments() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
-      {/* Merged content stacking Mutual Funds then Investments */}
+      {/* Merged content for Mutual Funds & Investments */}
       <MutualFundsContent />
-      <InvestmentsContent />
     </>
   )
 }

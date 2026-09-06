@@ -13,7 +13,7 @@ export default function Footer() {
               className="flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all"
               aria-label="Ace Capital Enterprise Home"
             >
-              <Image src="/acecapital/logo-acecapital-enterprise.webp" alt="" height={100} width={100} />
+              <Image src="/acecapital/logo-acecapital-enterprise.webp" alt="" height={150} width={150} />
             </Link>
           </div>
           <p className="font-body-md text-on-surface-variant leading-relaxed">

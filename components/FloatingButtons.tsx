@@ -10,7 +10,6 @@ export default function FloatingButtons() {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
-    org: "",
     email: "",
     type: "",
     message: "",
@@ -61,7 +60,7 @@ export default function FloatingButtons() {
           className="relative group transition-transform hover:scale-110 focus:outline-none"
           aria-label="Open ACE Form"
         >
-          {/* Subtle pulse ring behind the avatar */}
+          {/* Subtle ripple ring behind the avatar */}
           <div className="absolute inset-0 rounded-full bg-secondary/50 animate-ping opacity-75"></div>
 
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-secondary shadow-[0_0_15px_rgba(var(--color-secondary),0.5)] bg-white z-10 flex items-center justify-center">
@@ -134,24 +133,7 @@ export default function FloatingButtons() {
                     </label>
                   </div>
 
-                  {/* Organization */}
-                  <div className="relative">
-                    <input
-                      required
-                      type="text"
-                      id="ace-org"
-                      value={formData.org}
-                      onChange={(e) => setFormData({ ...formData, org: e.target.value })}
-                      placeholder="Organization"
-                      className="w-full bg-slate-gray/10 border-t-0 border-x-0 border-b border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-3 px-2 transition-all font-body-md placeholder-transparent peer text-sm rounded-t"
-                    />
-                    <label
-                      htmlFor="ace-org"
-                      className="absolute left-2 -top-3 text-outline text-[10px] transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:text-outline peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-secondary peer-focus:text-[10px] font-section-label uppercase"
-                    >
-                      Organization
-                    </label>
-                  </div>
+
 
                   {/* Email */}
                   <div className="relative">

@@ -127,7 +127,7 @@ export default function Home() {
       <HomepageCarousel />
 
       {/* Hero Section */}
-      <header className="relative flex items-center justify-center pt-12 overflow-hidden bg-background">
+      <header className="relative flex items-center justify-center pt-12 pb-24 overflow-hidden bg-background">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 hero-gradient"></div>
         </div>
@@ -138,8 +138,8 @@ export default function Home() {
               Systematic, Simple, Personal
             </span>
           </div>
-          <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight text-foreground font-bold">
-            Invest with clarity — your <span className="text-primary">trusted</span><br className="hidden md:block" /> mutual fund distributor in India.
+          <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl leading-tight font-bold text-primary">
+            Trusted Mutual Fund Distributor in India.
           </h1>
           <p className="font-body-lg text-base md:text-lg text-muted-foreground max-w-3xl">
             New-age mutual fund investing with an old-fashioned personal touch. We help you choose<br className="hidden md:block" /> funds that fit your goals and guide you, in plain language, at every step.
@@ -167,9 +167,9 @@ export default function Home() {
       </header>
 
       {/* Partnered AMCs Marquee */}
-      <section className="border-b border-border py-8 bg-background overflow-hidden relative">
-        <div className="text-center mb-6">
-          <p className="font-section-label text-sm tracking-widest text-muted-foreground">
+      <section className="border-y border-border py-12 bg-white overflow-hidden relative shadow-sm mb-16">
+        <div className="text-center mb-8">
+          <p className="font-section-label text-sm tracking-widest text-muted-foreground uppercase font-semibold">
             Empanelled with Leading Mutual Fund Houses
           </p>
         </div>
@@ -250,7 +250,7 @@ export default function Home() {
       <section className="ace-section ace-container">
         <div className="mb-16">
           <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
-            01 / WHO ARE WE
+            WHO ARE WE
           </span>
           <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">The ACE Mandate</h2>
         </div>
@@ -329,20 +329,14 @@ export default function Home() {
       </section>
 
       {/* Specialized Solutions Services Section */}
-      <section className="bg-surface-container-lowest ace-section">
+      <section className="bg-surface-container-lowest ace-section pt-16 md:pt-28">
         <div className="ace-container">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end my-16 gap-8">
             <div>
-              <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
-                02 / SERVICES
-              </span>
               <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
                 Specialized Solutions
               </h2>
             </div>
-            <p className="font-body-md text-on-surface-variant max-w-md">
-              We offer a comprehensive suite of financial instruments and platforms designed for the professional tier of capital management.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -388,70 +382,45 @@ export default function Home() {
       </section>
 
       {/* NRI Investors Section */}
-      <section className="ace-section bg-primary text-primary-foreground">
+      <section className="ace-section text-primary pt-16 md:pt-28">
         <div className="ace-container">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="flex-1 space-y-8">
-              <div>
-                <span className="font-section-label text-xs uppercase tracking-widest text-secondary font-bold">
-                  NRI Desk
-                </span>
-                <h2 className="font-display-hero text-4xl md:text-5xl uppercase leading-tight mt-4">
-                  Global Wealth, <br /><span className="text-secondary">Indian Roots</span>
-                </h2>
-              </div>
-              <p className="font-body-lg text-primary-foreground/80 max-w-xl">
-                Distance shouldn't distance you from India's growth story. Our specialized NRI desk simplifies mutual fund investing, ensuring your cross-border wealth grows with trust, simplicity, and absolute ease.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
-                <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-secondary">public</span>
-                  <h4 className="font-headline-lg text-lg uppercase">100% Digital Onboarding</h4>
-                  <p className="font-body-sm text-primary-foreground/70">Complete your KYC and start investing from anywhere in the world without a single physical document.</p>
-                </div>
-                <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-secondary">account_balance</span>
-                  <h4 className="font-headline-lg text-lg uppercase">NRE & NRO Ready</h4>
-                  <p className="font-body-sm text-primary-foreground/70">Seamless integration with your repatriable and non-repatriable bank accounts for smooth transfers.</p>
-                </div>
-                <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-secondary">support_agent</span>
-                  <h4 className="font-headline-lg text-lg uppercase">Global Timezone Support</h4>
-                  <p className="font-body-sm text-primary-foreground/70">Dedicated relationship managers available at times that work for you, not just IST.</p>
-                </div>
-                <div className="space-y-3">
-                  <span className="material-symbols-outlined text-3xl text-secondary">security</span>
-                  <h4 className="font-headline-lg text-lg uppercase">Tax-Optimized Guidance</h4>
-                  <p className="font-body-sm text-primary-foreground/70">Navigate DTAA and cross-border taxation complexities with our expert advisory network.</p>
-                </div>
-              </div>
-
-              <div className="pt-6">
-                <Link
-                  href="/contact"
-                  className="inline-block bg-secondary text-primary-foreground px-8 py-4 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md"
-                >
-                  Speak to an NRI Advisor
-                </Link>
-              </div>
+          <div className="space-y-8">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
+              <h2 className="font-display-hero text-4xl md:text-5xl uppercase leading-tight mt-4">
+                Global Wealth, <br /><span className="text-secondary">Indian Roots</span>
+              </h2>
+              <Link
+                href="/contact"
+                className="inline-block px-8 py-4 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md border border-secondary text-secondary hover:bg-secondary hover:text-white whitespace-nowrap"
+              >
+                Speak to an NRI Advisor
+              </Link>
             </div>
+            
+            <p className="font-body-lg text-muted-foreground max-w-xl">
+              Distance shouldn't distance you from India's growth story. Our specialized NRI desk simplifies mutual fund investing, ensuring your cross-border wealth grows with trust, simplicity, and absolute ease.
+            </p>
 
-            <div className="flex-1 w-full relative">
-              <div className="aspect-square max-w-md mx-auto relative group perspective-1000">
-                {/* Visual Graphic */}
-                <div className="absolute inset-0 bg-secondary rounded-full blur-3xl opacity-20 group-hover:opacity-40 transition-opacity duration-700"></div>
-                <div className="w-full h-full border border-white/10 rounded-[3rem] bg-white/5 backdrop-blur-sm p-8 flex flex-col items-center justify-center relative overflow-hidden transform group-hover:rotate-y-12 transition-transform duration-700 shadow-2xl">
-                  <span className="material-symbols-outlined text-9xl text-white/50 mb-8 group-hover:-translate-y-4 transition-transform duration-700">flight_takeoff</span>
-                  <div className="text-center space-y-2 relative z-10">
-                    <div className="text-5xl font-display-hero text-white">15+</div>
-                    <div className="text-sm uppercase tracking-widest text-primary-foreground/70">Countries Served</div>
-                  </div>
-                  {/* Decorative Elements */}
-                  <div className="absolute top-10 left-10 w-24 h-24 border border-secondary/30 rounded-full"></div>
-                  <div className="absolute bottom-10 right-10 w-40 h-40 border border-secondary/30 rounded-full"></div>
-                  <div className="absolute top-1/4 right-1/4 w-2 h-2 bg-white rounded-full animate-ping"></div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+              <div className="space-y-3">
+                <span className="material-symbols-outlined text-3xl text-secondary">public</span>
+                <h4 className="font-headline-lg text-lg uppercase">100% Digital Onboarding</h4>
+                <p className="font-body-sm text-muted-foreground">Complete your KYC and start investing from anywhere in the world without a single physical document.</p>
+              </div>
+              <div className="space-y-3">
+                <span className="material-symbols-outlined text-3xl text-secondary">account_balance</span>
+                <h4 className="font-headline-lg text-lg uppercase">NRE & NRO Ready</h4>
+                <p className="font-body-sm text-muted-foreground">Seamless integration with your repatriable and non-repatriable bank accounts for smooth transfers.</p>
+              </div>
+              <div className="space-y-3">
+                <span className="material-symbols-outlined text-3xl text-secondary">support_agent</span>
+                <h4 className="font-headline-lg text-lg uppercase">Global Timezone Support</h4>
+                <p className="font-body-sm text-muted-foreground">Dedicated relationship managers available at times that work for you, not just IST.</p>
+              </div>
+              <div className="space-y-3">
+                <span className="material-symbols-outlined text-3xl text-secondary">security</span>
+                <h4 className="font-headline-lg text-lg uppercase">Tax-Optimized Guidance</h4>
+                <p className="font-body-sm text-muted-foreground">Navigate DTAA and cross-border taxation complexities with our expert advisory network.</p>
               </div>
             </div>
           </div>
@@ -461,101 +430,11 @@ export default function Home() {
       {/* Investment Goals Bento Box */}
       <InvestmentGoals />
 
-      {/* Customer Testimonials Section */}
-      <section className="ace-section ace-container bg-background">
-        <div className="text-center mb-16">
-          <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
-            03 / TRUST
-          </span>
-          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
-            WHAT OUR CUSTOMERS SAY
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Testimonial 1 */}
-          <div className="ace-card p-12 border-l-4 border-l-secondary rounded-r">
-            <span className="material-symbols-outlined text-secondary text-4xl mb-6">
-              format_quote
-            </span>
-            <p className="font-body-lg text-body-lg italic text-on-surface mb-8">
-              "The execution speed and reliability of ACE's proprietary desks have fundamentally changed how our fund operates. Their institutional support is second to none."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-muted flex items-center justify-center font-bold text-primary uppercase rounded-sm">
-                AM
-              </div>
-              <div>
-                <div className="font-data-point text-data-point text-foreground uppercase text-sm">
-                  Aria Montgomery
-                </div>
-                <div className="font-section-label text-section-label text-outline uppercase text-xs">
-                  Managing Partner, Alpha Group
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial 2 */}
-          <div className="ace-card p-12 border-l-4 border-l-primary rounded-r">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">
-              format_quote
-            </span>
-            <p className="font-body-lg text-body-lg italic text-on-surface mb-8">
-              "Precision is the word that defines Ace Capital. From the onboarding to the daily reporting, every touchpoint exudes professional excellence."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-muted flex items-center justify-center font-bold text-primary uppercase rounded-sm">
-                SK
-              </div>
-              <div>
-                <div className="font-data-point text-data-point text-foreground uppercase text-sm">
-                  Siddharth Kapoor
-                </div>
-                <div className="font-section-label text-section-label text-outline uppercase text-xs">
-                  Private Wealth Client
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-12 text-center text-muted-foreground text-xs tracking-widest hidden md:block select-none">
-          ________________________________________________________________________________
-        </div>
-      </section>
-
-      {/* Certifications & Licenses */}
-      <section className="ace-section ace-container">
-        <div className="text-center mb-12">
-          <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
-            04 / COMPLIANCE
-          </span>
-          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
-            LICENSES & REGISTRATIONS
-          </h2>
-          <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto mt-4">
-            We adhere to the highest standards of regulatory compliance, ensuring your investments are secure and transparently managed.
-          </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-primary">
-            <span className="material-symbols-outlined text-4xl text-primary mb-4">gavel</span>
-            <h3 className="font-headline-lg text-xl uppercase mb-2">AMFI Certified</h3>
-            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: ARN-113576</p>
-          </div>
-          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-secondary">
-            <span className="material-symbols-outlined text-4xl text-secondary mb-4">policy</span>
-            <h3 className="font-headline-lg text-xl uppercase mb-2">EUIN Number(AMFI)</h3>
-            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">E199470</p>
-          </div>
-        </div>
-      </section>
-
       {/* App Download - Bento Style */}
       <section className="ace-section ace-container">
         <div className="text-center mb-12">
           <span className="font-section-label text-section-label uppercase tracking-widest text-secondary">
-            05 / PLATFORM
+            PLATFORM
           </span>
           <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
             THE ACE EXPERIENCE
@@ -619,6 +498,8 @@ export default function Home() {
             </div>
           </div>
 
+
+
           {/* Side Bento Card 1 */}
           <div className="bg-primary text-primary-foreground rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative group">
             <div className="z-10 space-y-4">
@@ -651,8 +532,37 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* Certifications & Licenses */}
+      <section className="ace-section ace-container">
+        <div className="text-center mb-12">
+          <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
+            COMPLIANCE
+          </span>
+          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
+            LICENSES & REGISTRATIONS
+          </h2>
+          <p className="font-body-md text-on-surface-variant max-w-2xl mx-auto mt-4">
+            We adhere to the highest standards of regulatory compliance, ensuring your investments are secure and transparently managed.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-primary">
+            <span className="material-symbols-outlined text-4xl text-primary mb-4">gavel</span>
+            <h3 className="font-headline-lg text-xl uppercase mb-2">AMFI Certified</h3>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">Reg No: ARN-113576</p>
+          </div>
+          <div className="ace-card p-8 flex flex-col items-center text-center border-t-4 border-t-secondary">
+            <span className="material-symbols-outlined text-4xl text-secondary mb-4">policy</span>
+            <h3 className="font-headline-lg text-xl uppercase mb-2">EUIN Number(AMFI)</h3>
+            <p className="font-section-label text-xs text-on-surface-variant uppercase tracking-widest">E199470</p>
+          </div>
+        </div>
+      </section>
+
+
       {/* CTA Connect Section */}
-      <section className="bg-primary-container ace-section relative overflow-hidden">
+      <section className="bg-primary-container ace-section relative overflow-hidden pt-16 md:pt-28">
         <div className="max-w-4xl mx-auto px-gutter text-center relative z-10 space-y-8">
           <h2 className="font-display-hero text-4xl md:text-5xl uppercase leading-tight text-foreground">
             Ready for Next-Tier <span className="text-secondary">Execution</span>?
@@ -660,18 +570,82 @@ export default function Home() {
           <p className="font-body-lg text-body-lg text-primary max-w-2xl mx-auto">
             Our support desk is operational 24/5 to match global market hours. Secure your institutional bridge today.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
-            <input
-              className="grow bg-background border border-border text-foreground font-data-point px-4 py-3 focus:border-secondary outline-none rounded uppercase placeholder:text-muted-foreground text-sm"
-              placeholder="ENTER WORK EMAIL"
-              type="email"
-            />
-            <button className="bg-secondary text-on-secondary-fixed font-section-label font-bold uppercase tracking-widest px-6 py-3 md:px-8 md:py-4 text-xs md:text-sm hover:brightness-110 active:scale-95 transition-all rounded">
-              CONNECT NOW
-            </button>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+            <Link
+              href="https://mf.acecapitalenterprise.com" target="_blank"
+              className="w-full sm:w-auto button-primary px-8 py-3.5 text-sm text-center rounded-md hover:brightness-110 active:scale-95 transition-all"
+            >
+              Start Investing
+            </Link>
+            <Link
+              href="/contact"
+              className="w-full sm:w-auto bg-card border border-border text-foreground px-8 py-3.5 font-semibold text-sm hover:bg-muted transition-all active:scale-95 text-center rounded-md shadow-sm"
+            >
+              Talk to Us
+            </Link>
           </div>
         </div>
       </section>
+
+      {/* Customer Testimonials Section */}
+      <section className="ace-section ace-container bg-background">
+        <div className="text-center mb-16">
+          <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
+            TRUST
+          </span>
+          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
+            WHAT OUR CUSTOMERS SAY
+          </h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Testimonial 1 */}
+          <div className="ace-card p-12 border-l-4 border-l-secondary rounded-r">
+            <span className="material-symbols-outlined text-secondary text-4xl mb-6">
+              format_quote
+            </span>
+            <p className="font-body-lg text-body-lg italic text-on-surface mb-8">
+              "The execution speed and reliability of ACE's proprietary desks have fundamentally changed how our fund operates. Their institutional support is second to none."
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-muted flex items-center justify-center font-bold text-primary uppercase rounded-sm">
+                AM
+              </div>
+              <div>
+                <div className="font-data-point text-data-point text-foreground uppercase text-sm">
+                  Aria Montgomery
+                </div>
+                <div className="font-section-label text-section-label text-outline uppercase text-xs">
+                  Managing Partner, Alpha Group
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Testimonial 2 */}
+          <div className="ace-card p-12 border-l-4 border-l-primary rounded-r">
+            <span className="material-symbols-outlined text-primary text-4xl mb-6">
+              format_quote
+            </span>
+            <p className="font-body-lg text-body-lg italic text-on-surface mb-8">
+              "Precision is the word that defines Ace Capital. From the onboarding to the daily reporting, every touchpoint exudes professional excellence."
+            </p>
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 bg-muted flex items-center justify-center font-bold text-primary uppercase rounded-sm">
+                SK
+              </div>
+              <div>
+                <div className="font-data-point text-data-point text-foreground uppercase text-sm">
+                  Siddharth Kapoor
+                </div>
+                <div className="font-section-label text-section-label text-outline uppercase text-xs">
+                  Private Wealth Client
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Home FAQs accordion (AEO Optimized) */}
       <FAQSection

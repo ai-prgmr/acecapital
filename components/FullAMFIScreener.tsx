@@ -20,8 +20,11 @@ export default function FullAMFIScreener() {
     const loadData = async (forceRefresh = false) => {
         setLoading(true);
 
+        const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+        const cacheKey = `clean_amfi_data_v2_${today}`;
+
         if (!forceRefresh) {
-            const cached = localStorage.getItem("clean_amfi_data_v2");
+            const cached = localStorage.getItem(cacheKey);
             if (cached) {
                 setAllFunds(JSON.parse(cached));
                 setLoading(false);
@@ -32,7 +35,18 @@ export default function FullAMFIScreener() {
         try {
             const data = await parseFullAMFIData();
             setAllFunds(data);
-            localStorage.setItem("clean_amfi_data_v2", JSON.stringify(data));
+            
+            // Clear old caches to save space
+            const keysToRemove = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key === "clean_amfi_data_v2" || key?.startsWith("clean_amfi_data_v2_")) {
+                    keysToRemove.push(key);
+                }
+            }
+            keysToRemove.forEach(k => localStorage.removeItem(k));
+            
+            localStorage.setItem(cacheKey, JSON.stringify(data));
         } catch (err) {
             console.error("Failed parsing AMFI data", err);
         } finally {
@@ -92,7 +106,7 @@ export default function FullAMFIScreener() {
             result.sort((a, b) => {
                 const aValue = a[sortConfig.key];
                 const bValue = b[sortConfig.key];
-                
+
                 // Handle nulls for returns
                 if (aValue === null && bValue === null) return 0;
                 if (aValue === null) return 1;
@@ -187,64 +201,65 @@ export default function FullAMFIScreener() {
             {loading ? (
                 <div className="text-center py-20 text-gray-500">Loading active AMFI data...</div>
             ) : (
-                <div className="overflow-x-auto border rounded-xl bg-white shadow-sm">
-                    <table className="w-full text-left border-collapse">
-                        <thead className="bg-gray-100 text-gray-700 text-xs uppercase tracking-wider border-b">
-                            <tr>
-                                <th className="p-4">Scheme Code</th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("scheme")}>
-                                    Scheme Name <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("scheme") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("category")}>
-                                    Category <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("category") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("nav")}>
-                                    NAV (₹) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("nav") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r1m")}>
-                                    1M (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r1m") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r1y")}>
-                                    1Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r1y") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r3y")}>
-                                    3Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r3y") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r5y")}>
-                                    5Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r5y") || <span className="invisible">↑</span>}</span>
-                                </th>
-                                <th className="p-4">Date</th>
-                            </tr>
-                        </thead>
-                        <tbody className="divide-y text-sm">
-                            {paginatedFunds.map((fund) => (
-                                <tr key={fund.code} className="hover:bg-gray-50 transition-colors">
-                                    <td className="p-4 font-mono text-xs text-gray-500">{fund.code}</td>
-                                    <td className="p-4 font-semibold text-gray-900">
-                                        {fund.scheme}
-                                        <div className="text-xs font-normal text-gray-400">{fund.amc}</div>
-                                    </td>
-                                    <td className="p-4 text-xs">
-                                        <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded border">{fund.category}</span>
-                                    </td>
-                                    <td className="p-4 font-bold text-gray-900">₹{fund.nav?.toFixed(2)}</td>
-                                    <td className={`p-4 font-medium text-xs ${fund.r1m !== null && fund.r1m > 0 ? 'text-green-600' : fund.r1m !== null && fund.r1m < 0 ? 'text-red-600' : 'text-gray-400'}`}>
-                                        {fund.r1m !== null ? `${fund.r1m}%` : '-'}
-                                    </td>
-                                    <td className={`p-4 font-medium text-xs ${fund.r1y !== null && fund.r1y > 0 ? 'text-green-600' : fund.r1y !== null && fund.r1y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
-                                        {fund.r1y !== null ? `${fund.r1y}%` : '-'}
-                                    </td>
-                                    <td className={`p-4 font-medium text-xs ${fund.r3y !== null && fund.r3y > 0 ? 'text-green-600' : fund.r3y !== null && fund.r3y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
-                                        {fund.r3y !== null ? `${fund.r3y}%` : '-'}
-                                    </td>
-                                    <td className={`p-4 font-medium text-xs ${fund.r5y !== null && fund.r5y > 0 ? 'text-green-600' : fund.r5y !== null && fund.r5y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
-                                        {fund.r5y !== null ? `${fund.r5y}%` : '-'}
-                                    </td>
-                                    <td className="p-4 text-xs text-gray-500 whitespace-nowrap">{fund.date}</td>
+                <div className="space-y-3">
+                    <div className="text-xs text-gray-500 text-right pb-2 border-b border-gray-200">
+                        Last update Date: <b>{new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</b>
+                    </div>
+                    <div className="overflow-x-auto border rounded-xl bg-white shadow-sm">
+                        <table className="w-full text-left border-collapse">
+                            <thead className="bg-gray-100 text-gray-700 text-xs uppercase tracking-wider border-b">
+                                <tr>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("scheme")}>
+                                        Scheme Name <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("scheme") || <span className="invisible">↑</span>}</span>
+                                    </th>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("category")}>
+                                        Category <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("category") || <span className="invisible">↑</span>}</span>
+                                    </th>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group" onClick={() => handleSort("nav")}>
+                                        NAV (₹) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("nav") || <span className="invisible">↑</span>}</span>
+                                    </th>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r1m")}>
+                                        1M (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r1m") || <span className="invisible">↑</span>}</span>
+                                    </th>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r1y")}>
+                                        1Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r1y") || <span className="invisible">↑</span>}</span>
+                                    </th>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r3y")}>
+                                        3Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r3y") || <span className="invisible">↑</span>}</span>
+                                    </th>
+                                    <th className="p-4 cursor-pointer hover:bg-gray-200 select-none group whitespace-nowrap" onClick={() => handleSort("r5y")}>
+                                        5Y (%) <span className="text-gray-400 group-hover:text-gray-700">{renderSortArrow("r5y") || <span className="invisible">↑</span>}</span>
+                                    </th>
                                 </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody className="divide-y text-sm">
+                                {paginatedFunds.map((fund) => (
+                                    <tr key={fund.code} className="hover:bg-gray-50 transition-colors">
+                                        <td className="p-4 font-semibold text-gray-900">
+                                            {fund.scheme}
+                                            <div className="text-xs font-normal text-gray-400">{fund.amc}</div>
+                                        </td>
+                                        <td className="p-4 text-xs">
+                                            <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded border">{fund.category}</span>
+                                        </td>
+                                        <td className="p-4 font-bold text-gray-900">₹{fund.nav?.toFixed(2)}</td>
+                                        <td className={`p-4 font-medium text-xs ${fund.r1m !== null && fund.r1m > 0 ? 'text-green-600' : fund.r1m !== null && fund.r1m < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r1m !== null ? `${fund.r1m}%` : '-'}
+                                        </td>
+                                        <td className={`p-4 font-medium text-xs ${fund.r1y !== null && fund.r1y > 0 ? 'text-green-600' : fund.r1y !== null && fund.r1y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r1y !== null ? `${fund.r1y}%` : '-'}
+                                        </td>
+                                        <td className={`p-4 font-medium text-xs ${fund.r3y !== null && fund.r3y > 0 ? 'text-green-600' : fund.r3y !== null && fund.r3y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r3y !== null ? `${fund.r3y}%` : '-'}
+                                        </td>
+                                        <td className={`p-4 font-medium text-xs ${fund.r5y !== null && fund.r5y > 0 ? 'text-green-600' : fund.r5y !== null && fund.r5y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r5y !== null ? `${fund.r5y}%` : '-'}
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             )}
 
@@ -270,7 +285,7 @@ export default function FullAMFIScreener() {
                     </button>
                 </div>
             )}
-            
+
             {!loading && filteredAndSortedFunds.length === 0 && (
                 <div className="text-center py-10 text-gray-500">
                     No funds found matching your current filters.

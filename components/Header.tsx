@@ -21,8 +21,8 @@ export default function Header() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 w-full z-50 border-b border-border bg-background/90 backdrop-blur-xl">
-        <div className="ace-container h-19 flex justify-between items-center">
+      <nav className="sticky top-0 left-0 w-full z-50 border-b border-border bg-background/90 backdrop-blur-xl">
+        <div className="ace-container h-25 flex justify-between items-center">
           {/* Logo */}
           <div className="flex items-center gap-8">
             <Link
@@ -30,7 +30,7 @@ export default function Header() {
               className="flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all"
               aria-label="Ace Capital Enterprise Home"
             >
-              <Image src="/acecapital/logo-acecapital-enterprise.webp" alt="" height={100} width={100} />
+              <Image src="/acecapital/logo-acecapital-enterprise.webp" alt="" height={150} width={150} />
             </Link>
 
             {/* Desktop Navigation Links */}
@@ -42,7 +42,7 @@ export default function Header() {
                     key={link.path}
                     href={link.path}
                     className={cn(
-                      "font-section-label text-sm  transition-colors duration-200 py-2 border-b-2",
+                      "leading-tight text-md  transition-colors duration-200 py-2 border-b-2",
                       isActive
                         ? "text-secondary border-secondary"
                         : "text-on-surface-variant border-transparent hover:text-foreground hover:border-border"
@@ -57,10 +57,10 @@ export default function Header() {
 
           {/* Desktop Right Actions */}
           <div className="hidden xl:flex items-center gap-3">
-            <Link href="/screener" className="px-4 py-2.5 text-xs font-bold text-foreground border border-border rounded-full hover:bg-muted transition-colors">
-              Fund Screener
+            <Link href="/screener" className="btn-shine bg-linear-to-r from-cyan-500 to-blue-500 px-4 py-2.5 text-md font-bold text-white border border-border rounded-full hover:bg-muted transition-colors group">
+              <span className="relative z-10">ACE Screener</span>
             </Link>
-            <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary px-4 py-2.5 text-xs">
+            <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary px-4 py-2.5 text-md">
               Portal login <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>
@@ -120,7 +120,7 @@ export default function Header() {
         )}
       </nav>
       {/* Spacer to push page content below fixed navbar */}
-      <div className="h-19.5"></div>
+
     </>
   )
 }

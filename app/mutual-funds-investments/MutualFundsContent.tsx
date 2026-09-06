@@ -16,33 +16,44 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import Autoplay from 'embla-carousel-autoplay'
-export default function MutualFundsContent() {
-  const fundsFAQs = [
-    {
-      question: "What is the level of fund management expertise?",
-      answer: "Our portfolios are managed by senior strategists with over 25 years of institutional experience, utilizing proprietary algorithmic frameworks and deep fundamental analysis.",
-    },
-    {
-      question: "How often are the funds rebalanced?",
-      answer: "We employ dynamic rebalancing triggered by quantitative signals and market volatility thresholds, ensuring capital is always optimized for current market conditions.",
-    },
-    {
-      question: "How do I begin investing via the portal?",
-      answer: "Existing clients can access the 'Portal Login' to allocate capital. New institutional partners should contact our desk to initiate the onboarding and compliance process.",
-    },
-    {
-      question: "Are these funds available to retail investors?",
-      answer: "ACE Capital Mutual Funds are primarily designed for institutional-grade wealth management, though select vehicles are available for high-net-worth individual portfolios.",
-    },
-  ]
 
-  const funds = [
-    { name: "Global Strategy Yield", type: "Multi-Asset", risk: "Low", nav: "₹156.90", ytd: "+12.40%" },
-    { name: "Core Equity Growth", type: "Large Cap", risk: "High", nav: "₹342.10", ytd: "+18.70%" },
-    { name: "Strategic Arbitrage Fund", type: "Market Neutral", risk: "Low", nav: "₹112.50", ytd: "+9.82%" },
-    { name: "Global Multi-Asset Dynamic", type: "Balanced", risk: "Moderate", nav: "₹156.90", ytd: "+11.08%" },
-    { name: "Emerging Markets Quant", type: "Intl Equity", risk: "High", nav: "₹94.22", ytd: "+14.30%" },
-  ]
+export const combinedMutualFundsFAQs = [
+  {
+    question: "What is the level of fund management expertise?",
+    answer: "Our portfolios are managed by senior strategists with over 25 years of institutional experience, utilizing proprietary algorithmic frameworks and deep fundamental analysis.",
+  },
+  {
+    question: "How often are the funds rebalanced?",
+    answer: "We employ dynamic rebalancing triggered by quantitative signals and market volatility thresholds, ensuring capital is always optimized for current market conditions.",
+  },
+  {
+    question: "How do I begin investing via the portal?",
+    answer: "Existing clients can access the 'Portal Login' to allocate capital. New institutional partners should contact our desk to initiate the onboarding and compliance process.",
+  },
+  {
+    question: "Are these funds available to retail investors?",
+    answer: "ACE Capital Mutual Funds are primarily designed for institutional-grade wealth management, though select vehicles are available for high-net-worth individual portfolios.",
+  },
+  {
+    question: "What asset classes are covered?",
+    answer: "Our primary focus remains on global equities, fixed-income instruments, and complex derivatives. We also maintain specialized desks for private equity and pre-IPO opportunities for accredited institutional partners.",
+  },
+  {
+    question: "What is the research methodology?",
+    answer: "We utilize a hybrid approach combining deep-dive fundamental analysis with proprietary quantitative models. This allows us to identify structural market inefficiencies and execute with mathematical precision.",
+  },
+  {
+    question: "How are risk-adjusted returns profiled?",
+    answer: "Portfolios are optimized for high Sharpe ratios, targeting consistent alpha while maintaining strict VaR (Value at Risk) limits. Our risk management layer dynamically adjusts position sizing based on real-time volatility indices.",
+  },
+  {
+    question: "How is liquidity managed?",
+    answer: "We operate 24/7 coverage across major global trading hubs. Our low-latency infrastructure ensures absolute liquidity and optimal execution even during periods of high market volatility.",
+  },
+]
+
+export default function MutualFundsContent() {
+
 
   return (
     <>
@@ -54,90 +65,25 @@ export default function MutualFundsContent() {
           className="w-full"
         >
           <CarouselContent>
-            {/* Slide 3 - SIP Banner 1 */}
-            <CarouselItem>
-              <div className="relative w-full h-150 flex items-center justify-center bg-background px-4 md:px-12">
-                <div className="relative overflow-hidden rounded-xl bg-card border border-border shadow-sm flex flex-col md:flex-row w-full max-w-7xl">
-                  <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                    <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 bg-muted text-secondary border border-border rounded-full font-bold text-xs tracking-widest uppercase w-fit">
-                      Systematic Investment Plan · SIP
-                    </div>
-                    <h2 className="text-4xl md:text-5xl font-extrabold text-foreground leading-tight mb-4 tracking-tight">
-                      Small steps today,<br />
-                      <span className="text-primary">big futures</span> tomorrow.
-                    </h2>
-                    <p className="text-muted-foreground text-lg md:text-xl mb-8 max-w-xl">
-                      Invest a fixed amount every month, automatically. Let steady, disciplined investing do the heavy lifting over time.
-                    </p>
-                    <div className="flex flex-wrap gap-3 mb-10">
-                      <span className="bg-muted text-foreground px-4 py-2 rounded-md font-semibold text-sm">Start at ₹500</span>
-                      <span className="bg-muted text-foreground px-4 py-2 rounded-md font-semibold text-sm">Fully automatic</span>
-                      <span className="bg-muted text-foreground px-4 py-2 rounded-md font-semibold text-sm">Pause or step up anytime</span>
-                    </div>
-                    <div>
-                      <button className="button-primary px-8 py-3.5 rounded-full font-bold shadow-md hover:shadow-lg inline-flex items-center gap-2">
-                        Start your SIP
-                        <span className="text-xl leading-none">→</span>
-                      </button>
-                    </div>
-                  </div>
-                  <div className="hidden md:block md:w-[45%] lg:w-[50%] relative">
-                    <div className="absolute inset-0 bg-primary transform -skew-x-12 origin-top-right translate-x-16 z-0 border-l-[8px] border-white"></div>
-                    <div className="absolute inset-0 z-10 flex flex-col items-start justify-center pl-16 pr-8 text-primary-foreground h-full" style={{ clipPath: 'polygon(15% 0, 100% 0, 100% 100%, 0% 100%)' }}>
-                      <div className="w-full h-full relative p-8 flex flex-col">
-                        <h3 className="text-xl font-bold mb-1">The power of consistency</h3>
-                        <p className="text-primary-foreground/70 text-sm mb-4">Illustrative concept, not indicative of returns</p>
-                        <div className="relative flex-1 rounded-lg overflow-hidden border border-primary/20 shadow-2xl bg-white">
-                          <Image src="/acecapital/images/sip-graph.jpg" alt="SIP Growth" fill className="object-cover" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            {[
+              "/acecapital/images/mf-carousel/Slide-1.png",
+              "/acecapital/images/mf-carousel/slide-2.png",
+              "/acecapital/images/mf-carousel/slide-3.png",
+              "/acecapital/images/mf-carousel/slide-4.png"
+            ].map((src, index) => (
+              <CarouselItem key={index}>
+                <div className="relative w-full aspect-21/9 md:aspect-21/7 max-h-150">
+                  <Image
+                    src={src}
+                    alt={`Mutual Funds Slide ${index + 1}`}
+                    fill
+                    className="object-contain"
+                    priority={index === 0}
+                    draggable={false}
+                  />
                 </div>
-              </div>
-            </CarouselItem>
-
-            {/* Slide 4 - SIP Banner 2 */}
-            <CarouselItem>
-              <div className="relative w-full h-150 flex items-center justify-center bg-background px-4 md:px-12">
-                <div className="relative overflow-hidden rounded-xl bg-card border border-border shadow-sm flex flex-col md:flex-row w-full max-w-7xl">
-                  <div className="flex-1 p-8 md:p-12 lg:p-16 flex flex-col justify-center relative z-10">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground leading-tight mb-2 uppercase tracking-tight">
-                      Creating better investors with <span className="text-primary">SIP</span>
-                    </h2>
-                    <p className="text-muted-foreground text-lg md:text-xl font-bold mb-10">
-                      (SYSTEMATIC INVESTMENT PLAN IN MUTUAL FUND)
-                    </p>
-
-                    <div className="flex flex-col sm:flex-row gap-8 lg:gap-16">
-                      <div className="flex items-center gap-4">
-                        <div className="text-secondary bg-secondary/10 p-4 rounded-full">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg>
-                        </div>
-                        <div>
-                          <div className="text-primary font-bold text-2xl">9 New SIPs</div>
-                          <div className="text-muted-foreground font-medium">per minute</div>
-                        </div>
-                      </div>
-
-                      <div className="flex items-center gap-4">
-                        <div className="text-secondary bg-secondary/10 p-4 rounded-full">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2" /><line x1="16" x2="16" y1="2" y2="6" /><line x1="8" x2="8" y1="2" y2="6" /><line x1="3" x2="21" y1="10" y2="10" /><path d="M8 14h.01" /><path d="M12 14h.01" /><path d="M16 14h.01" /><path d="M8 18h.01" /><path d="M12 18h.01" /><path d="M16 18h.01" /></svg>
-                        </div>
-                        <div>
-                          <div className="text-primary font-bold text-2xl">2588 Cr</div>
-                          <div className="text-muted-foreground font-medium">Monthly SIP book</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="w-full md:w-1/2 min-h-[300px] relative mt-8 md:mt-0 opacity-90 mix-blend-multiply hidden md:block">
-                    <Image src="/acecapital/images/crowd-arrow.jpg" alt="Crowd forming an upward arrow" fill className="object-cover md:object-contain object-right" />
-                  </div>
-                </div>
-              </div>
-            </CarouselItem>
+              </CarouselItem>
+            ))}
           </CarouselContent>
           <div className="absolute bottom-8 right-16 flex gap-2">
             {/* Custom styled Next/Prev buttons to override shadcn defaults */}
@@ -153,13 +99,27 @@ export default function MutualFundsContent() {
       {/* SIP & SWP Section */}
       <section className="ace-section bg-surface-container-lowest border-t border-border py-16">
         <div className="ace-container">
-          <div className="text-center mb-12 max-w-3xl mx-auto">
+          <div className="text-center mb-12 max-w-4xl mx-auto">
             <h2 className="font-headline-lg text-headline-lg uppercase text-foreground">
               Smart Ways to Invest & Withdraw
             </h2>
-            <p className="font-body-lg text-on-surface-variant mt-4">
+            <p className="font-body-lg text-on-surface-variant mt-4 mb-8">
               Whether you are accumulating wealth or generating a steady income, we offer structured plans to meet your financial objectives.
             </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              <span className="inline-flex items-center gap-1.5 bg-primary/5 text-primary border border-primary/20 px-4 py-2 rounded-full font-medium text-sm">
+                <CheckCircle2 className="w-4 h-4" /> Online Registration & KYC
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-primary/5 text-primary border border-primary/20 px-4 py-2 rounded-full font-medium text-sm">
+                <CheckCircle2 className="w-4 h-4" /> No Paperwork
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-primary/5 text-primary border border-primary/20 px-4 py-2 rounded-full font-medium text-sm">
+                <CheckCircle2 className="w-4 h-4" /> Seamless Investment
+              </span>
+              <span className="inline-flex items-center gap-1.5 bg-primary/5 text-primary border border-primary/20 px-4 py-2 rounded-full font-medium text-sm">
+                <CheckCircle2 className="w-4 h-4" /> Hassle-free Redemption
+              </span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -245,7 +205,7 @@ export default function MutualFundsContent() {
       <section className="ace-section bg-surface-container-lowest border-y border-border py-16">
         <div className="ace-container">
           <MutualFundsCalculator />
-          
+
           <div className="mt-16 text-center">
             <h3 className="font-headline-md text-2xl uppercase text-foreground mb-4">Ready to start your journey?</h3>
             <Link href="https://mf.acecapitalenterprise.com/" target="_blank" className="button-primary px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl inline-flex items-center gap-2 text-lg bg-primary text-primary-foreground transition-all">
@@ -296,8 +256,8 @@ export default function MutualFundsContent() {
       {/* Mutual Funds FAQ Accordion */}
       <FAQSection
         title="Mutual Fund FAQ"
-        subtitle="Common inquiries regarding our institutional-grade investment vehicles."
-        items={fundsFAQs}
+        subtitle="Common inquiries regarding our institutional-grade investment vehicles and strategy methodology."
+        items={combinedMutualFundsFAQs}
       />
     </>
   )

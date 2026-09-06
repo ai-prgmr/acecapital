@@ -69,9 +69,9 @@ export default function PropTradingAutomated() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
-      
+
       <main className="min-h-screen pt-24 font-sans bg-background text-foreground">
-        
+
         {/* 01 HERO */}
         <section className="relative px-gutter py-16 md:py-24 border-b border-border/40 hero-gradient">
           <div className="ace-container grid lg:grid-cols-2 gap-12 items-center">
@@ -80,8 +80,8 @@ export default function PropTradingAutomated() {
                 PROPRIETARY TRADING · AUTO DESK
               </div>
               <h1 className="text-display-hero text-foreground mb-4">
-                Our own capital.<br />
-                <span className="metallic-gradient">Our own edge.</span>
+                Own Capital.<br />
+                <span className="metallic-gradient">Own Edge.</span>
               </h1>
               <p className="text-body-lg text-muted-foreground max-w-xl">
                 Ace Capital runs an in-house proprietary trading desk — trading the firm's own capital across equity, derivatives, cash and ETFs, driven by quantitative strategies and automated, low-latency execution.
@@ -98,7 +98,7 @@ export default function PropTradingAutomated() {
                 </button>
               </div>
             </div>
-            
+
             {/* Minimalist Corporate Visualization */}
             <div className="hidden lg:flex items-center justify-center h-full">
               <div className="relative w-full max-w-md aspect-square glass-card rounded-2xl flex items-center justify-center overflow-hidden border border-border">
@@ -107,27 +107,27 @@ export default function PropTradingAutomated() {
                   {[...Array(12)].map((_, i) => {
                     const height = Math.random() * 60 + 20;
                     return (
-                      <div 
-                        key={i} 
-                        className="w-4 bg-primary/20 rounded-t-sm relative group overflow-hidden" 
+                      <div
+                        key={i}
+                        className="w-4 bg-primary/20 rounded-t-sm relative group overflow-hidden"
                         style={{ height: `${height}%`, transition: 'height 1s ease-in-out' }}
                       >
-                         <div className="absolute bottom-0 left-0 w-full bg-primary/40" style={{ height: `${height * 0.7}%` }}></div>
-                         <div className="absolute top-0 left-0 w-full h-1 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute bottom-0 left-0 w-full bg-primary/40" style={{ height: `${height * 0.7}%` }}></div>
+                        <div className="absolute top-0 left-0 w-full h-1 bg-secondary opacity-0 group-hover:opacity-100 transition-opacity"></div>
                       </div>
                     )
                   })}
                 </div>
-                
+
                 {/* Overlay Elements */}
                 <div className="absolute top-8 left-8 right-8 glass-card rounded-lg p-4 flex justify-between items-center border border-white/40 shadow-sm">
-                   <div>
-                     <div className="text-xs text-muted-foreground font-mono font-bold uppercase tracking-wider mb-1">Algo Performance</div>
-                     <div className="text-2xl font-bold text-primary">+14.2%</div>
-                   </div>
-                   <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
-                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
-                   </div>
+                  <div>
+                    <div className="text-xs text-muted-foreground font-mono font-bold uppercase tracking-wider mb-1">Algo Performance</div>
+                    <div className="text-2xl font-bold text-primary">+14.2%</div>
+                  </div>
+                  <div className="h-10 w-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -137,19 +137,19 @@ export default function PropTradingAutomated() {
         {/* 02 WHAT WE DO */}
         <section className="px-gutter py-16 md:py-24 border-b border-border/40 bg-surface-container-low">
           <div className="ace-container space-y-8 text-center max-w-4xl mx-auto">
-             <h2 className="text-headline-lg">
-               We trade <span className="text-primary">our own book.</span>
-             </h2>
-             <p className="text-body-lg text-muted-foreground">
-               Ace Capital's proprietary desk puts the firm's own capital to work across equity, derivatives, cash and ETFs. Every strategy is researched, tested and run in-house, then executed by our own technology — no client money, no outside mandates. Just our capital, our strategies, our risk.
-             </p>
-             <div className="flex flex-wrap justify-center gap-4 pt-4">
-               {['Equity', 'Derivatives (F&O)', 'Cash', 'ETFs'].map(asset => (
-                 <span key={asset} className="px-6 py-2 rounded-full border border-secondary/30 bg-secondary/10 text-secondary font-medium tracking-wide">
-                   {asset}
-                 </span>
-               ))}
-             </div>
+            <h2 className="text-headline-lg">
+              We trade <span className="text-primary">our own book.</span>
+            </h2>
+            <p className="text-body-lg text-muted-foreground">
+              Ace Capital's proprietary desk puts the firm's own capital to work across equity, derivatives, cash and ETFs. Every strategy is researched, tested and run in-house, then executed by our own technology — no client money, no outside mandates. Just our capital, our strategies, our risk.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 pt-4">
+              {['Equity', 'Derivatives (F&O)', 'Cash', 'ETFs'].map(asset => (
+                <span key={asset} className="px-6 py-2 rounded-full border border-secondary/30 bg-secondary/10 text-secondary font-medium tracking-wide">
+                  {asset}
+                </span>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -160,7 +160,7 @@ export default function PropTradingAutomated() {
               <h2 className="text-headline-lg">Three pillars, one desk</h2>
               <p className="text-body-lg text-muted-foreground">Research, automation and risk — working as one.</p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { num: '01', title: 'Quantitative Research', desc: 'We turn market data into tested, rules-based strategies — researched, backtested and refined before a rupee is put at risk.' },
@@ -184,7 +184,7 @@ export default function PropTradingAutomated() {
               <h2 className="text-headline-lg">The Auto Desk — <span className="text-primary">automation at the core</span></h2>
               <p className="text-body-lg text-muted-foreground">Our automated execution engine turns researched strategies into consistent, monitored, rules-based trading.</p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { title: 'Systematic execution', desc: 'Strategies run to rules, not emotion — the same logic, every time.' },
@@ -194,7 +194,7 @@ export default function PropTradingAutomated() {
               ].map((feature, i) => (
                 <div key={i} className="bg-card p-8 rounded-xl border border-border/50 shadow-sm space-y-3 hover:shadow-md transition-shadow group">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-                     <div className="w-3 h-3 bg-primary rounded-full"></div>
+                    <div className="w-3 h-3 bg-primary rounded-full"></div>
                   </div>
                   <h3 className="text-lg font-bold text-foreground">{feature.title}</h3>
                   <p className="text-body-md text-muted-foreground">{feature.desc}</p>
@@ -211,7 +211,7 @@ export default function PropTradingAutomated() {
               <h2 className="text-headline-lg">What sets our desk apart</h2>
               <p className="text-body-lg text-muted-foreground">Right-sized advantages of a focused, in-house desk.</p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 { title: 'In-house technology', desc: 'We build our own tools, end to end — research to execution.' },
@@ -232,7 +232,7 @@ export default function PropTradingAutomated() {
         <section className="px-gutter py-16 md:py-24 border-b border-border/40">
           <div className="ace-container space-y-12">
             <h2 className="text-headline-lg text-center">Risk comes <span className="text-secondary">first</span></h2>
-            
+
             <div className="bg-primary/5 border border-primary/10 p-8 md:p-12 rounded-2xl flex flex-col md:flex-row gap-8 items-center shadow-sm">
               <div className="w-24 h-24 flex-shrink-0 bg-white border border-primary/20 rounded-2xl flex items-center justify-center shadow-sm">
                 <span className="material-symbols-outlined text-primary text-5xl">

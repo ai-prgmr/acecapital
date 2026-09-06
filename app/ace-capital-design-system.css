@@ -29,7 +29,7 @@
 }
 
 .ace-section {
-  padding-block: var(--spacing-section-v-space);
+  padding-bottom: var(--spacing-section-v-space);
 }
 
 .ace-section-sm {
@@ -167,7 +167,7 @@
 /* Responsive */
 @media (max-width: 900px) {
   .ace-section {
-    padding-block: var(--spacing-section-v-space-mobile);
+    padding-bottom: var(--spacing-section-v-space-mobile);
   }
 
   .ace-card-grid,

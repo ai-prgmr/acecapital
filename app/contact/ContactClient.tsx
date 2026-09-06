@@ -5,7 +5,6 @@ import { useState, useEffect } from "react"
 export default function ContactClient() {
   const [formData, setFormData] = useState({
     name: "",
-    org: "",
     email: "",
     type: "",
     message: "",
@@ -231,23 +230,6 @@ export default function ContactClient() {
                     </label>
                   </div>
 
-                  <div className="relative">
-                    <input
-                      required
-                      type="text"
-                      id="org"
-                      value={formData.org}
-                      onChange={(e) => setFormData({ ...formData, org: e.target.value })}
-                      placeholder="Organization"
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 focus:border-secondary focus:ring-0 text-white py-4 px-0 transition-all font-body-md placeholder-transparent peer"
-                    />
-                    <label
-                      htmlFor="org"
-                      className="absolute left-0 -top-3.5 text-outline text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-outline peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-xs font-section-label uppercase"
-                    >
-                      Organization
-                    </label>
-                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -265,7 +247,7 @@ export default function ContactClient() {
                       htmlFor="email"
                       className="absolute left-0 -top-3.5 text-outline text-xs transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-outline peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-secondary peer-focus:text-xs font-section-label uppercase"
                     >
-                      Corporate Email
+                      Email
                     </label>
                   </div>
 

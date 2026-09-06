@@ -18,10 +18,11 @@ export interface AMFIFund {
  * Falls back across potential base path variations for both local dev and GitHub Pages.
  */
 export async function fetchAMFIData(): Promise<AMFIFund[]> {
+  const today = new Date().toISOString().split('T')[0];
   const candidatePaths = [
-    "/acecapital/data/funds.json",
-    "/data/funds.json",
-    "./data/funds.json",
+    `/acecapital/data/funds.json?date=${today}`,
+    `/data/funds.json?date=${today}`,
+    `./data/funds.json?date=${today}`,
   ];
 
   for (const path of candidatePaths) {
