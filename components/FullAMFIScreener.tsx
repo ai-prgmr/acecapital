@@ -203,7 +203,7 @@ export default function FullAMFIScreener() {
             ) : (
                 <div className="space-y-3">
                     <div className="text-xs text-gray-500 text-right pb-2 border-b border-gray-200">
-                        Last update Date: <b>{new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</b>
+                        Last update Date: <b>{new Date(Date.now() - 86400000).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</b>
                     </div>
                     <div className="overflow-x-auto border rounded-xl bg-white shadow-sm">
                         <table className="w-full text-left border-collapse">

@@ -105,14 +105,6 @@ export default function Footer() {
             </div>
             <div>
               <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
-                Technical Support
-              </p>
-              <a href="mailto:techsupport@acecapitalenterprise.com" className="font-body-md text-on-surface hover:text-secondary transition-colors break-all">
-                techsupport@acecapitalenterprise.com
-              </a>
-            </div>
-            <div>
-              <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
                 Operational Hours
               </p>
               <p className="font-body-md text-on-surface">
