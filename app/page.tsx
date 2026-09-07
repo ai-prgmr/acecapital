@@ -3,7 +3,7 @@ import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
 import InvestmentGoals from "@/components/InvestmentGoals"
 import { HomepageCarousel } from "@/components/HomepageCarousel"
-
+import Image from "next/image"
 export const metadata: Metadata = {
   title: "ACE CAPITAL ENTERPRISE | Leading Proprietary Trading Firm",
   description: "Experience Institutional Alpha Through Precision. Ace Capital Enterprise is a leading proprietary trading firm utilizing HFT desks, quantitative research, and expert asset management.",
@@ -396,7 +396,7 @@ export default function Home() {
                 Speak to an NRI Advisor
               </Link>
             </div>
-            
+
             <p className="font-body-lg text-muted-foreground max-w-xl">
               Distance shouldn't distance you from India's growth story. Our specialized NRI desk simplifies mutual fund investing, ensuring your cross-border wealth grows with trust, simplicity, and absolute ease.
             </p>
@@ -482,28 +482,7 @@ export default function Home() {
             <div className="w-full md:w-auto h-64 md:h-full relative mt-10 md:mt-0 flex justify-center md:justify-end">
               <div className="w-56 h-125 bg-background border-8 border-foreground/90 rounded-[2.5rem] shadow-2xl absolute -bottom-32 md:-bottom-48 md:right-0 group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-6 bg-foreground/90 rounded-b-2xl opacity-10 mx-auto w-32 z-20"></div>
-                <div className="p-4 bg-muted h-full flex flex-col gap-4 relative z-10">
-                  <div className="h-32 bg-primary rounded-xl flex flex-col justify-end p-4 text-primary-foreground">
-                    <span className="text-xs opacity-80 uppercase tracking-widest">Total Value</span>
-                    <span className="text-2xl font-bold">₹12,45,000</span>
-                  </div>
-                  <div className="space-y-3">
-                    <div className="h-16 bg-card rounded-xl border border-border shadow-sm flex items-center p-3 gap-3">
-                      <div className="w-10 h-10 bg-primary/20 rounded-full"></div>
-                      <div className="flex-1">
-                        <div className="h-3 w-20 bg-muted-foreground/30 rounded mb-2"></div>
-                        <div className="h-2 w-12 bg-muted-foreground/20 rounded"></div>
-                      </div>
-                    </div>
-                    <div className="h-16 bg-card rounded-xl border border-border shadow-sm flex items-center p-3 gap-3">
-                      <div className="w-10 h-10 bg-secondary/20 rounded-full"></div>
-                      <div className="flex-1">
-                        <div className="h-3 w-16 bg-muted-foreground/30 rounded mb-2"></div>
-                        <div className="h-2 w-14 bg-muted-foreground/20 rounded"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <Image src="/acecapital/Ace_Cap_Mobile_App.jpeg" alt="Ace Capital Mobile App" layout="fill" objectFit="cover" className="z-10" />
               </div>
             </div>
           </div>

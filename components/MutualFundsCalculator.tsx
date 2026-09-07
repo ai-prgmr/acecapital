@@ -9,11 +9,10 @@ export default function MutualFundsCalculator() {
   const [lumpsumInvestment, setLumpsumInvestment] = useState(100000)
   const [horizonYears, setHorizonYears] = useState(18)
   const [annualReturn, setAnnualReturn] = useState(6)
-
   const calculations = useMemo(() => {
     const r = annualReturn / 100
     const i = r / 12
-    const N = horizonYears * 12
+    const N = Math.round(horizonYears * 12)
 
     let futureValue = 0
     let totalInvested = 0
@@ -140,9 +139,30 @@ export default function MutualFundsCalculator() {
             Investment Period (Years)
           </label>
           <input
-            type="number"
+            type="text"
+            inputMode="numeric"
+            pattern="[0-9]*"
             value={horizonYears}
-            onChange={(e) => setHorizonYears(Number(e.target.value))}
+            onKeyDown={(e) => {
+              if (['.', 'e', 'E', '+', '-'].includes(e.key)) {
+                e.preventDefault();
+              }
+            }}
+            onChange={(e) => {
+              const val = e.target.value.replace(/[^0-9]/g, '');
+              setHorizonYears(val === '' ? 0 : Number(val));
+            }}
+            className="w-full bg-white border border-outline-variant/50 p-4 text-xl font-bold text-foreground rounded-lg focus:border-[#1E3A8A] outline-none transition-colors"
+          />
+        </div>
+        <div className="space-y-2">
+          <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
+            In Months
+          </label>
+          <input
+            type="number"
+            disabled
+            value={Math.round(horizonYears * 12)}
             className="w-full bg-white border border-outline-variant/50 p-4 text-xl font-bold text-foreground rounded-lg focus:border-[#1E3A8A] outline-none transition-colors"
           />
         </div>
