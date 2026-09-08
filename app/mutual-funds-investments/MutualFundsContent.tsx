@@ -97,7 +97,7 @@ export default function MutualFundsContent() {
       <InvestmentGoals />
 
       {/* SIP & SWP Section */}
-      <section className="ace-section bg-surface-container-lowest border-t border-border py-16">
+      <section className="ace-section bg-surface-container-lowest border-t border-border">
         <div className="ace-container">
           <div className="text-center mb-12 max-w-4xl mx-auto">
             <h2 className="font-headline-lg text-headline-lg uppercase text-foreground">
@@ -186,7 +186,7 @@ export default function MutualFundsContent() {
 
 
       {/* Screener Promotional Section */}
-      <section className="ace-section ace-container border-t border-border pt-16 pb-16">
+      <section className="ace-section ace-container border-t border-border">
         <div className="bg-primary/5 rounded-3xl p-8 md:p-12 text-center border border-primary/20">
           <h2 className="font-headline-lg text-3xl md:text-4xl uppercase text-foreground mb-4">
             Discover Top Mutual Funds
@@ -202,7 +202,7 @@ export default function MutualFundsContent() {
       </section>
 
       {/* Interactive Growth Projection Tool */}
-      <section className="ace-section bg-surface-container-lowest border-y border-border py-16">
+      <section className="ace-section bg-surface-container-lowest border-y border-border">
         <div className="ace-container">
           <MutualFundsCalculator />
 

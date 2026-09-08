@@ -329,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* Specialized Solutions Services Section */}
-      <section className="bg-surface-container-lowest ace-section pt-16 md:pt-28">
+      <section className="bg-surface-container-lowest ace-section">
         <div className="ace-container">
           <div className="flex flex-col md:flex-row justify-between items-end my-16 gap-8">
             <div>
@@ -382,7 +382,7 @@ export default function Home() {
       </section>
 
       {/* NRI Investors Section */}
-      <section className="ace-section text-primary pt-16 md:pt-28">
+      <section className="ace-section text-primary">
         <div className="ace-container">
           <div className="space-y-8">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6">
@@ -551,7 +551,7 @@ export default function Home() {
 
 
       {/* CTA Connect Section */}
-      <section className="bg-primary-container ace-section relative overflow-hidden pt-16 md:pt-28">
+      <section className="bg-primary-container ace-section relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-gutter text-center relative z-10 space-y-8">
           <h2 className="font-display-hero text-4xl md:text-5xl uppercase leading-tight text-foreground">
             Ready for Next-Tier <span className="text-secondary">Execution</span>?
