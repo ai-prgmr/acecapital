@@ -148,7 +148,7 @@ export default function FloatingButtons() {
                       htmlFor="ace-email"
                       className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
                     >
-                      Corporate Email
+                      Email Address
                     </label>
                   </div>
 

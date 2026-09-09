@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export default function ContactClient() {
   const [formData, setFormData] = useState({
@@ -12,62 +12,16 @@ export default function ContactClient() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const [clocks, setClocks] = useState({
-    mumbai: "--:-- IST",
-    london: "--:-- GMT",
-    singapore: "--:-- SGT",
-  })
-
-  useEffect(() => {
-    const updateClocks = () => {
-      const options: Intl.DateTimeFormatOptions = {
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: false,
-      }
-
-      try {
-        const mumbaiTime = new Intl.DateTimeFormat("en-IN", {
-          ...options,
-          timeZone: "Asia/Kolkata",
-        }).format(new Date())
-        const londonTime = new Intl.DateTimeFormat("en-GB", {
-          ...options,
-          timeZone: "Europe/London",
-        }).format(new Date())
-        const singaporeTime = new Intl.DateTimeFormat("en-SG", {
-          ...options,
-          timeZone: "Asia/Singapore",
-        }).format(new Date())
-
-        setClocks({
-          mumbai: `${mumbaiTime} IST`,
-          london: `${londonTime} GMT`,
-          singapore: `${singaporeTime} SGT`,
-        })
-      } catch (e) {
-        // Fallback
-      }
-    }
-
-    updateClocks()
-    const interval = setInterval(updateClocks, 1000)
-    return () => clearInterval(interval)
-  }, [])
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
     try {
-      // With static exports, we must hit Google Apps Script directly bypassing Next.js API routes.
-      // We use mode: 'no-cors' to avoid preflight OPTIONS issues.
       await fetch("https://script.google.com/macros/s/AKfycbx0KwN2YiGndA0opr1Xk9KCS-lvnHAqmpll7aVVQNhRWCJydbqZXK9-2GlbEb2ucrdV/exec", {
         method: "POST",
         mode: "no-cors",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       })
-      // When mode is no-cors, we don't get an ok response, so we assume success if no network error
       setSubmitted(true)
     } catch (error) {
       console.error("Submission error:", error)
@@ -76,7 +30,6 @@ export default function ContactClient() {
     }
   }
 
-  // Schema for Contact Us Page
   const contactSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -85,7 +38,7 @@ export default function ContactClient() {
         "@id": "https://acecapitalenterprise.com/contact/#webpage",
         "url": "https://acecapitalenterprise.com/contact",
         "name": "Contact Us | ACE CAPITAL ENTERPRISE",
-        "description": "Connect with Ace Capital Enterprise. Get technical support for API integrations, general partnership inquiries, or visit our regional hubs in Mumbai, London, and Singapore.",
+        "description": "Connect with Ace Capital Enterprise. Get technical support, general partnership inquiries, or institutional trading assistance.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://acecapitalenterprise.com/#website",
@@ -104,12 +57,8 @@ export default function ContactClient() {
             {
               "@type": "ContactPoint",
               "contactType": "technical support",
-              "email": "support@acecapital.com"
-            },
-            {
-              "@type": "ContactPoint",
-              "contactType": "general inquiries",
-              "email": "info@acecapital.com"
+              "email": "support@acecapital.com",
+              "telephone": "9220556760"
             }
           ]
         }
@@ -124,87 +73,110 @@ export default function ContactClient() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
       />
 
-      <main className="pt-24 bg-background text-white min-h-screen">
+      <main className="pt-24 font-sans bg-background text-foreground min-h-screen">
         {/* Hero Section */}
-        <section className="relative h-[450px] flex items-center justify-center text-center px-gutter overflow-hidden">
+        <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center text-center px-gutter overflow-hidden border-b border-border/40">
           <div className="absolute inset-0 z-0">
             <div
-              className="w-full h-full bg-cover bg-center opacity-15 grayscale"
+              className="w-full h-full bg-cover bg-center opacity-10"
               style={{
-                backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuBr2nmu-4E_6BGqRN4FskpYEuNXxMWBRXADIO6SZWkUnT2-4hnMXFaHFxtV_AVUab9TPoPLcniY_f_ol6y6CJyqSw9r33UOLmeKVJPp-rmdiq-Pwve9JfGQPTemdUW5KJw5l18CJP-SVGH_bjgGMEPCDmdKcEcuw4nUu10DyIJDiGKuYKH5aW4QXVXZF45RfaCdtkKbgKCyCsdUg4TepC01ciSqCFKKMSOJBAu29haAesn7MMNsITY')`,
+                backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')`,
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/80 to-transparent" />
           </div>
-          <div className="relative z-10 max-w-4xl space-y-4">
-            <span className="font-section-label text-xs text-secondary uppercase tracking-[0.3em] block">
-              Strategic Presence
+
+          <div className="relative z-10 max-w-4xl space-y-6 animate-fade-in-up">
+            <span className="font-section-label text-xs md:text-sm text-secondary uppercase tracking-[0.3em] font-bold block">
+              Contact Us
             </span>
-            <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl text-white uppercase leading-none">
-              Connect with <br />
-              <span className="text-secondary italic">Institutional Alpha</span>
+            <h1 className="font-display-hero text-4xl md:text-6xl lg:text-7xl uppercase leading-tight">
+              Connect with <br className="hidden md:block" />
+              <span className="text-primary italic">Institutional Alpha</span>
             </h1>
-            <div className="h-1 w-24 bg-secondary mx-auto mt-6"></div>
+            <p className="font-body-md text-muted-foreground max-w-2xl mx-auto">
+              Our desk partners and technical support teams are on standby to assist with your portfolio, algorithmic integrations, and partnership inquiries.
+            </p>
           </div>
         </section>
 
         {/* Direct Support Channels */}
-        <section className="ace-container -mt-16 relative z-20 mb-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Tech Support */}
-            <div className="ace-card p-8 group border border-outline-variant/20 hover:border-secondary transition-all rounded duration-300">
-              <div className="flex justify-between items-start mb-4">
-                <span className="material-symbols-outlined text-secondary text-4xl">terminal</span>
-                <span className="font-data-point text-xs text-success-green flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-success-green animate-ping"></span>
-                  Live Now
-                </span>
+        <section className="ace-section ace-container relative z-20">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-card border border-border/60 hover:border-secondary/50 shadow-2xl shadow-black/50 transition-all rounded-3xl p-8 md:p-12 overflow-hidden relative group">
+              <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
+                <span className="material-symbols-outlined text-9xl text-secondary">headset_mic</span>
               </div>
-              <h3 className="font-headline-lg text-xl text-white uppercase mb-2">Technical Support</h3>
-              <p className="text-on-surface-variant font-body-md mb-6">
-                Dedicated assistance for algorithmic API integration and execution inquiries.
-              </p>
-              <div className="flex flex-col gap-1">
-                <span className="font-section-label text-[10px] text-outline uppercase tracking-wider">Email</span>
-                <a
-                  className="font-data-point text-sm text-secondary hover:underline transition-colors"
-                  href="mailto:support@acecapital.com"
-                >
-                  support@acecapital.com
-                </a>
-              </div>
-              <div className="mt-6 pt-6 border-t border-charcoal/50 flex items-center gap-2">
-                <span className="font-section-label text-xs text-outline uppercase">
-                  Target response: <strong className="text-white">&lt; 2 hours</strong>
-                </span>
+
+              <div className="relative z-10">
+                <div className="flex justify-between items-start mb-6">
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center border border-secondary/30">
+                      <span className="material-symbols-outlined text-secondary text-2xl">support_agent</span>
+                    </div>
+                    <h3 className="font-headline-lg text-2xl md:text-3xl uppercase">Client & Tech Support</h3>
+                  </div>
+                  <span className="font-data-point text-[10px] md:text-xs text-[#00ff88] bg-[#00ff88]/10 border border-[#00ff88]/20 px-3 py-1 rounded-full flex items-center gap-2 font-bold uppercase tracking-widest">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-ping"></span>
+                    Live Now
+                  </span>
+                </div>
+
+                <p className="text-muted-foreground font-body-md mb-8 max-w-xl text-lg">
+                  Dedicated assistance for algorithmic API integration, mutual fund queries, and general execution inquiries.
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-border/40">
+                  <div className="flex flex-col gap-2">
+                    <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Email Us</span>
+                    <a
+                      className="font-body-md text-lg text-foreground hover:text-secondary transition-colors inline-flex items-center gap-2"
+                      href="mailto:support@acecapital.com"
+                    >
+                      <span className="material-symbols-outlined text-sm text-secondary">mail</span>
+                      support@acecapital.com
+                    </a>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Call Us</span>
+                    <a
+                      className="font-body-md text-lg text-foreground hover:text-secondary transition-colors inline-flex items-center gap-2"
+                      href="tel:+919220556760"
+                    >
+                      <span className="material-symbols-outlined text-sm text-secondary">call</span>
+                      +91 9220556760
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
-
           </div>
         </section>
 
         {/* Institutional Inquiry Form */}
-        <section className="ace-section bg-slate-gray/10 border-y border-charcoal/30">
-          <div className="max-w-3xl mx-auto px-gutter">
-            <div className="text-center mb-12">
-              <h2 className="font-headline-lg text-3xl text-white uppercase mb-4">Institutional Inquiry</h2>
-              <p className="text-on-surface-variant font-body-md max-w-xl mx-auto">
+        <section className="ace-section bg-surface-container-lowest border-y border-border relative overflow-hidden">
+          <div className="max-w-3xl mx-auto px-gutter relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="font-headline-lg text-3xl md:text-4xl uppercase mb-4">Inquiry Form</h2>
+              <p className="text-muted-foreground font-body-md max-w-xl mx-auto">
                 Please complete the parameters below for a tailored response from our senior desk officers.
               </p>
             </div>
 
             {submitted ? (
-              <div className="ace-card p-8 text-center rounded border border-secondary/50 space-y-4">
-                <span className="material-symbols-outlined text-success-green text-5xl">check_circle</span>
-                <h3 className="font-headline-lg text-xl text-white uppercase">Inquiry Logged</h3>
-                <p className="text-on-surface-variant font-body-md">
-                  Thank you for reaching out. A desk partner will verify details and connect shortly.
+              <div className="bg-[#00ff88]/10 border border-[#00ff88]/30 p-12 text-center rounded-2xl space-y-6 max-w-xl mx-auto backdrop-blur-sm">
+                <div className="w-20 h-20 bg-[#00ff88]/20 rounded-full flex items-center justify-center mx-auto">
+                  <span className="material-symbols-outlined text-[#00ff88] text-4xl">check_circle</span>
+                </div>
+                <h3 className="font-headline-lg text-2xl uppercase">Inquiry Logged</h3>
+                <p className="text-muted-foreground font-body-md">
+                  Thank you for reaching out. A desk partner will verify your details and connect with you shortly.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative">
+              <form onSubmit={handleSubmit} className="space-y-8 bg-card border border-border p-8 md:p-12 rounded-3xl shadow-xl">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="relative group">
                     <input
                       required
                       type="text"
@@ -212,17 +184,17 @@ export default function ContactClient() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder=" "
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer"
+                      className="block w-full px-0 py-3 text-foreground bg-transparent border-0 border-b-2 border-border/60 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer transition-colors font-body-md"
                     />
                     <label
                       htmlFor="name"
-                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
+                      className="absolute text-sm text-outline duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-focus:start-0 peer-focus:text-secondary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase font-section-label tracking-wider font-bold pointer-events-none"
                     >
                       Full Name
                     </label>
                   </div>
 
-                  <div className="relative">
+                  <div className="relative group">
                     <input
                       required
                       type="email"
@@ -230,43 +202,45 @@ export default function ContactClient() {
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder=" "
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer"
+                      className="block w-full px-0 py-3 text-foreground bg-transparent border-0 border-b-2 border-border/60 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer transition-colors font-body-md"
                     />
                     <label
                       htmlFor="email"
-                      className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
+                      className="absolute text-sm text-outline duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-focus:start-0 peer-focus:text-secondary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase font-section-label tracking-wider font-bold pointer-events-none"
                     >
-                      Email
+                      Email Address
                     </label>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="relative">
-                    <select
-                      required
-                      id="type"
-                      value={formData.type}
-                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-section-label uppercase focus:outline-none focus:border-secondary focus:ring-0 transition-all appearance-none cursor-pointer"
-                    >
-                      <option value="" disabled className="bg-[#111315]">Select Inquiry Type</option>
-                      <option value="nri" className="bg-[#111315]">NRI Enquiry</option>
-                      <option value="prop" className="bg-[#111315]">Proprietary Trading</option>
-                      <option value="mutual" className="bg-[#111315]">Mutual Funds</option>
-                      <option value="careers" className="bg-[#111315]">Institutional Careers</option>
-                      <option value="other" className="bg-[#111315]">General Partnership</option>
-                    </select>
-                    <label
-                      htmlFor="type"
-                      className="absolute left-4 top-1.5 text-[10px] text-secondary font-section-label uppercase pointer-events-none"
-                    >
-                      Inquiry Type
-                    </label>
+                <div className="relative group">
+                  <select
+                    required
+                    id="type"
+                    value={formData.type}
+                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                    className={`block w-full px-0 py-3 bg-transparent border-0 border-b-2 border-border/60 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer transition-colors font-body-md cursor-pointer ${formData.type ? 'text-foreground' : 'text-transparent'}`}
+                  >
+                    <option value="" disabled className="bg-background text-muted-foreground">Select Inquiry Type</option>
+                    <option value="nri" className="bg-background text-foreground">NRI Enquiry</option>
+                    <option value="prop" className="bg-background text-foreground">Proprietary Trading</option>
+                    <option value="mutual" className="bg-background text-foreground">Mutual Funds</option>
+                    <option value="careers" className="bg-background text-foreground">Institutional Careers</option>
+                    <option value="other" className="bg-background text-foreground">General Partnership</option>
+                  </select>
+                  {/* Custom dropdown arrow */}
+                  <div className="absolute right-0 top-3 pointer-events-none text-outline peer-focus:text-secondary transition-colors">
+                    <span className="material-symbols-outlined">expand_more</span>
                   </div>
+                  <label
+                    htmlFor="type"
+                    className={`absolute text-sm duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] uppercase font-section-label tracking-wider font-bold pointer-events-none ${formData.type ? 'text-outline scale-75 -translate-y-6' : 'text-outline peer-focus:text-secondary peer-focus:scale-75 peer-focus:-translate-y-6'}`}
+                  >
+                    {formData.type ? 'Inquiry Type' : 'Select Inquiry Type'}
+                  </label>
                 </div>
 
-                <div className="relative">
+                <div className="relative group">
                   <textarea
                     required
                     id="message"
@@ -274,31 +248,39 @@ export default function ContactClient() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder=" "
-                    className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-body-md focus:outline-none focus:border-secondary focus:ring-0 transition-all peer resize-none"
+                    className="block w-full px-0 py-3 text-foreground bg-transparent border-0 border-b-2 border-border/60 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer transition-colors font-body-md resize-none"
                   />
                   <label
                     htmlFor="message"
-                    className="absolute left-4 top-1.5 text-[10px] text-outline transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-focus:top-1.5 peer-focus:text-[10px] peer-focus:text-secondary font-section-label uppercase pointer-events-none"
+                    className="absolute text-sm text-outline duration-300 transform -translate-y-6 scale-75 top-3 z-10 origin-[0] peer-focus:start-0 peer-focus:text-secondary peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 uppercase font-section-label tracking-wider font-bold pointer-events-none"
                   >
                     Message
                   </label>
                 </div>
 
-                <div className="flex justify-center pt-6">
+                <div className="flex justify-center pt-8">
                   <button
                     type="submit"
                     disabled={loading}
-                    className="button-primary px-16 py-4 uppercase font-bold text-xs justify-center rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="button-primary w-full md:w-auto px-16 py-4 uppercase font-bold tracking-widest text-sm rounded-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed group"
                   >
-                    {loading ? 'Submitting...' : 'Submit Inquiry'}
+                    {loading ? (
+                      <>
+                        <span className="material-symbols-outlined animate-spin">refresh</span>
+                        Submitting...
+                      </>
+                    ) : (
+                      <>
+                        Submit Inquiry
+                        <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                      </>
+                    )}
                   </button>
                 </div>
               </form>
             )}
           </div>
         </section>
-
-
       </main>
     </>
   )
