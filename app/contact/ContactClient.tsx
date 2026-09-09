@@ -180,36 +180,11 @@ export default function ContactClient() {
               </div>
             </div>
 
-            {/* General Inquiries */}
-            <div className="ace-card p-8 group border border-outline-variant/20 hover:border-secondary transition-all rounded duration-300">
-              <div className="flex justify-between items-start mb-4">
-                <span className="material-symbols-outlined text-secondary text-4xl">corporate_fare</span>
-                <span className="font-data-point text-xs text-outline">Business Hours</span>
-              </div>
-              <h3 className="font-headline-lg text-xl text-white uppercase mb-2">General Inquiries</h3>
-              <p className="text-on-surface-variant font-body-md mb-6">
-                For institutional partnerships, mutual fund allocations, and corporate relations.
-              </p>
-              <div className="flex flex-col gap-1">
-                <span className="font-section-label text-[10px] text-outline uppercase tracking-wider">Email</span>
-                <a
-                  className="font-data-point text-sm text-secondary hover:underline transition-colors"
-                  href="mailto:info@acecapital.com"
-                >
-                  info@acecapital.com
-                </a>
-              </div>
-              <div className="mt-6 pt-6 border-t border-charcoal/50 flex items-center gap-2">
-                <span className="font-section-label text-xs text-outline uppercase">
-                  Target response: <strong className="text-white">Same business day</strong>
-                </span>
-              </div>
-            </div>
           </div>
         </section>
 
         {/* Institutional Inquiry Form */}
-        <section className="py-20 bg-slate-gray/10 border-y border-charcoal/30">
+        <section className="ace-section bg-slate-gray/10 border-y border-charcoal/30">
           <div className="max-w-3xl mx-auto px-gutter">
             <div className="text-center mb-12">
               <h2 className="font-headline-lg text-3xl text-white uppercase mb-4">Institutional Inquiry</h2>
@@ -269,20 +244,20 @@ export default function ContactClient() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="relative">
                     <select
-                    required
-                    id="type"
-                    value={formData.type}
-                    onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                    className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-section-label uppercase focus:outline-none focus:border-secondary focus:ring-0 transition-all appearance-none cursor-pointer"
-                  >
-                    <option value="" disabled className="bg-[#111315]">Select Inquiry Type</option>
-                    <option value="nri" className="bg-[#111315]">NRI Enquiry</option>
-                    <option value="prop" className="bg-[#111315]">Proprietary Trading</option>
-                    <option value="mutual" className="bg-[#111315]">Mutual Funds</option>
-                    <option value="careers" className="bg-[#111315]">Institutional Careers</option>
-                    <option value="other" className="bg-[#111315]">General Partnership</option>
-                  </select>
-                  <label
+                      required
+                      id="type"
+                      value={formData.type}
+                      onChange={(e) => setFormData({ ...formData, type: e.target.value })}
+                      className="w-full bg-slate-gray/20 border-t-0 border-x-0 border-b-2 border-charcoal/80 rounded-t px-4 pt-6 pb-2 text-white font-section-label uppercase focus:outline-none focus:border-secondary focus:ring-0 transition-all appearance-none cursor-pointer"
+                    >
+                      <option value="" disabled className="bg-[#111315]">Select Inquiry Type</option>
+                      <option value="nri" className="bg-[#111315]">NRI Enquiry</option>
+                      <option value="prop" className="bg-[#111315]">Proprietary Trading</option>
+                      <option value="mutual" className="bg-[#111315]">Mutual Funds</option>
+                      <option value="careers" className="bg-[#111315]">Institutional Careers</option>
+                      <option value="other" className="bg-[#111315]">General Partnership</option>
+                    </select>
+                    <label
                       htmlFor="type"
                       className="absolute left-4 top-1.5 text-[10px] text-secondary font-section-label uppercase pointer-events-none"
                     >

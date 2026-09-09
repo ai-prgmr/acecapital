@@ -73,7 +73,7 @@ export default function PropTradingAutomated() {
       <main className="min-h-screen pt-24 font-sans bg-background text-foreground">
 
         {/* 01 HERO */}
-        <section className="relative px-gutter py-16 md:py-24 border-b border-border/40 hero-gradient">
+        <section className="relative px-gutter ace-section border-b border-border/40 hero-gradient">
           <div className="ace-container grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 z-10">
               <div className="inline-block px-3 py-1 border border-secondary/50 rounded-full font-section-label text-[10px] md:text-xs text-secondary tracking-widest uppercase bg-secondary/10">
@@ -135,7 +135,7 @@ export default function PropTradingAutomated() {
         </section>
 
         {/* 02 WHAT WE DO */}
-        <section className="px-gutter py-16 md:py-24 border-b border-border/40 bg-surface-container-low">
+        <section className="px-gutter ace-section border-b border-border/40 bg-surface-container-low">
           <div className="ace-container space-y-8 text-center max-w-4xl mx-auto">
             <h2 className="text-headline-lg">
               We trade <span className="text-primary">our own book.</span>
@@ -154,7 +154,7 @@ export default function PropTradingAutomated() {
         </section>
 
         {/* 03 HOW WE TRADE */}
-        <section className="px-gutter py-16 md:py-24 border-b border-border/40 bg-muted/30">
+        <section className="px-gutter ace-section border-b border-border/40 bg-muted/30">
           <div className="ace-container space-y-12">
             <div className="space-y-4 text-center">
               <h2 className="text-headline-lg">Three pillars, one desk</h2>
@@ -178,7 +178,7 @@ export default function PropTradingAutomated() {
         </section>
 
         {/* 04 THE AUTO DESK */}
-        <section className="px-gutter py-16 md:py-24 border-b border-border/40">
+        <section className="px-gutter ace-section border-b border-border/40">
           <div className="ace-container space-y-12">
             <div className="space-y-4 max-w-2xl">
               <h2 className="text-headline-lg">The Auto Desk — <span className="text-primary">automation at the core</span></h2>
@@ -205,7 +205,7 @@ export default function PropTradingAutomated() {
         </section>
 
         {/* 05 OUR EDGE */}
-        <section className="px-gutter py-16 md:py-24 border-b border-border/40 bg-muted/30">
+        <section className="px-gutter ace-section border-b border-border/40 bg-muted/30">
           <div className="ace-container space-y-12">
             <div className="space-y-4 text-center">
               <h2 className="text-headline-lg">What sets our desk apart</h2>
@@ -229,7 +229,7 @@ export default function PropTradingAutomated() {
         </section>
 
         {/* 06 RISK MANAGEMENT */}
-        <section className="px-gutter py-16 md:py-24 border-b border-border/40">
+        <section className="px-gutter ace-section border-b border-border/40">
           <div className="ace-container space-y-12">
             <h2 className="text-headline-lg text-center">Risk comes <span className="text-secondary">first</span></h2>
 

@@ -104,16 +104,20 @@ export default function Header() {
                 >
                   FUND SCREENER
                 </Link>
-                <a
-                  href="#footer-contact"
+                <Link
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
                   className="w-full text-center py-3 border border-border text-primary uppercase tracking-[0.16em] font-section-label text-sm font-bold hover:bg-muted transition-colors"
                 >
                   CONTACT US
-                </a>
-                <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary w-full py-3 justify-center text-sm" onClick={() => setIsOpen(false)}>
+                </Link>
+                <Link
+                  href="https://mf.acecapitalenterprise.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="button-primary w-full py-3 justify-center text-sm" onClick={() => setIsOpen(false)}>
                   PORTAL LOGIN
-                </a>
+                </Link>
               </div>
             </div>
           </div>

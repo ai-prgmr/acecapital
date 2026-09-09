@@ -167,7 +167,7 @@ export default function Home() {
       </header>
 
       {/* Partnered AMCs Marquee */}
-      <section className="border-y border-border py-12 bg-white overflow-hidden relative shadow-sm mb-16">
+      <section className="ace-section border-y border-border bg-white overflow-hidden relative shadow-sm">
         <div className="text-center mb-8">
           <p className="font-section-label text-sm tracking-widest text-muted-foreground uppercase font-semibold">
             Empanelled with Leading Mutual Fund Houses
@@ -331,9 +331,9 @@ export default function Home() {
       {/* Specialized Solutions Services Section */}
       <section className="bg-surface-container-lowest ace-section">
         <div className="ace-container">
-          <div className="flex flex-col md:flex-row justify-between items-end my-16 gap-8">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
-              <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
+              <h2 className="font-headline-lg text-headline-lg uppercase text-foreground">
                 Specialized Solutions
               </h2>
             </div>
@@ -442,17 +442,17 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Main App CTA Card */}
-          <div className="md:col-span-2 bg-card border border-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center justify-between overflow-hidden relative group">
+          <div className="md:col-span-2 bg-card border border-border rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center md:items-stretch justify-between overflow-hidden relative group gap-8">
             {/* Text content */}
-            <div className="z-10 flex-1 space-y-6">
+            <div className="z-10 flex-1 space-y-6 text-center md:text-left flex flex-col justify-center">
               <h2 className="font-display-hero text-3xl md:text-5xl uppercase leading-tight text-foreground">
                 Invest Anywhere,<br></br> <span className="text-primary">Anytime</span>
               </h2>
-              <p className="font-body-md text-muted-foreground max-w-md">
-                Download the Ace Capital app to track your mutual funds, automate SIPs, and access institutional-grade insights on the go.
+              <p className="font-body-md text-muted-foreground max-w-md mx-auto md:mx-0">
+                Download the Dhan Setu app to track your mutual funds, automate SIPs, and access institutional-grade insights on the go.
               </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <button className="button-primary px-5 py-2.5 rounded-lg flex items-center gap-2">
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
+                <a href="https://apps.apple.com/in/app/dhan-setu/id6761404925" target="_blank" rel="noopener noreferrer" className="button-primary px-5 py-2.5 rounded-lg flex items-center gap-2">
                   <svg className="h-8 w-auto fill-current" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
                     <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z" />
                   </svg>
@@ -460,8 +460,8 @@ export default function Home() {
                     <span className="text-[9px] leading-none uppercase tracking-wider">Download on the</span>
                     <span className="text-sm font-bold leading-none mt-1">App Store</span>
                   </div>
-                </button>
-                <button className="bg-foreground text-background px-5 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition-colors">
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.dhan.app.setu" target="_blank" rel="noopener noreferrer" className="bg-foreground text-background px-5 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition-colors">
                   <svg className="h-8 w-auto" aria-hidden="true" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path fill="none" d="M0,0h40v40H0V0z"></path>
                     <g>
@@ -475,14 +475,14 @@ export default function Home() {
                     <span className="text-[9px] leading-none uppercase tracking-wider">GET IT ON</span>
                     <span className="text-sm font-bold leading-none mt-1">Google Play</span>
                   </div>
-                </button>
+                </a>
               </div>
             </div>
             {/* Mockup Placeholder */}
-            <div className="w-full md:w-auto h-64 md:h-full relative mt-10 md:mt-0 flex justify-center md:justify-end">
-              <div className="w-56 h-125 bg-background border-8 border-foreground/90 rounded-[2.5rem] shadow-2xl absolute -bottom-32 md:-bottom-48 md:right-0 group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
+            <div className="w-full md:w-56 h-[320px] md:h-auto mt-12 md:mt-0 flex justify-center shrink-0 md:self-end md:-mb-24 lg:-mb-32 relative z-0">
+              <div className="w-56 h-[500px] bg-background border-8 border-foreground/90 rounded-[2.5rem] shadow-2xl relative group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-6 bg-foreground/90 rounded-b-2xl opacity-10 mx-auto w-32 z-20"></div>
-                <Image src="/acecapital/Ace_Cap_Mobile_App.jpeg" alt="Ace Capital Mobile App" layout="fill" objectFit="cover" className="z-10" />
+                <Image src="/acecapital/Ace_Cap_Mobile_App.jpeg" alt="Dhan Setu Mobile App" layout="fill" objectFit="cover" className="z-10" />
               </div>
             </div>
           </div>
