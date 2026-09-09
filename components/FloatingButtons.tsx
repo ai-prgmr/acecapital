@@ -16,7 +16,7 @@ export default function FloatingButtons() {
   })
 
   // We leave a placeholder for WhatsApp number
-  const WHATSAPP_NUMBER = "1234567890" // Replace with actual number
+  const WHATSAPP_NUMBER = "+919220556760" // Replace with actual number
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}`
 
   const handleSubmit = async (e: React.FormEvent) => {
