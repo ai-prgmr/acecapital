@@ -15,16 +15,16 @@ export default function About() {
       name: "Rahul Singhal",
       role: "Founder & Managing Partner",
       tag: "SYSTEMATIC, SIMPLE AND PERSONAL",
-      description: "Mr. Rahul Singhal is the Founder of Ace Capital Enterprise, which he established in 2016. An MBA qualified, he built the firm around one idea — that investing should be done with clarity: systematic, simple and personal.\n\nUnder his leadership, Ace Capital blends new-age, data-driven fund selection with an old-fashioned personal touch — helping families invest in mutual funds toward real-life goals, while the firm's in-house desk trades its own capital across equity, derivatives, cash and ETFs with quantitative rigour. With 15+ years in India's markets, he has guided clients and the firm through multiple market cycles, always led by transparency and discipline.\n\nHis philosophy, and the firm's: invest with clarity.",
+      description: "Mr. Rahul Singhal is the Founder of Ace Capital Enterprise, which he established in 2016. An MBA qualified, he built the firm around one idea: that investing should be done with clarity, systematically, simply and personally.\n\nUnder his leadership, Ace Capital blends new-age, data-driven fund selection with an old-fashioned personal touch. He helps families invest in mutual funds toward real-life goals, while the firm's in-house desk trades its own capital across equity, derivatives, cash and ETFs with quantitative rigour. With 15+ years in India's markets, he has guided clients and the firm through multiple market cycles, always led by transparency and discipline.\n\nHis philosophy, and the firm's: invest with clarity.",
       image: "/acecapital/Rahul-Singhal-profile.jpeg",
       linkedin: "https://www.linkedin.com/in/rahul-singhal-73262217/",
       x: "https://x.com/rahulsinghal13"
     },
     {
       name: "Deepika Singhal",
-      role: "Co-Founder & Partner — Legal & Marketing",
+      role: "Co-Founder & Partner, Legal & Marketing",
       tag: "COMPLIANCE & BRAND VOICE",
-      description: "Ms. Deepika Singhal is a Co-Founder and Partner at Ace Capital Enterprise, and has helped build the firm from the ground up. She leads its legal and marketing functions — keeping Ace Capital compliant, transparent and trustworthy, while giving it a clear and consistent voice.\n\nOn the legal side, she oversees the firm's compliance and regulatory matters, so that every client relationship rests on transparency and trust. On the marketing side, she carries the firm's promise — investing that is systematic, simple and personal — into everything clients see and experience.",
+      description: "Ms. Deepika Singhal is a Co-Founder and Partner at Ace Capital Enterprise, and has helped build the firm from the ground up. She leads its legal and marketing functions, keeping Ace Capital compliant, transparent and trustworthy, while giving it a clear and consistent voice.\n\nOn the legal side, she oversees the firm's compliance and regulatory matters, so that every client relationship rests on transparency and trust. On the marketing side, she carries the firm's promise of investing that is systematic, simple and personal into everything clients see and experience.",
       image: "/acecapital/Deepika-Singhal-profile.jpeg",
       linkedin: "https://www.linkedin.com/in/deepika-singhal-81a28313/",
       x: "https://x.com/dpka1985"
@@ -95,7 +95,7 @@ export default function About() {
               Invest with <span className="metallic-gradient">Clarity.</span>
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-              Founded in 2016, Ace Capital Enterprise is a partnership firm built on one promise — to help you invest with clarity. As an AMFI-registered mutual fund distributor (ARN-113576), we help individuals and families invest in mutual funds toward their real-life goals — matched to their time horizon and risk comfort, and explained in plain language at every step — while our in-house desk trades the firm's own capital across equity, derivatives, cash and ETFs with systematic, technology-driven discipline. 
+              Founded in 2016, Ace Capital Enterprise is a partnership firm built on one promise: to help you invest with clarity. As an AMFI-registered mutual fund distributor (ARN-113576), we help individuals and families invest in mutual funds toward their real-life goals, matched to their time horizon and risk comfort, and explained in plain language at every step. Meanwhile, our in-house desk trades the firm's own capital across equity, derivatives, cash and ETFs with systematic, technology-driven discipline. 
             </p>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
               Pairing new-age, data-driven thinking with an old-fashioned personal touch, everything we do runs on three ideas: <strong className="text-foreground">systematic, simple and personal.</strong>
@@ -130,13 +130,13 @@ export default function About() {
           <div className="ace-card p-10 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
             <span className="material-symbols-outlined text-secondary text-4xl mb-4 block">visibility</span>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
-              To become India's most trusted name for clear, honest and personal investing — helping every household move from confusion to confidence, and build lasting wealth with discipline, transparency and guidance they can count on for the long term.
+              To become India's most trusted name for clear, honest and personal investing. We aim to help every household move from confusion to confidence, and build lasting wealth with discipline, transparency and guidance they can count on for the long term.
             </p>
           </div>
           <div className="ace-card p-10 rounded-xl bg-white shadow-sm hover:shadow-md transition-shadow">
             <span className="material-symbols-outlined text-secondary text-4xl mb-4 block">trending_up</span>
             <p className="font-body-lg text-on-surface-variant leading-relaxed">
-              To empower investors across India with thoughtfully curated, data-driven mutual fund portfolios— making rigorous wealth management accessible to everyone, wherever they are.
+              To empower investors across India with thoughtfully curated, data-driven mutual fund portfolios, making rigorous wealth management accessible to everyone, wherever they are.
             </p>
           </div>
         </div>
@@ -315,7 +315,7 @@ export default function About() {
       <section className="ace-container py-12">
         <div className="max-w-4xl mx-auto p-6 bg-muted/50 rounded-lg text-center border border-border">
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Our proprietary trading desk trades the firm's own capital only and is separate and distinct from our mutual fund distribution business; it is not an investment offering. Mutual Fund investments are subject to market risks — read all scheme related documents carefully.
+            Our proprietary trading desk trades the firm's own capital only and is separate and distinct from our mutual fund distribution business; it is not an investment offering. Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully.
           </p>
         </div>
       </section>

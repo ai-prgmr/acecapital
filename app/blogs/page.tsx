@@ -194,34 +194,6 @@ export default function Blogs() {
           ))}
         </div>
       </section>
-
-      {/* Subscriptions */}
-      <section className="ace-section px-gutter bg-surface-container-lowest border-y border-border">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          <span className="material-symbols-outlined text-secondary text-5xl">mail</span>
-          <h2 className="font-headline-lg text-3xl uppercase text-foreground">Subscribe to Research</h2>
-          <p className="font-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
-            Receive bi-weekly quantitative research insights and market commentary directly to your institutional mailbox.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
-            <input
-              type="email"
-              className="flex-grow bg-background border border-border px-4 py-3 text-foreground placeholder:text-outline text-sm font-data-point focus:border-secondary outline-none rounded uppercase"
-              placeholder="e.g. rahul@example.com"
-            />
-            <button className="bg-secondary text-on-secondary-fixed font-bold font-section-label uppercase tracking-widest px-6 py-3 md:px-8 md:py-3.5 text-xs md:text-sm rounded hover:brightness-110 active:scale-95 transition-all">
-              SUBSCRIBE
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Blogs FAQs */}
-      <FAQSection
-        title="Insights FAQs"
-        subtitle="Common queries regarding our research material and publications desk."
-        items={blogFAQs}
-      />
     </>
   )
 }

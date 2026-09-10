@@ -57,7 +57,7 @@ export default function ContactClient() {
             {
               "@type": "ContactPoint",
               "contactType": "technical support",
-              "email": "support@acecapital.com",
+              "email": "support@acecapitalenterprise.com",
               "telephone": "9220556760"
             }
           ]
@@ -131,10 +131,10 @@ export default function ContactClient() {
                     <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Email Us</span>
                     <a
                       className="font-body-md text-lg text-foreground hover:text-secondary transition-colors inline-flex items-center gap-2"
-                      href="mailto:support@acecapital.com"
+                      href="mailto:support@acecapitalenterprise.com"
                     >
                       <span className="material-symbols-outlined text-sm text-secondary">mail</span>
-                      support@acecapital.com
+                      support@acecapitalenterprise.com
                     </a>
                   </div>
                   <div className="flex flex-col gap-2">

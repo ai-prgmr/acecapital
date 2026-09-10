@@ -11,31 +11,7 @@ export const metadata: Metadata = {
 }
 
 export default function Careers() {
-  const candidateFAQs = [
-    {
-      question: "How long is the standard recruitment timeline?",
-      answer: "Our process is efficient but thorough. From initial application to final offer, the average cycle is 14-21 days for engineering roles and 21-30 days for research/trading roles.",
-    },
-    {
-      question: "What technical requirements are non-negotiable?",
-      answer: "Engineering roles require mastery of C++ (17/20) or Rust, with a deep understanding of Linux kernel internals. Research roles require PhD-level mathematics or physics and proficiency in Python/C++.",
-    },
-    {
-      question: "Do you offer remote or hybrid work?",
-      answer: "While we value the synergy of the trading floor, certain engineering and research hubs operate on a hybrid basis. Specific remote-first mandates are explicitly tagged in our open mandates list.",
-    },
-    {
-      question: "How does the performance-linked bonus work?",
-      answer: "Bonuses are calculated based on individual alpha generation (for traders), system uptime/latency improvements (for engineers), and strategy contribution (for researchers). We use a transparent, data-driven waterfall model.",
-    },
-  ]
 
-  const stats = [
-    { value: "₹3,400Cr+", label: "Daily Volume" },
-    { value: "<5ms", label: "Execution Latency" },
-    { value: "12+", label: "Global Hubs" },
-    { value: "Top 1%", label: "Engineering Talent" },
-  ]
 
   const evaluationSteps = [
     {
@@ -83,21 +59,6 @@ export default function Careers() {
           "url": "https://acecapitalenterprise.com",
           "name": "Ace Capital Enterprise"
         }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "https://acecapitalenterprise.com/careers/#faq",
-        "isPartOf": {
-          "@id": "https://acecapitalenterprise.com/careers/#webpage"
-        },
-        "mainEntity": candidateFAQs.map((faq) => ({
-          "@type": "Question",
-          "name": faq.question,
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": faq.answer,
-          },
-        })),
       }
     ]
   }
@@ -200,9 +161,9 @@ export default function Careers() {
                 <img
                   className="w-full h-full object-cover opacity-60 rounded"
                   alt="Workstations environment"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFTK-UKiMAvvZ_fQugzM3sGqgJ-MzQISfK2HTxJhSmf0GfLzx-o8zuitC2yxR_Q4ORBeapko4sji64YTBuz-Qnr_U5okYMDRWK4g5DTTXDnD84NZ8Rjndt2WK8bhTLtsNkO6MeXz5DM2yNSy2plptwUFbN9Q8F3i11xkv_7E7ibYFJPRV2-EgJ2nF5mHwg1aWdmCE5mT06MbXr_5kBvywMNRGlHyXhLTB7a_m-wBBX6JsIgEbuorI"
+                  src="/acecapital/Ace-Capital-Enterprise-office.jpeg"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8 p-6 bg-background/90 backdrop-blur border-l-4 border-secondary rounded-r">
                   <p className="text-on-surface font-body-lg italic leading-relaxed">
                     "At Ace, we don't just trade markets. We build the architecture that defines them."
@@ -241,13 +202,6 @@ export default function Careers() {
           ))}
         </div>
       </section>
-
-      {/* Candidate FAQs Section */}
-      <FAQSection
-        title="Candidate FAQs"
-        subtitle="Inquiries regarding recruitment stages, frameworks, and bonuses."
-        items={candidateFAQs}
-      />
     </>
   )
 }

@@ -64,7 +64,7 @@ export default function Home() {
     },
     {
       question: "What if I have a question or a complaint?",
-      answer: "Just write to us at support@acecapital.com — we're always happy to help. If something stays unresolved, you can take it further to the fund company, and then to the regulators (AMFI and SEBI).",
+      answer: "Just write to us at support@acecapitalenterprise.com — we're always happy to help. If something stays unresolved, you can take it further to the fund company, and then to the regulators (AMFI and SEBI).",
     },
   ]
 

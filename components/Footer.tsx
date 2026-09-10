@@ -58,7 +58,43 @@ export default function Footer() {
             </a>
           </div>
 
-          <div className="pt-4 flex flex-col gap-3">
+        </div>
+
+        {/* Contact Information & Hours */}
+        <div className="space-y-6 flex flex-col h-full">
+          <div className="space-y-6">
+            <h3 className="font-section-label text-section-label text-secondary uppercase tracking-widest">
+              Support Desk
+            </h3>
+            <div className="space-y-4">
+              <div>
+                <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
+                  Support Email
+                </p>
+                <a href="mailto:support@acecapitalenterprise.com" className="font-body-md text-on-surface hover:text-secondary transition-colors break-all">
+                  support@acecapitalenterprise.com
+                </a>
+              </div>
+              <div>
+                <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
+                  Operational Hours
+                </p>
+                <p className="font-body-md text-on-surface">
+                  MON - FRI: 9:00 AM - 5:00 PM (IST)
+                </p>
+              </div>
+              <div>
+                <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
+                  Support Phone Number
+                </p>
+                <a href="tel:+919220556760" className="font-body-md text-on-surface hover:text-secondary transition-colors break-all">
+                  +91 9220556760
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-4 flex flex-col gap-3 mt-auto">
             <h3 className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">Download Dhan Setu</h3>
             <div className="flex gap-3">
               <a href="https://apps.apple.com/in/app/dhan-setu/id6761404925" target="_blank" rel="noopener noreferrer" className="bg-black text-white px-3 py-2 rounded-md flex items-center gap-2 hover:bg-gray-800 transition-colors w-full justify-center shadow-sm">
@@ -89,72 +125,38 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Contact Information & Hours */}
-        <div className="space-y-6">
-          <h3 className="font-section-label text-section-label text-secondary uppercase tracking-widest">
-            Support Desk
-          </h3>
-          <div className="space-y-4">
-            <div>
-              <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
-                Support Email
-              </p>
-              <a href="mailto:support@acecapitalenterprise.com" className="font-body-md text-on-surface hover:text-secondary transition-colors break-all">
-                support@acecapitalenterprise.com
-              </a>
-            </div>
-            <div>
-              <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
-                Operational Hours
-              </p>
-              <p className="font-body-md text-on-surface">
-                MON - FRI: 9:00 AM - 5:00 PM (IST)
-              </p>
-            </div>
-          </div>
-        </div>
-
         {/* Navigation & Quick Links */}
-        <div className="grid grid-cols-2 gap-4">
-          <div className="space-y-4">
-            <h3 className="font-section-label text-section-label text-secondary uppercase tracking-widest">
-              Firm Info
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/about" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/prop-trading-automated" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Prop Trading & Auto Desks
-                </Link>
-              </li>
-              <li>
-                <Link href="/careers" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Careers
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="space-y-4">
-            <h3 className="font-section-label text-section-label text-secondary uppercase tracking-widest">
-              Quick Links
-            </h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="/blogs" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Our Blogs
-                </a>
-              </li>
-              <li>
-                <a href="/mutual-funds-investments" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
-                  Mutual Funds & Investments
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="space-y-4">
+          <h3 className="font-section-label text-section-label text-secondary uppercase tracking-widest">
+            Quick Links
+          </h3>
+          <ul className="space-y-2">
+            <li>
+              <Link href="/about" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link href="/prop-trading-automated" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                Prop Trading & Auto Desks
+              </Link>
+            </li>
+            <li>
+              <Link href="/careers" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                Careers
+              </Link>
+            </li>
+            <li>
+              <Link href="/blogs" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                Our Blogs
+              </Link>
+            </li>
+            <li>
+              <Link href="/mutual-funds-investments" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                Mutual Funds & Investments
+              </Link>
+            </li>
+          </ul>
         </div>
 
         {/* Regulatory & Institutional Links */}
