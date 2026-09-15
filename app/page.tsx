@@ -542,65 +542,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Customer Testimonials Section */}
-      <section className="ace-section ace-container bg-background">
-        <div className="text-center mb-16">
-          <span className="font-section-label text-section-label uppercase tracking-widest text-primary">
-            TRUST
-          </span>
-          <h2 className="font-headline-lg text-headline-lg mt-4 uppercase">
-            WHAT OUR CUSTOMERS SAY
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Testimonial 1 */}
-          <div className="ace-card p-12 border-l-4 border-l-secondary rounded-r">
-            <span className="material-symbols-outlined text-secondary text-4xl mb-6">
-              format_quote
-            </span>
-            <p className="font-body-lg text-body-lg italic text-on-surface mb-8">
-              "The execution speed and reliability of ACE's proprietary desks have fundamentally changed how our fund operates. Their institutional support is second to none."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-muted flex items-center justify-center font-bold text-primary uppercase rounded-sm">
-                AM
-              </div>
-              <div>
-                <div className="font-data-point text-data-point text-foreground uppercase text-sm">
-                  Aria Montgomery
-                </div>
-                <div className="font-section-label text-section-label text-outline uppercase text-xs">
-                  Managing Partner, Alpha Group
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Testimonial 2 */}
-          <div className="ace-card p-12 border-l-4 border-l-primary rounded-r">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">
-              format_quote
-            </span>
-            <p className="font-body-lg text-body-lg italic text-on-surface mb-8">
-              "Precision is the word that defines Ace Capital. From the onboarding to the daily reporting, every touchpoint exudes professional excellence."
-            </p>
-            <div className="flex items-center gap-4">
-              <div className="w-12 h-12 bg-muted flex items-center justify-center font-bold text-primary uppercase rounded-sm">
-                SK
-              </div>
-              <div>
-                <div className="font-data-point text-data-point text-foreground uppercase text-sm">
-                  Siddharth Kapoor
-                </div>
-                <div className="font-section-label text-section-label text-outline uppercase text-xs">
-                  Private Wealth Client
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       {/* Home FAQs accordion (AEO Optimized) */}
       <FAQSection
