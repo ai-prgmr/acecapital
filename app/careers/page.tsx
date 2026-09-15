@@ -161,7 +161,7 @@ export default function Careers() {
                 <img
                   className="w-full h-full object-cover opacity-60 rounded"
                   alt="Workstations environment"
-                  src="/acecapital/Ace-Capital-Enterprise-office.jpeg"
+                  src="/Ace-Capital-Enterprise-office.jpeg"
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent"></div>
                 <div className="absolute bottom-8 left-8 right-8 p-6 bg-background/90 backdrop-blur border-l-4 border-secondary rounded-r">

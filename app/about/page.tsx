@@ -16,7 +16,7 @@ export default function About() {
       role: "Founder & Managing Partner",
       tag: "SYSTEMATIC, SIMPLE AND PERSONAL",
       description: "Mr. Rahul Singhal is the Founder of Ace Capital Enterprise, which he established in 2016. An MBA qualified, he built the firm around one idea: that investing should be done with clarity, systematically, simply and personally.\n\nUnder his leadership, Ace Capital blends new-age, data-driven fund selection with an old-fashioned personal touch. He helps families invest in mutual funds toward real-life goals, while the firm's in-house desk trades its own capital across equity, derivatives, cash and ETFs with quantitative rigour. With 15+ years in India's markets, he has guided clients and the firm through multiple market cycles, always led by transparency and discipline.\n\nHis philosophy, and the firm's: invest with clarity.",
-      image: "/acecapital/Rahul-Singhal-profile.jpeg",
+      image: "/Rahul-Singhal-profile.jpeg",
       linkedin: "https://www.linkedin.com/in/rahul-singhal-73262217/",
       x: "https://x.com/rahulsinghal13"
     },
@@ -25,7 +25,7 @@ export default function About() {
       role: "Co-Founder & Partner, Legal & Marketing",
       tag: "COMPLIANCE & BRAND VOICE",
       description: "Ms. Deepika Singhal is a Co-Founder and Partner at Ace Capital Enterprise, and has helped build the firm from the ground up. She leads its legal and marketing functions, keeping Ace Capital compliant, transparent and trustworthy, while giving it a clear and consistent voice.\n\nOn the legal side, she oversees the firm's compliance and regulatory matters, so that every client relationship rests on transparency and trust. On the marketing side, she carries the firm's promise of investing that is systematic, simple and personal into everything clients see and experience.",
-      image: "/acecapital/Deepika-Singhal-profile.jpeg",
+      image: "/Deepika-Singhal-profile.jpeg",
       linkedin: "https://www.linkedin.com/in/deepika-singhal-81a28313/",
       x: "https://x.com/dpka1985"
     }
@@ -103,7 +103,7 @@ export default function About() {
               width={800}
               height={600}
               alt="Ace Capital Office"
-              src="/acecapital/Ace-Capital-Enterprise-office.jpeg"
+              src="/Ace-Capital-Enterprise-office.jpeg"
               className="w-full h-full object-contain rounded transition-all duration-700"
             />
           </div>

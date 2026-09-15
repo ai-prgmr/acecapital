@@ -159,7 +159,7 @@ export default function Home() {
               { file: "ppfas.svg", alt: "PPFAS", full: "PPFAS Mutual Fund (Parag Parikh)" },
             ].map((amc, idx) => (
               <div key={`amc1-${idx}`} className="flex flex-col items-center justify-center w-56 p-3  hover:border-secondary transition-colors select-none">
-                <img src={`/acecapital/logo/${amc.file}`} alt={amc.alt} className="w-full h-12 object-contain mb-2" />
+                <img src={`/logo/${amc.file}`} alt={amc.alt} className="w-full h-12 object-contain mb-2" />
                 {/* <div className="text-[10px] text-center text-foreground font-semibold whitespace-normal leading-tight">
                   {amc.full}
                 </div> */}
@@ -184,7 +184,7 @@ export default function Home() {
               { file: "ppfas.svg", alt: "PPFAS", full: "PPFAS Mutual Fund (Parag Parikh)" },
             ].map((amc, idx) => (
               <div key={`amc2-${idx}`} className="flex flex-col items-center justify-center w-56  p-3 hover:border-secondary transition-colors select-none">
-                <img src={`/acecapital/logo/${amc.file}`} alt={amc.alt} className="w-full h-12 object-contain mb-2" />
+                <img src={`/logo/${amc.file}`} alt={amc.alt} className="w-full h-12 object-contain mb-2" />
                 {/* <div className="text-[10px] text-center text-foreground font-semibold whitespace-normal leading-tight">
                   {amc.full}
                 </div> */}
@@ -448,7 +448,7 @@ export default function Home() {
             <div className="w-full md:w-56 h-[320px] md:h-auto mt-12 md:mt-0 flex justify-center shrink-0 md:self-end md:-mb-24 lg:-mb-32 relative z-0">
               <div className="w-56 h-[500px] bg-background border-8 border-foreground/90 rounded-[2.5rem] shadow-2xl relative group-hover:-translate-y-4 transition-transform duration-500 overflow-hidden">
                 <div className="absolute top-0 inset-x-0 h-6 bg-foreground/90 rounded-b-2xl opacity-10 mx-auto w-32 z-20"></div>
-                <Image src="/acecapital/Ace_Cap_Mobile_App.jpeg" alt="Dhan Setu Mobile App" layout="fill" objectFit="cover" className="z-10" />
+                <Image src="/Ace_Cap_Mobile_App.jpeg" alt="Dhan Setu Mobile App" layout="fill" objectFit="cover" className="z-10" />
               </div>
             </div>
           </div>

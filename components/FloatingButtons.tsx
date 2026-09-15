@@ -65,7 +65,7 @@ export default function FloatingButtons() {
 
           <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-secondary shadow-[0_0_15px_rgba(var(--color-secondary),0.5)] bg-white z-10 flex items-center justify-center">
             <Image
-              src="/acecapital/avatar.jpg"
+              src="/avatar.jpg"
               alt="Support Assistant"
               fill
               className="object-cover"

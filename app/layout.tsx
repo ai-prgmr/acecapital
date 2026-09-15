@@ -63,7 +63,7 @@ export default function RootLayout({
               "name": "Ace Capital Enterprise",
               "description": "Leading proprietary trading company with a sharp focus on innovation and excellence in global financial markets.",
               "url": "https://acecapitalenterprise.com",
-              "logo": "https://acecapitalenterprise.com/acecapital/logo-acecapital-enterprise.webp",
+              "logo": "https://acecapitalenterprise.com/logo-acecapital-enterprise.webp",
               "foundingDate": "2016",
               "address": {
                 "@type": "PostalAddress",

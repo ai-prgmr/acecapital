@@ -20,7 +20,7 @@ export interface AMFIFund {
 export async function fetchAMFIData(): Promise<AMFIFund[]> {
   const today = new Date().toISOString().split('T')[0];
   const candidatePaths = [
-    `/acecapital/data/funds.json?date=${today}`,
+    `/data/funds.json?date=${today}`,
     `/data/funds.json?date=${today}`,
     `./data/funds.json?date=${today}`,
   ];

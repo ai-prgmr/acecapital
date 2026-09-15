@@ -56,7 +56,7 @@ const blogData: Record<
     readTime: "3 min read",
     summary: "Learn 5 easy ways to master candlestick patterns and trade smarter. Boost your trading skills, identify trends, and make better market decisions fast.",
     author: "Ace Capital",
-    image: "/acecapital/blog-candlesticks.png",
+    image: "/blog-candlesticks.png",
     content: (
       <>
         <p className="font-body-lg text-on-surface-variant leading-relaxed mb-8">
@@ -187,7 +187,7 @@ const blogData: Record<
     readTime: "8 min read",
     summary: "Trading can be a highly rewarding career, but achieving profitability within six months requires a clear roadmap, discipline, and consistent effort. Learn the 180 days action plan.",
     author: "Ace Capital",
-    image: "/acecapital/blog-profitable.png",
+    image: "/blog-profitable.png",
     content: (
       <>
         <p className="font-body-lg text-on-surface-variant leading-relaxed mb-8">
@@ -352,7 +352,7 @@ const blogData: Record<
     readTime: "6 min read",
     summary: "The Indian railway sector is set to witness substantial growth. If you’re considering tapping into this booming sector, here are the top five railway stocks in 2025.",
     author: "Ace Capital",
-    image: "/acecapital/blog-railways.png",
+    image: "/blog-railways.png",
     content: (
       <>
         <p className="font-body-lg text-on-surface-variant leading-relaxed mb-8">
@@ -485,7 +485,7 @@ const blogData: Record<
     readTime: "7 min read",
     summary: "Intraday trading can be one of the most exciting and rewarding experiences in the stock market — but it’s also one of the riskiest. Learn 6 low-risk strategies.",
     author: "Ace Capital",
-    image: "/acecapital/blog-intraday.png",
+    image: "/blog-intraday.png",
     content: (
       <>
         <p className="font-body-lg text-on-surface-variant leading-relaxed mb-8">

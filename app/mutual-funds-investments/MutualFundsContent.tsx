@@ -84,10 +84,10 @@ export default function MutualFundsContent() {
         >
           <CarouselContent>
             {[
-              "/acecapital/images/mf-carousel/Slide-1.png",
-              "/acecapital/images/mf-carousel/slide-2.png",
-              "/acecapital/images/mf-carousel/slide-3.png",
-              "/acecapital/images/mf-carousel/slide-4.png"
+              "/images/mf-carousel/Slide-1.png",
+              "/images/mf-carousel/slide-2.png",
+              "/images/mf-carousel/slide-3.png",
+              "/images/mf-carousel/slide-4.png"
             ].map((src, index) => (
               <CarouselItem key={index}>
                 <div className="relative w-full aspect-21/9 md:aspect-21/7 max-h-150">

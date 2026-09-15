@@ -31,7 +31,7 @@ export default function Blogs() {
       summary: "Candlestick patterns are one of the most powerful tools in a trader’s arsenal, providing visual insights into market sentiment, trends, and potential reversals.",
       author: "Ace Capital",
       slug: "5-easy-way-to-master-candlestick-patterns",
-      image: "/acecapital/blog-candlesticks.png",
+      image: "/blog-candlesticks.png",
     },
     {
       title: "How to Become a Profitable Trader in 180 Days (6 Months)",
@@ -41,7 +41,7 @@ export default function Blogs() {
       summary: "Trading can be a highly rewarding career, but achieving profitability within six months requires a clear roadmap, discipline, and consistent effort. Master the essentials in 180 days.",
       author: "Ace Capital",
       slug: "how-to-become-profitable-trader",
-      image: "/acecapital/blog-profitable.png",
+      image: "/blog-profitable.png",
     },
     {
       title: "5 Best Railway Stocks in India 2025",
@@ -51,7 +51,7 @@ export default function Blogs() {
       summary: "The Indian railway sector is set to witness substantial growth. If you’re considering tapping into this booming sector, here are the top five railway stocks in 2025.",
       author: "Ace Capital",
       slug: "5-best-railway-stocks-in-india-2025",
-      image: "/acecapital/blog-railways.png",
+      image: "/blog-railways.png",
     },
     {
       title: "Master the Market with Smart & Simple Trading Tactics",
@@ -61,7 +61,7 @@ export default function Blogs() {
       summary: "Intraday trading can be one of the most exciting and rewarding experiences in the stock market — but it’s also one of the riskiest. Learn 6 low-risk strategies.",
       author: "Ace Capital",
       slug: "master-the-market-with-smart-and-simple-trading-tactics",
-      image: "/acecapital/blog-intraday.png",
+      image: "/blog-intraday.png",
     }
   ]
 

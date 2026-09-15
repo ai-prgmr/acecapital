@@ -12,11 +12,11 @@ import {
 import Image from "next/image"
 
 const carouselImages = [
-  "/acecapital/images/homepage-carousel/slide-1.png",
-  "/acecapital/images/homepage-carousel/slide-2.png",
-  "/acecapital/images/homepage-carousel/slide-3.png",
-  "/acecapital/images/homepage-carousel/slide-4.png",
-  "/acecapital/images/homepage-carousel/slide-5.png",
+  "/images/homepage-carousel/slide-1.png",
+  "/images/homepage-carousel/slide-2.png",
+  "/images/homepage-carousel/slide-3.png",
+  "/images/homepage-carousel/slide-4.png",
+  "/images/homepage-carousel/slide-5.png",
 ]
 
 export function HomepageCarousel() {
