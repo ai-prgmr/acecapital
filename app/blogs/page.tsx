@@ -162,33 +162,34 @@ export default function Blogs() {
             <Link
               key={idx}
               href={`/blogs/${blog.slug}`}
-              className="ace-card p-8 rounded border border-outline-variant/20 hover:border-secondary transition-all duration-300 flex flex-col justify-between group h-[400px] cursor-pointer"
+              className="ace-card rounded-lg border border-outline-variant/20 hover:border-secondary transition-all duration-300 flex flex-col group cursor-pointer overflow-hidden bg-surface-container-lowest"
             >
-              <div className="space-y-6">
+              {blog.image && (
+                <div className="w-full h-56 overflow-hidden bg-muted border-b border-border/50">
+                  <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                </div>
+              )}
+              <div className="p-6 flex flex-col flex-grow space-y-4">
                 <div className="flex justify-between items-center text-xs font-mono text-outline">
                   <span className="text-secondary uppercase tracking-widest font-section-label">
                     {blog.category}
                   </span>
                   <span>{blog.readTime}</span>
                 </div>
-                {blog.image && (
-                  <div className="w-full h-24 overflow-hidden rounded border border-border bg-muted">
-                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                )}
-                <div className="space-y-2">
-                  <h3 className="font-headline-lg text-lg text-foreground group-hover:text-secondary transition-colors uppercase leading-tight line-clamp-2">
+                
+                <div className="space-y-2 flex-grow">
+                  <h3 className="font-headline-lg text-xl text-foreground group-hover:text-secondary transition-colors uppercase leading-tight line-clamp-2">
                     {blog.title}
                   </h3>
-                  <p className="font-body-md text-on-surface-variant text-xs mt-2 line-clamp-3 leading-relaxed">
+                  <p className="font-body-md text-on-surface-variant text-sm mt-2 line-clamp-3 leading-relaxed">
                     {blog.summary}
                   </p>
                 </div>
-              </div>
 
-              <div className="border-t border-border pt-4 flex justify-between items-center text-xs font-section-label mt-auto">
-                <span className="text-muted-foreground uppercase">By {blog.author}</span>
-                <span className="text-outline uppercase tracking-wider">{blog.date}</span>
+                <div className="border-t border-border pt-4 flex justify-between items-center text-xs font-section-label mt-4">
+                  <span className="text-muted-foreground uppercase">By {blog.author}</span>
+                  <span className="text-outline uppercase tracking-wider">{blog.date}</span>
+                </div>
               </div>
             </Link>
           ))}

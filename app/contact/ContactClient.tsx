@@ -130,7 +130,7 @@ export default function ContactClient() {
                   <div className="flex flex-col gap-2">
                     <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Email Us</span>
                     <a
-                      className="font-body-md text-lg text-foreground hover:text-secondary transition-colors inline-flex items-center gap-2"
+                      className="font-body-md text-md text-foreground hover:text-secondary transition-colors inline-flex items-center gap-2"
                       href="mailto:support@acecapitalenterprise.com"
                     >
                       <span className="material-symbols-outlined text-sm text-secondary">mail</span>
