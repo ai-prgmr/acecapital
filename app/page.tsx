@@ -15,81 +15,47 @@ export const metadata: Metadata = {
 export default function Home() {
   const homeFAQs = [
     {
-      question: "What is the history of Ace Capital Enterprise?",
-      answer: "Founded on the principles of mathematical rigor and market efficiency, Ace Capital Enterprise has evolved from a boutique quantitative desk into a global institutional powerhouse, delivering precision-engineered capital strategies for over a decade.",
+      question: "What does Ace Capital Enterprise do?",
+      answer: "We're an AMFI-registered mutual fund distributor (ARN-113576). In plain terms, we help you invest in mutual funds toward your real goals — picking suitable funds, setting up your SIPs, and staying with you for the long run. Explore our services →",
+      answerNode: <>We're an AMFI-registered mutual fund distributor (ARN-113576). In plain terms, we help you invest in mutual funds toward your real goals &mdash; picking suitable funds, setting up your SIPs, and staying with you for the long run. <Link href="/mutual-funds-investments" className="text-secondary hover:underline">Explore our services &rarr;</Link></>
     },
     {
-      question: "What range of services do you offer?",
-      answer: "We provide a comprehensive suite of financial instruments including proprietary trading desks, automated execution engines with ultra-low latency, tailored portfolio construction, and diversified mutual fund strategies.",
-    },
-    {
-      question: "How can I get started with Ace Capital?",
-      answer: "Institutional clients and high-net-worth individuals can begin by clicking 'Connect Now' or 'Contact Us' to schedule a consultation with our relationship management team. We follow a rigorous onboarding process to ensure alignment with your financial objectives.",
-    },
-    {
-      question: "How do I start?",
-      answer: "Just get in touch. We'll understand what you're saving for, help you finish a quick one-time sign-up, and you can start the same day — all online, no paperwork.",
-    },
-    {
-      question: "What is this “KYC” I have to do?",
-      answer: "It's a simple, one-time ID check that every investor does once. You'll just need your PAN card, an address proof and a bank account — and we'll help you finish it online in minutes.",
+      question: "How do I start investing?",
+      answer: "It's quick and fully online. Get in touch, finish a one-time KYC, and you can start the same day — no paperwork. From there you invest and track everything on our app, DhanSetu, or the web portal. Talk to us →",
+      answerNode: <>It's quick and fully online. Get in touch, finish a one-time KYC, and you can start the same day &mdash; no paperwork. From there you invest and track everything on our app, DhanSetu, or the <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">web portal</a>. <Link href="/contact" className="text-secondary hover:underline">Talk to us &rarr;</Link></>
     },
     {
       question: "How much do I need to start?",
-      answer: "Not much at all. You can begin with as little as ₹500 a month, or put in a larger amount whenever you like. Start small and grow it as you get comfortable.",
+      answer: "Not much at all — you can begin a SIP with as little as ₹500 a month, or invest a lump sum whenever it suits you. Start small and step it up as you grow comfortable.",
     },
     {
-      question: "Can I take my money out whenever I want?",
-      answer: "With most funds, yes — take out part or all of it whenever you need, and it reaches your bank in a few working days. A few funds ask you to stay invested for a fixed period, and we'll always tell you that before you invest.",
+      question: "Do you charge me any fees?",
+      answer: "No — you don't pay us a fee. We earn a small commission from the fund house when you invest, so our guidance and support cost you nothing extra.",
     },
     {
-      question: "Is my money safe with you?",
-      answer: "Your money never stays with us. It goes straight to the fund company, and your investment is recorded in your name with an official record-keeper. We help you invest and look after it — but it always belongs to you. Do keep in mind that funds move up and down with the market, so their value can change.",
+      question: "Is my money safe with Ace Capital?",
+      answer: "Your money never sits with us. It goes straight to the mutual fund company and is held in your name with the registrar (CAMS/KFintech) — we help you invest and look after it, but it always belongs to you. Do keep in mind that mutual funds move with the market, so their value can rise and fall.",
     },
     {
-      question: "Do you charge me anything?",
-      answer: "No, you don't pay us a fee. We earn a small commission from the fund company when you invest — so our help and support cost you nothing extra.",
+      question: "Can I invest and track everything online?",
+      answer: "Yes. Invest, start or pause SIPs, and see your whole portfolio in one place — on the DhanSetu app (iOS · Android) or the web portal, anytime.",
+      answerNode: <>Yes. Invest, start or pause SIPs, and see your whole portfolio in one place &mdash; on the DhanSetu app (<a href="https://apps.apple.com/in/app/dhan-setu/id6761404925" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">iOS</a> &middot; <a href="https://play.google.com/store/apps/details?id=com.dhan.app.setu" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Android</a>) or the <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">web portal</a>, anytime.</>
     },
     {
-      question: "Which funds should I pick?",
-      answer: "We'll help you shortlist funds that match what you're saving for, how long you can stay invested, and how much ups-and-downs you're okay with — explained in plain words. The final call is always yours.",
+      question: "What returns can I expect?",
+      answer: "No one can promise a number — and it's wise to be careful of anyone who does. Returns depend on the market and the funds you choose. What we can promise is to help you invest sensibly and stay on track. (Past performance doesn't guarantee future returns.)",
     },
     {
-      question: "What returns will I get?",
-      answer: "No one can promise a number — and it's wise to be careful of anyone who does. Your returns depend on the market and the funds you choose. What we promise is to help you invest sensibly and stay on track. (How a fund did in the past isn't a guarantee for the future.)",
-    },
-    {
-      question: "How do I keep an eye on my investments?",
-      answer: "You'll see everything in one simple view and get regular statements. And you can always call us for a quick, plain-English update on how things are going.",
-    },
-    {
-      question: "What if I have a question or a complaint?",
-      answer: "Just write to us at support@acecapitalenterprise.com — we're always happy to help. If something stays unresolved, you can take it further to the fund company, and then to the regulators (AMFI and SEBI).",
-    },
+      question: "Have more questions?",
+      answer: "See our full Mutual Funds FAQ, or reach us at support@acecapitalenterprise.com · +91 9220556760.",
+      answerNode: <>See our <Link href="/mutual-funds-investments" className="text-secondary hover:underline">full Mutual Funds FAQ &rarr;</Link>, or reach us at <a href="mailto:support@acecapitalenterprise.com" className="text-secondary hover:underline">support@acecapitalenterprise.com</a> &middot; +91 9220556760.</>
+    }
   ]
 
   // AEO/SEO Organization Schema
   const homeSchema = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://acecapitalenterprise.com/#organization",
-        "name": "Ace Capital Enterprise",
-        "url": "https://acecapitalenterprise.com",
-        "logo": "https://acecapitalenterprise.com/logo.png",
-        "description": "Leading proprietary trading company with a sharp focus on innovation and excellence in global financial markets.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Mumbai",
-          "addressCountry": "India"
-        },
-        "sameAs": [
-          "https://www.facebook.com/profile.php?id=61566740426997",
-          "https://x.com/acecapitalent",
-          "https://www.linkedin.com/company/ace-capital-enterprise/"
-        ]
-      },
       {
         "@type": "WebSite",
         "@id": "https://acecapitalenterprise.com/#website",

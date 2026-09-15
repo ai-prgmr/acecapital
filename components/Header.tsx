@@ -102,7 +102,7 @@ export default function Header() {
                   onClick={() => setIsOpen(false)}
                   className="w-full text-center py-3 border border-border text-foreground uppercase tracking-[0.16em] font-section-label text-sm font-bold hover:bg-muted transition-colors"
                 >
-                  FUND SCREENER
+                  ACE SCREENER
                 </Link>
                 <Link
                   href="/contact"

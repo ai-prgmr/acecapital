@@ -10,5 +10,29 @@ export const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  return <ContactClient />
+  const contactSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Us | ACE CAPITAL ENTERPRISE",
+    "url": "https://acecapitalenterprise.com/contact",
+    "mainEntity": {
+      "@type": "Organization",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-9220556760",
+        "email": "support@acecapitalenterprise.com",
+        "contactType": "customer service"
+      }
+    }
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <ContactClient />
+    </>
+  )
 }

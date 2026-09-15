@@ -1,11 +1,12 @@
 "use client"
 
-import { useState } from "react"
+import React, { useState } from "react"
 import { cn } from "@/lib/utils"
 
 interface FAQItem {
   question: string
   answer: string
+  answerNode?: React.ReactNode
 }
 
 interface FAQSectionProps {
@@ -82,7 +83,7 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
                   )}
                 >
                   <div className="p-6 text-on-surface-variant font-body-md leading-relaxed whitespace-pre-line">
-                    {item.answer}
+                    {item.answerNode || item.answer}
                   </div>
                 </div>
               </div>

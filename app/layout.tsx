@@ -27,6 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://acecapitalenterprise.com"),
   title: "ACE CAPITAL ENTERPRISE | Institutional Alpha Through Precision",
   description: "Precision-engineered capital strategies, automated trading desks, and institutional-grade wealth management for modern market participants.",
 }
@@ -51,6 +52,49 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "@id": "https://acecapitalenterprise.com/#organization",
+              "name": "Ace Capital Enterprise",
+              "description": "Leading proprietary trading company with a sharp focus on innovation and excellence in global financial markets.",
+              "url": "https://acecapitalenterprise.com",
+              "logo": "https://acecapitalenterprise.com/acecapital/logo-acecapital-enterprise.webp",
+              "foundingDate": "2016",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "India"
+              },
+              "founder": [
+                {
+                  "@type": "Person",
+                  "name": "Rahul Singhal",
+                  "jobTitle": "Founder & Managing Partner"
+                },
+                {
+                  "@type": "Person",
+                  "name": "Deepika Singhal",
+                  "jobTitle": "Co-Founder & Partner, Legal & Marketing"
+                }
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "email": "support@acecapitalenterprise.com",
+                "telephone": "+91-9220556760",
+                "contactType": "customer service"
+              },
+              "sameAs": [
+                "https://www.facebook.com/profile.php?id=61566740426997",
+                "https://x.com/acecapitalent",
+                "https://youtube.com/@acecapitalenterprise?si=kxXjdN6WXwNZHzN7",
+                "https://www.linkedin.com/company/ace-capital-enterprise/"
+              ]
+            })
+          }}
         />
       </head>
       <body className="bg-background text-foreground font-sans min-h-screen relative">

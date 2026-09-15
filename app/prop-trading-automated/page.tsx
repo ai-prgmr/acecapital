@@ -1,4 +1,5 @@
 import { Metadata } from "next"
+import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
 
 export const metadata: Metadata = {
@@ -12,20 +13,37 @@ export const metadata: Metadata = {
 export default function PropTradingAutomated() {
   const propFAQs = [
     {
-      question: "How is capital allocated to new traders?",
-      answer: "Initial allocation is based on the evaluation performance and historical track record. Successful candidates typically start with a Tier-1 mandate, which scales dynamically based on quarterly risk-adjusted returns.",
+      question: "What is Ace Capital's proprietary trading desk?",
+      answer: "It's our in-house desk that trades the firm's own capital in the markets, using quantitative research and systematic, technology-driven strategies. It's how we stay close to the markets we work in — and it's separate from our mutual fund distribution business.",
     },
     {
-      question: "What are the leverage limits?",
-      answer: "We provide institutional-grade leverage across FX and Equities. Mandates are tailored to the specific strategy's volatility profile, ensuring maximum capital efficiency while maintaining strict solvency buffers.",
+      question: "Can I invest money in the trading desk?",
+      answer: "No. The desk trades only Ace Capital's own capital — it doesn't accept, pool or manage money from the public, and it is not an investment scheme or offering. If you'd like to invest, that's what our mutual fund services are for.",
     },
     {
-      question: "What are the hard risk protocols?",
-      answer: "Every desk operates under a hard daily stop-loss and maximum drawdown limit. Our automated risk engine monitors Delta, Gamma, and VaR in real-time, with automated liquidation triggers to protect firm capital.",
+      question: "What markets and instruments do you trade?",
+      answer: "Primarily Indian markets — equity, derivatives (F&O), cash and ETFs.",
     },
     {
-      question: "How long is the evaluation process?",
-      answer: "The standard evaluation period is 30 to 60 trading days. We look for consistency, disciplined risk management, and the ability to generate alpha across different market regimes rather than raw PnL spikes.",
+      question: "What is the “Auto Desk” / automated trading?",
+      answer: "It's our automated execution engine — strategies run to defined rules, with low-latency execution and round-the-clock monitoring, so trading stays systematic and consistent rather than emotional.",
+    },
+    {
+      question: "How do you manage risk?",
+      answer: "Risk comes first. Every strategy runs inside strict, real-time limits, with automated stop-outs and position controls. Capital preservation is the priority, always.",
+    },
+    {
+      question: "Is the trading desk connected to my mutual fund investments?",
+      answer: "No — the two are operationally and legally separate. Your mutual fund investments are held in your name with the fund houses and their registrars; the desk trades entirely on the firm's own book.",
+    },
+    {
+      question: "Do you give trading tips, advisory or run a PMS?",
+      answer: "No. We don't offer trading tips or a PMS/advisory service. For mutual funds we act as an AMFI-registered distributor (ARN-113576); the trading desk is proprietary — own capital only.",
+    },
+    {
+      question: "Interested in joining the desk?",
+      answer: "We're always keen to meet sharp quants, developers and traders who love markets and clean code. Get in touch →",
+      answerNode: <>We're always keen to meet sharp quants, developers and traders who love markets and clean code. <Link href="/contact" className="text-secondary hover:underline">Get in touch &rarr;</Link></>
     },
   ]
 
@@ -88,14 +106,6 @@ export default function PropTradingAutomated() {
               </p>
               <div className="border-l-4 border-secondary pl-4 py-3 pr-4 text-body-md text-foreground bg-muted/50 rounded-r-md max-w-xl">
                 Ace Capital's proprietary trading arm is separate and distinct from its AMFI-registered mutual fund distribution business.
-              </div>
-              <div className="flex flex-wrap gap-4 pt-6">
-                <button className="button-primary px-8 py-3 rounded-md">
-                  Explore the Desk
-                </button>
-                <button className="border-2 border-primary text-primary hover:bg-primary/5 px-8 py-3 rounded-md font-semibold transition-colors">
-                  How We Trade
-                </button>
               </div>
             </div>
 

@@ -63,15 +63,6 @@ export default function About() {
           "@id": "https://acecapitalenterprise.com/#website",
           "url": "https://acecapitalenterprise.com",
           "name": "Ace Capital Enterprise"
-        },
-        "mainEntity": {
-          "@type": "Organization",
-          "name": "Ace Capital Enterprise",
-          "foundingDate": "2016",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "India"
-          }
         }
       }
     ]
