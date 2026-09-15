@@ -3,7 +3,7 @@ import ContactClient from "./ContactClient"
 
 export const metadata: Metadata = {
   title: "Contact Us | ACE CAPITAL ENTERPRISE",
-  description: "Connect with Ace Capital Enterprise. Get technical support for API integrations, general partnership inquiries, or visit our regional hubs in Mumbai, London, and Singapore.",
+  description: "Connect with Ace Capital Enterprise. Connect with us support@acecapitalenterprise.com or +91-9220556760",
   alternates: {
     canonical: "/contact",
   },

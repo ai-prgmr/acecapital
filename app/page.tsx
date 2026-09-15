@@ -5,10 +5,32 @@ import InvestmentGoals from "@/components/InvestmentGoals"
 import { HomepageCarousel } from "@/components/HomepageCarousel"
 import Image from "next/image"
 export const metadata: Metadata = {
-  title: "ACE CAPITAL ENTERPRISE | Leading Proprietary Trading Firm",
-  description: "Experience Institutional Alpha Through Precision. Ace Capital Enterprise is a leading proprietary trading firm utilizing HFT desks, quantitative research, and expert asset management.",
+  title: "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor",
+  description: "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor",
+    description: "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
+    url: "https://acecapitalenterprise.com",
+    siteName: "Ace Capital Enterprise",
+    images: [
+      {
+        url: "/logo-acecapital-enterprise.webp",
+        width: 1200,
+        height: 630,
+        alt: "Ace Capital Enterprise",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor",
+    description: "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
+    images: ["/logo-acecapital-enterprise.webp"],
   },
 }
 
@@ -69,8 +91,8 @@ export default function Home() {
         "@type": "WebPage",
         "@id": "https://acecapitalenterprise.com/#webpage",
         "url": "https://acecapitalenterprise.com",
-        "name": "ACE CAPITAL ENTERPRISE | Leading Proprietary Trading Firm",
-        "description": "Experience Institutional Alpha Through Precision. Ace Capital Enterprise is a leading proprietary trading firm utilizing HFT desks, quantitative research, and expert asset management.",
+        "name": "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor in India",
+        "description": "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor (ARN-113576). We help you invest in mutual funds toward your real goals — picking suitable funds, setting up your SIPs, and staying with you for the long run.",
         "isPartOf": {
           "@id": "https://acecapitalenterprise.com/#website"
         },

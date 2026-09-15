@@ -3,7 +3,7 @@ import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
 
 export const metadata: Metadata = {
-  title: "Ace Insights & Blogs | ACE CAPITAL",
+  title: "Ace Insights & Blogs | ACE CAPITAL ENTERPRISE",
   description: "Explore market insights, quantitative research, latency optimizations, and macro trends analyzed by Ace Capital Enterprise desks.",
   alternates: {
     canonical: "/blogs",
@@ -141,7 +141,7 @@ export default function Blogs() {
       <section className="ace-section ace-container border-t border-border">
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-border pb-6 mb-12 gap-4">
           <h2 className="font-headline-lg text-2xl uppercase text-foreground">Latest Commentary</h2>
-          <div className="flex bg-surface-container-low p-1 border border-border rounded text-xs font-section-label">
+          {/* <div className="flex bg-surface-container-low p-1 border border-border rounded text-xs font-section-label">
             {["All", "Quant Strategy", "Market Analysis", "Infrastructure"].map((cat, idx) => (
               <button
                 key={idx}
@@ -153,7 +153,7 @@ export default function Blogs() {
                 {cat}
               </button>
             ))}
-          </div>
+          </div> */}
         </div>
 
         {/* Blogs list */}
@@ -176,7 +176,7 @@ export default function Blogs() {
                   </span>
                   <span>{blog.readTime}</span>
                 </div>
-                
+
                 <div className="space-y-2 flex-grow">
                   <h3 className="font-headline-lg text-xl text-foreground group-hover:text-secondary transition-colors uppercase leading-tight line-clamp-2">
                     {blog.title}

@@ -3,10 +3,32 @@ import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
 
 export const metadata: Metadata = {
-  title: "Prop Trading & Auto Desk | ACE CAPITAL",
-  description: "Ace Capital runs an in-house proprietary trading desk — trading the firm's own capital across equity, derivatives, cash and ETFs, driven by quantitative strategies and automated, low-latency execution.",
+  title: "Prop Trading & Auto Desk | ACE CAPITAL ENTERPRISE",
+  description: "Ace Capital runs an in-house proprietary trading desk, trading the firm's own capital across equity, derivatives, cash and ETFs",
   alternates: {
     canonical: "/prop-trading-automated",
+  },
+  openGraph: {
+    title: "Prop Trading & Auto Desk | ACE CAPITAL ENTERPRISE",
+    description: "Ace Capital runs an in-house proprietary trading desk, trading the firm's own capital across equity, derivatives, cash and ETFs",
+    url: "https://acecapitalenterprise.com/prop-trading-automated",
+    siteName: "Ace Capital Enterprise",
+    images: [
+      {
+        url: "/logo-acecapital-enterprise.webp",
+        width: 1200,
+        height: 630,
+        alt: "Ace Capital Enterprise",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Prop Trading & Auto Desk | ACE CAPITAL ENTERPRISE",
+    description: "Ace Capital runs an in-house proprietary trading desk, trading the firm's own capital across equity, derivatives, cash and ETFs",
+    images: ["/logo-acecapital-enterprise.webp"],
   },
 }
 

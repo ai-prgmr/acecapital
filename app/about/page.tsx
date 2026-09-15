@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "About Us | Ace Capital Enterprise",
-  description: "Founded in 2016, Ace Capital Enterprise helps individuals and families invest in mutual funds toward their real-life goals with clarity, transparency, and discipline.",
+  description: "Founded in 2016, Ace Capital Enterprise helps individuals and families invest in mutual funds toward their real-life goals.",
   alternates: {
     canonical: "/about",
   },
@@ -57,7 +57,7 @@ export default function About() {
         "@id": "https://acecapitalenterprise.com/about/#webpage",
         "url": "https://acecapitalenterprise.com/about",
         "name": "About Us | Ace Capital Enterprise",
-        "description": "Founded in 2016, Ace Capital Enterprise helps individuals and families invest in mutual funds toward their real-life goals with clarity, transparency, and discipline.",
+        "description": "Founded in 2016, Ace Capital Enterprise helps individuals and families invest in mutual funds toward their real-life goals",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://acecapitalenterprise.com/#website",
@@ -86,7 +86,7 @@ export default function About() {
               Invest with <span className="metallic-gradient">Clarity.</span>
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-              Founded in 2016, Ace Capital Enterprise is a partnership firm built on one promise: to help you invest with clarity. As an AMFI-registered mutual fund distributor (ARN-113576), we help individuals and families invest in mutual funds toward their real-life goals, matched to their time horizon and risk comfort, and explained in plain language at every step. Meanwhile, our in-house desk trades the firm's own capital across equity, derivatives, cash and ETFs with systematic, technology-driven discipline. 
+              Founded in 2016, Ace Capital Enterprise is a partnership firm built on one promise: to help you invest with clarity. As an AMFI-registered mutual fund distributor (ARN-113576), we help individuals and families invest in mutual funds toward their real-life goals, matched to their time horizon and risk comfort, and explained in plain language at every step. Meanwhile, our in-house desk trades the firm's own capital across equity, derivatives, cash and ETFs with systematic, technology-driven discipline.
             </p>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
               Pairing new-age, data-driven thinking with an old-fashioned personal touch, everything we do runs on three ideas: <strong className="text-foreground">systematic, simple and personal.</strong>
@@ -245,7 +245,7 @@ export default function About() {
                 At the core of our wealth management division is a dedicated team of specialists who believe that geography should never limit your financial potential. Combining deep analytical rigor with personalized guidance, our team ensures your portfolio is built on pure logic and structured for long-term resilience.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <div className="flex items-start gap-4">
                 <span className="material-symbols-outlined text-secondary mt-1">person</span>
@@ -274,7 +274,7 @@ export default function About() {
                 At the heart of our firm's market expertise is our Proprietary Quant Trading Team. Operating entirely on data, algorithmic precision, and strict structural analysis, this team navigates the daily complexities of active trading. While this desk operates behind the scenes, their real-time insights and rigorous research provide the foundation of logic and discipline that runs through our entire firm.
               </p>
             </div>
-            
+
             <div className="space-y-4">
               <div className="flex items-start gap-4">
                 <span className="material-symbols-outlined text-secondary mt-1">person</span>

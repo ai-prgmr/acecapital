@@ -28,8 +28,30 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://acecapitalenterprise.com"),
-  title: "ACE CAPITAL ENTERPRISE | Institutional Alpha Through Precision",
-  description: "Precision-engineered capital strategies, automated trading desks, and institutional-grade wealth management for modern market participants.",
+  title: "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor",
+  description: "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
+  openGraph: {
+    title: "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor",
+    description: "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
+    url: "https://acecapitalenterprise.com",
+    siteName: "Ace Capital Enterprise",
+    images: [
+      {
+        url: "/logo-acecapital-enterprise.webp",
+        width: 1200,
+        height: 630,
+        alt: "Ace Capital Enterprise",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ACE CAPITAL ENTERPRISE | Leading Mutual Fund Distributor",
+    description: "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
+    images: ["/logo-acecapital-enterprise.webp"],
+  },
 }
 
 export default function RootLayout({
@@ -61,7 +83,7 @@ export default function RootLayout({
               "@type": "Organization",
               "@id": "https://acecapitalenterprise.com/#organization",
               "name": "Ace Capital Enterprise",
-              "description": "Leading proprietary trading company with a sharp focus on innovation and excellence in global financial markets.",
+              "description": "Ace Capital Enterprise is a leading AMFI-registered mutual fund distributor ARN-113576 We help you invest in mutual funds and staying with you for the long run.",
               "url": "https://acecapitalenterprise.com",
               "logo": "https://acecapitalenterprise.com/logo-acecapital-enterprise.webp",
               "foundingDate": "2016",
@@ -98,11 +120,11 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-foreground font-sans min-h-screen relative">
-          <a href="#main-content" className="skip-link">Skip to main content</a>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-          <FloatingButtons />
+        <a href="#main-content" className="skip-link">Skip to main content</a>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
+        <FloatingButtons />
       </body>
     </html>
   )

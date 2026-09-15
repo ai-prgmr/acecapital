@@ -2,8 +2,6 @@
 
 import FAQSection from "@/components/FAQSection"
 import MutualFundsCalculator from "@/components/MutualFundsCalculator"
-import TopFundsTabbed from "@/components/TopFundsTabbed"
-import ProductsGrid from "@/components/ProductsGrid"
 import Link from "next/link"
 import Image from "next/image"
 import { TrendingUp, ArrowDownToLine, CheckCircle2 } from "lucide-react"

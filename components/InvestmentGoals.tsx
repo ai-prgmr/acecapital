@@ -4,9 +4,9 @@ export default function InvestmentGoals() {
   return (
     <section className="ace-section ace-container">
       <div className="text-center mb-12">
-        <span className="font-section-label text-section-label uppercase tracking-widest text-secondary">
+        <h1 className="font-section-label text-section-label uppercase tracking-widest text-secondary">
           INVEST WITH PURPOSE
-        </span>
+        </h1>
         <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
           GOALS THAT DRIVE YOU
         </h2>

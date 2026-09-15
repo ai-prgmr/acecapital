@@ -38,7 +38,7 @@ export default function ContactClient() {
         "@id": "https://acecapitalenterprise.com/contact/#webpage",
         "url": "https://acecapitalenterprise.com/contact",
         "name": "Contact Us | ACE CAPITAL ENTERPRISE",
-        "description": "Connect with Ace Capital Enterprise. Get technical support, general partnership inquiries, or institutional trading assistance.",
+        "description": "Connect with Ace Capital Enterprise. Connect with us support@acecapitalenterprise.com or +91-9220556760",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://acecapitalenterprise.com/#website",
@@ -50,7 +50,7 @@ export default function ContactClient() {
           "name": "Ace Capital Enterprise",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Mumbai",
+            "addressLocality": "Delhi/NCR",
             "addressCountry": "India"
           },
           "contactPoint": [
@@ -75,7 +75,7 @@ export default function ContactClient() {
 
       <main className="pt-24 font-sans bg-background text-foreground min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[400px] md:min-h-[500px] flex items-center justify-center text-center px-gutter overflow-hidden border-b border-border/40">
+        <section className="relative min-h-100 md:min-h-125 flex items-center justify-center text-center px-gutter overflow-hidden border-b border-border/40">
           <div className="absolute inset-0 z-0">
             <div
               className="w-full h-full bg-cover bg-center opacity-10"
