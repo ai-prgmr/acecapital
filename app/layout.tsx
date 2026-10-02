@@ -1,5 +1,6 @@
 import { Libre_Bodoni, Public_Sans, JetBrains_Mono } from "next/font/google"
 import { Metadata } from "next"
+import Script from "next/script"
 import "./globals.css"
 import "./ace-capital-design-system.css"
 import { cn } from "@/lib/utils"
@@ -120,6 +121,19 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-foreground font-sans min-h-screen relative">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-KMWM36NR9Y"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KMWM36NR9Y');
+          `}
+        </Script>
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content">{children}</main>
