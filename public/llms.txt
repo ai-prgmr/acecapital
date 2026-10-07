@@ -1,0 +1,25 @@
+# Ace Capital Enterprise
+
+> Ace Capital Enterprise is an AMFI-registered mutual fund distributor (ARN-113576) and quantitative proprietary trading firm established in 2016. The firm provides systematic, goal-oriented wealth management and mutual fund distribution for individuals, families, and NRIs, alongside operating an in-house quantitative proprietary trading desk across equity, derivatives, cash, and ETFs.
+
+## Core Pages & Services
+
+- [Ace Capital Enterprise Homepage](https://acecapitalenterprise.com/): Overview of Ace Capital Enterprise, systematic investment approach, AMFI registration (ARN-113576), mutual fund solutions, and proprietary trading capabilities.
+- [About Us](https://acecapitalenterprise.com/about): Firm history since 2016, vision, core values (Systematic, Simple, Personal), team structure, and profiles of founders Rahul Singhal and Deepika Singhal.
+- [Mutual Funds & Investments](https://acecapitalenterprise.com/mutual-funds-investments): Goal-based mutual fund investing, SIP and lumpsum solutions, NRI investment services, DhanSetu mobile/web platform tracking, and comprehensive investment FAQs.
+- [Proprietary Trading & Auto Desk](https://acecapitalenterprise.com/prop-trading-automated): Details on Ace Capital's in-house quant trading desk, low-latency execution engine, risk guardrails, and asset coverage (equities, F&O, cash, ETFs) using firm-only capital.
+- [Mutual Fund Screener](https://acecapitalenterprise.com/screener): Interactive screening tool for live NAV data, fund categories, and scheme metrics across 14 leading Asset Management Companies (AMCs).
+- [Careers](https://acecapitalenterprise.com/careers): Information on institutional hiring, quantitative research roles, evaluation process (Alpha Screening, Deep Tech Dive, Trading Floor, Partner Review), and firm benefits.
+- [Contact Us](https://acecapitalenterprise.com/contact): Support email (support@acecapitalenterprise.com), phone (+91-9220556760), office locations, and institutional inquiry submission form.
+
+## Educational Content & Market Insights
+
+- [Ace Insights & Blogs Index](https://acecapitalenterprise.com/blogs): Market commentary, quantitative research papers, trading tactics, and sectoral analysis.
+- [5 Easy Ways to Master Candlestick Patterns](https://acecapitalenterprise.com/blogs/5-easy-way-to-master-candlestick-patterns): Technical guide to single, double, and triple candlestick patterns, chart context, and step-by-step trading analysis.
+- [How to Become a Profitable Trader in 180 Days](https://acecapitalenterprise.com/blogs/how-to-become-profitable-trader): A 6-month roadmap for beginner traders in India covering market basics, risk-reward planning, technical analysis, brokerage toolkits, and psychological discipline.
+- [5 Best Railway Stocks in India 2025](https://acecapitalenterprise.com/blogs/5-best-railway-stocks-in-india-2025): Detailed analysis of key Indian railway stocks (IRCTC, RITES, IRCON, CONCOR, Titagarh Rail Systems), government modernization budgets, and growth drivers.
+- [Master the Market with Smart & Simple Trading Tactics](https://acecapitalenterprise.com/blogs/master-the-market-with-smart-and-simple-trading-tactics): Breakdown of six low-risk intraday trading strategies (EMA Crossover, Breakout, ORB, RSI Reversal, VWAP, Scalping) and risk management guidelines.
+
+## Optional & Comprehensive Resources
+
+- [Full Site Documentation (llms-full.txt)](https://acecapitalenterprise.com/llms-full.txt): Complete concatenated text documentation of all pages, services, FAQs, blog articles, and regulatory disclosures for Ace Capital Enterprise.

@@ -1,0 +1,256 @@
+# Ace Capital Enterprise - Full Documentation Knowledge Base
+
+> Ace Capital Enterprise is an AMFI-registered mutual fund distributor (ARN-113576) and quantitative proprietary trading firm established in 2016. The firm provides systematic, goal-oriented wealth management and mutual fund distribution for individuals, families, and NRIs, alongside operating an in-house quantitative proprietary trading desk across equity, derivatives, cash, and ETFs.
+
+---
+
+## Table of Contents
+
+1. [Firm Overview & Philosophy](#1-firm-overview--philosophy)
+2. [Leadership & Team Structure](#2-leadership--team-structure)
+3. [Mutual Funds & Wealth Management](#3-mutual-funds--wealth-management)
+4. [Proprietary Trading & Auto Desk](#4-proprietary-trading--auto-desk)
+5. [Interactive Mutual Fund Screener](#5-interactive-mutual-fund-screener)
+6. [Careers & Institutional Hiring](#6-careers--institutional-hiring)
+7. [Contact Channels & Offices](#7-contact-channels--offices)
+8. [Market Insights & Educational Articles](#8-market-insights--educational-articles)
+    - [Article 1: 5 Easy Ways to Master Candlestick Patterns](#article-1-5-easy-ways-to-master-candlestick-patterns)
+    - [Article 2: How to Become a Profitable Trader in 180 Days](#article-2-how-to-become-a-profitable-trader-in-180-days)
+    - [Article 3: 5 Best Railway Stocks in India 2025](#article-3-5-best-railway-stocks-in-india-2025)
+    - [Article 4: Master the Market with Smart & Simple Trading Tactics](#article-4-master-the-market-with-smart--simple-trading-tactics)
+9. [Regulatory Disclosures & Complaint Mechanisms](#9-regulatory-disclosures--complaint-mechanisms)
+
+---
+
+## 1. Firm Overview & Philosophy
+
+**Tagline:** Invest with Clarity.
+
+Founded in 2016, Ace Capital Enterprise is a partnership firm built on one promise: to help clients invest with clarity. 
+
+As an AMFI-registered mutual fund distributor (ARN-113576), Ace Capital helps individuals and families invest in mutual funds toward their real-life goals, matched to their time horizon and risk comfort, explained in plain language at every step. Meanwhile, the firm's in-house desk trades its own capital across equity, derivatives, cash, and ETFs with systematic, technology-driven discipline.
+
+### Core Philosophy: Three Ideas We Run On
+- **Systematic:** Technology-driven discipline and quantitative rigor in everything we do.
+- **Simple:** Plain language explanations that make rigorous wealth management accessible to everyone.
+- **Personal:** An old-fashioned personal touch, tailored to individual time horizons and risk comfort.
+
+### Vision Statements
+1. To become India's most trusted name for clear, honest, and personal investing. Helping every household move from confusion to confidence, building lasting wealth with discipline, transparency, and guidance for the long term.
+2. To empower investors across India with thoughtfully curated, data-driven mutual fund portfolios, making rigorous wealth management accessible to everyone, wherever they are.
+
+---
+
+## 2. Leadership & Team Structure
+
+### Founders & Leadership
+
+- **Rahul Singhal — Founder & Managing Partner**
+  - *Tagline:* Systematic, Simple and Personal
+  - *Background:* MBA qualified with 15+ years of experience in India's financial markets. Established Ace Capital Enterprise in 2016 around the core idea that investing should be done with clarity, systematically, simply, and personally.
+  - *Role:* Leads firm strategy, mutual fund distribution vision, and quantitative proprietary trading oversight across market cycles with transparency and discipline.
+  - *Social:* LinkedIn (rahul-singhal-73262217) | X (@rahulsinghal13)
+
+- **Deepika Singhal — Co-Founder & Partner, Legal & Marketing**
+  - *Tagline:* Compliance & Brand Voice
+  - *Background:* Co-founder involved in building Ace Capital from the ground up.
+  - *Role:* Leads legal compliance, regulatory adherence, and marketing functions. Ensures every client relationship rests on transparency and trust while maintaining a clear and consistent brand voice.
+  - *Social:* LinkedIn (deepika-singhal-81a28313) | X (@dpka1985)
+
+### Operations & Specialist Teams
+
+- **Mutual Fund Team:**
+  - *Amit Singh:* Senior Mutual Fund Analyst and Consultant
+  - *Rahul S.:* Mutual Fund Consultant & Client Relationship Specialist
+  - *Focus:* Client portfolio construction, goal alignment, KYC onboarding, and periodic review.
+
+- **Quant Trading Team:**
+  - *Amit Singh:* Senior Trader & Strategist
+  - *Sanjay Singh:* Quantitative Researcher
+  - *Mohit Kumar:* Trader & Strategist
+  - *Focus:* In-house proprietary data modeling, algorithmic strategy backtesting, execution optimization, and real-time risk parameter enforcement.
+
+---
+
+## 3. Mutual Funds & Wealth Management
+
+Ace Capital Enterprise provides goal-based mutual fund investment services across equity, hybrid, debt, and tax-saving (ELSS) categories.
+
+### Key Mutual Fund Solutions & Offerings
+- **Goal-Based Portfolios:** Customized allocation for retirement, children's education, wealth creation, or short-term emergency funds.
+- **SIP & Lump Sum:** Systematic Investment Plans (SIP) starting from ₹500/month or strategic lump sum deployments.
+- **Tax Planning (ELSS):** Equity Linked Savings Schemes under Section 80C (up to ₹1.5 Lakh annual deduction) with a 3-year lock-in.
+- **NRI Services:** Specialized investment guidance for NRIs via NRE/NRO accounts in compliance with FEMA rules and local AMC guidelines.
+- **Portfolio Tracking (DhanSetu):** Integrated portfolio viewing, transaction execution, SIP management, and account statements via DhanSetu mobile apps (iOS & Android) and web portal.
+
+### Frequently Asked Questions (Mutual Funds)
+
+- **What is a mutual fund, in simple terms?**
+  A mutual fund pools money from many investors, and a professional fund manager invests it across stocks, bonds or other assets. You own units in proportion to what you put in, and their value moves with the market.
+- **SIP or lump sum — which is better?**
+  Both work. A SIP invests a fixed amount every month — building discipline and averaging market ups and downs. Lump sum fits ready capital.
+- **Direct vs Regular plan — what's the difference?**
+  Direct plans carry no distributor commission, requiring self-research and manual tracking. Regular plans include a small distributor commission (paid directly by the AMC, never charged on top to the client) and include expert guidance, fund selection, portfolio monitoring, and personal support.
+- **Are there any fees charged to the investor?**
+  No fees are charged directly to the investor. Ace Capital is remunerated via distributor commissions paid by the fund houses on Regular plans.
+- **Where is my money held?**
+  Money goes directly to the Asset Management Company (AMC). Investor units are held securely in their own name with mutual fund registrars (CAMS / KFintech).
+- **How do I withdraw/redeem money?**
+  Open-ended schemes can be redeemed anytime, with funds settling into the investor's linked bank account within 2–3 business days.
+
+---
+
+## 4. Proprietary Trading & Auto Desk
+
+Ace Capital operates an in-house proprietary trading desk dedicated exclusively to trading the firm's own balance sheet.
+
+### Key Desk Features
+- **Own Capital Only:** Trades exclusively firm capital across equity, derivatives (F&O), cash, and ETFs.
+- **Auto Desk Execution:** Automated execution engine running rules-based, quantitative algorithms with low-latency infrastructure.
+- **Pillars:** Quantitative Research, Auto Desk Automation, and Strict Risk Control.
+- **Risk Limits:** Automated stop-outs, position caps, and real-time exposure limits governed by hard kill-switches.
+
+### Critical Legal & Operational Disclaimer
+Ace Capital's proprietary trading desk is strictly separate and distinct from its AMFI-registered mutual fund distribution business. It does NOT accept, pool, manage, or solicit public or client funds, and is NOT a PMS, AIF, or investment advisory service.
+
+### Frequently Asked Questions (Prop Trading)
+- **Can public investors invest in the trading desk?**
+  No. The desk trades Ace Capital's own capital only and does not accept public investments.
+- **What markets are traded?**
+  Indian equity, derivatives (Futures & Options), cash, and ETF markets.
+- **Are trading tips or PMS offered?**
+  No trading tips, recommendations, or PMS services are offered.
+
+---
+
+## 5. Interactive Mutual Fund Screener
+
+Ace Capital provides a live Mutual Fund Screener covering schemes across 14 Asset Management Companies in India:
+- **Coverage:** Axis Mutual Fund, HDFC Mutual Fund, ICICI Prudential Mutual Fund, SBI Mutual Fund, Nippon India Mutual Fund, Mirae Asset Mutual Fund, Parag Parikh Mutual Fund, UTI Mutual Fund, Kotak Mutual Fund, Aditya Birla Sun Life Mutual Fund, DSP Mutual Fund, Tata Mutual Fund, Motilal Oswal Mutual Fund, Quant Mutual Fund.
+- **Metrics Tracked:** Live NAV, 1-Year Returns, 3-Year CAGR, 5-Year CAGR, Expense Ratios, AUM (Assets Under Management), and Risk Ratings.
+
+---
+
+## 6. Careers & Institutional Hiring
+
+Ace Capital recruits quantitative researchers, high-frequency systems engineers, and algorithmic traders.
+
+### Evaluation Process (4 Steps)
+1. **Alpha Screening:** Initial resume evaluation and algorithmic coding challenge.
+2. **Deep Tech Dive:** Technical peer review of system architecture, statistics, and mathematical models.
+3. **The Trading Floor:** Simulated execution environment evaluating risk discipline under market volatility.
+4. **Partner Review:** Final interview with desk partners to align on capital allocation and strategy.
+
+### Employee Perks (The Ace Edge)
+- Performance-linked meritocratic compensation models.
+- Low-latency technological infrastructure and private research clusters.
+- Flexible career growth and international exposure.
+
+---
+
+## 7. Contact Channels & Offices
+
+- **Official Website:** [https://acecapitalenterprise.com](https://acecapitalenterprise.com)
+- **Client & Technical Support Email:** `support@acecapitalenterprise.com`
+- **Phone / Support Helpline:** `+91-9220556760`
+- **Headquarters Location:** Delhi / NCR & Mumbai, India
+- **Support Hours:** Live support available during standard market hours (9:00 AM – 6:00 PM IST, Mon–Fri).
+
+---
+
+## 8. Market Insights & Educational Articles
+
+### Article 1: 5 Easy Ways to Master Candlestick Patterns
+
+Candlestick patterns provide visual insights into market sentiment, price action, and potential reversals.
+
+#### Anatomy of a Candlestick
+- **Body:** Difference between opening and closing price.
+- **Wicks (Shadows):** High and low price extremes during the session.
+- **Colors:** Green (bullish - close > open) and Red (bearish - close < open).
+
+#### Core Pattern Categories
+1. **Single Candlestick Patterns:**
+   - *Doji:* Open and close prices are nearly identical, showing indecision.
+   - *Hammer:* Bullish reversal pattern occurring after a downtrend with a long lower shadow.
+   - *Spinning Top:* Small body with equal wicks, signaling market equilibrium.
+2. **Double Candlestick Patterns:**
+   - *Bullish Engulfing:* Large green candle fully encloses previous small red candle.
+   - *Bearish Engulfing:* Large red candle fully encloses previous small green candle.
+   - *Tweezer Tops/Bottoms:* Consecutive candles sharing identical high or low levels.
+3. **Triple Candlestick Patterns:**
+   - *Morning Star:* Bullish 3-candle reversal (long red, small body, long green).
+   - *Evening Star:* Bearish 3-candle reversal at top of an uptrend.
+   - *Three White Soldiers / Three Black Crows:* Strong trend continuation signals.
+
+#### Step-by-Step Execution Rules
+1. Identify the pattern on the chart.
+2. Analyze overall market context (trend vs range).
+3. Confirm with volume and indicators (Moving Averages, RSI, VWAP).
+4. Enforce strict risk-reward ratios (> 2:1).
+
+---
+
+### Article 2: How to Become a Profitable Trader in 180 Days
+
+Achieving trading profitability within 6 months requires a disciplined roadmap:
+
+#### Phase 1: Days 1–30 (Foundation & Paper Trading)
+- Master Indian market structure (NSE, BSE, F&O).
+- Select a primary trading style: Day Trading, Swing Trading, Position Trading, or Scalping.
+- Build a paper-trading track record to validate setup mechanics.
+
+#### Phase 2: Days 31–90 (Micro-Capital Live Testing)
+- Transition to real capital using minimal position sizes (e.g. single stock lots).
+- Maintain a comprehensive trading journal tracking entries, exits, risk-reward, and emotional state.
+- Cap per-trade risk to a maximum of 1%–2% of total trading equity.
+
+#### Phase 3: Days 91–180 (Execution Scaling & Auditing)
+- Conduct weekly performance reviews analyzing win rate, profit factor, and max drawdown.
+- Scale position sizes incrementally based on positive mathematical expectancy.
+- Utilize low-brokerage platforms (Zerodha, Upstox) and charting systems (TradingView).
+
+---
+
+### Article 3: 5 Best Railway Stocks in India 2025
+
+The Indian railway sector is experiencing multi-year structural growth backed by government infrastructure budgets, electrification, and modernization.
+
+#### Top 5 Companies Analyzed
+1. **IRCTC (Indian Railway Catering & Tourism Corp):** Monopoly in online railway ticketing, catering services, Rail Neer packaged water, and luxury tourism.
+2. **RITES Ltd.:** Debt-free government engineering consultancy specializing in transport infrastructure with international project exposure and high dividend yields.
+3. **IRCON International:** Major public sector construction firm handling complex railway lines, bridges, highways, and metro projects.
+4. **Container Corporation of India (CONCOR):** Market leader in container logistics, multimodal freight transport, and cold-chain logistics hubs.
+5. **Titagarh Rail Systems:** Premier private manufacturer of freight wagons, Vande Bharat passenger coaches, metro trainsets, and steel bridges.
+
+---
+
+### Article 4: Master the Market with Smart & Simple Trading Tactics
+
+Six low-risk intraday strategies for modern electronic markets:
+
+1. **Exponential Moving Average (EMA) Crossover:** Buy when 9-EMA crosses above 21-EMA; sell when 9-EMA crosses below 21-EMA.
+2. **Breakout Trading with Volume:** Identify consolidation resistance/support; execute upon high-volume break confirmed by VWAP.
+3. **Opening Range Breakout (ORB):** Mark the high and low of the first 15–30 minutes of trading; trade in the direction of the breakout with tight stop-loss.
+4. **RSI Reversal:** Utilize short-period RSI (7 or 9 period) to catch oversold (<30) bounces or overbought (>70) pullbacks.
+5. **VWAP (Volume Weighted Average Price) Anchor:** Use VWAP as an institutional benchmark; go long above VWAP and short below VWAP.
+6. **Scalping High-Liquidity Stocks:** Quick micro-tick trades executed with tight spreads and Level 2 orderbook depth.
+
+---
+
+## 9. Regulatory Disclosures & Complaint Mechanisms
+
+### Registration Details
+- **AMFI Registration Number:** ARN-113576
+- **Entity Name:** Ace Capital Enterprise
+- **Business Type:** Partnership Firm (Mutual Fund Distributor & Proprietary Trading Desk)
+
+### Statutory Disclosures
+- **Mutual Fund Disclaimer:** Mutual Fund investments are subject to market risks. Read all scheme-related documents carefully before investing. Past performance is not indicative of future returns.
+- **Proprietary Trading Separation:** Ace Capital Enterprise's proprietary trading desk trades the firm's own capital only. It does not offer investment schemes, PMS, AIF, or public money management.
+
+### Grievance Redressal Mechanism
+For any service or investment complaints:
+1. **First Point of Contact:** Email `support@acecapitalenterprise.com` or call `+91-9220556760`.
+2. **Escalation to AMC:** Contact the respective Asset Management Company's Investor Service Centre.
+3. **Regulatory Portals:** Escalations can be registered with SEBI SCORES portal ([scores.sebi.gov.in](https://scores.sebi.gov.in)) or the SMART ODR platform ([smartodr.in](https://smartodr.in)).
