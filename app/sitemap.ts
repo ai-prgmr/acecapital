@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/prop-trading-automated',
     '/mutual-funds-investments',
     '/blogs',
+    '/screener',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),
