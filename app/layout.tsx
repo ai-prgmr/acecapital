@@ -90,7 +90,11 @@ export default function RootLayout({
               "foundingDate": "2016",
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "India"
+                "streetAddress": "Unit-210, JMD REGENT SQUARE, MG Road",
+                "addressLocality": "Gurugram",
+                "addressRegion": "Haryana",
+                "postalCode": "122002",
+                "addressCountry": "IN"
               },
               "founder": [
                 {

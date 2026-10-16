@@ -64,9 +64,19 @@ export default function Footer() {
         <div className="space-y-6 flex flex-col h-full">
           <div className="space-y-6">
             <h3 className="font-section-label text-section-label text-secondary uppercase tracking-widest">
-              Support Desk
+              Office & Support
             </h3>
             <div className="space-y-4">
+              <div>
+                <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
+                  Office Address
+                </p>
+                <address className="not-italic font-body-md text-on-surface leading-relaxed">
+                  Unit-210, JMD REGENT SQUARE,<br />
+                  MG Road, Gurugram,<br />
+                  Haryana- 122002
+                </address>
+              </div>
               <div>
                 <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
                   Support Email

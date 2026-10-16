@@ -10,7 +10,7 @@
 - [Proprietary Trading & Auto Desk](https://acecapitalenterprise.com/prop-trading-automated): Details on Ace Capital's in-house quant trading desk, low-latency execution engine, risk guardrails, and asset coverage (equities, F&O, cash, ETFs) using firm-only capital.
 - [Mutual Fund Screener](https://acecapitalenterprise.com/screener): Interactive screening tool for live NAV data, fund categories, and scheme metrics across 14 leading Asset Management Companies (AMCs).
 - [Careers](https://acecapitalenterprise.com/careers): Information on institutional hiring, quantitative research roles, evaluation process (Alpha Screening, Deep Tech Dive, Trading Floor, Partner Review), and firm benefits.
-- [Contact Us](https://acecapitalenterprise.com/contact): Support email (support@acecapitalenterprise.com), phone (+91-9220556760), office locations, and institutional inquiry submission form.
+- [Contact Us](https://acecapitalenterprise.com/contact): Dedicated mutual fund specialists and investor support desk. Support email (support@acecapitalenterprise.com), phone (+91-9220556760), office address (Unit-210, JMD REGENT SQUARE, MG Road, Gurugram, Haryana- 122002), and investor inquiry submission form.
 
 ## Educational Content & Market Insights
 

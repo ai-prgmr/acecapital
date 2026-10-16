@@ -50,8 +50,11 @@ export default function ContactClient() {
           "name": "Ace Capital Enterprise",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Delhi/NCR",
-            "addressCountry": "India"
+            "streetAddress": "Unit-210, JMD REGENT SQUARE, MG Road",
+            "addressLocality": "Gurugram",
+            "addressRegion": "Haryana",
+            "postalCode": "122002",
+            "addressCountry": "IN"
           },
           "contactPoint": [
             {
@@ -95,7 +98,7 @@ export default function ContactClient() {
               <span className="text-primary italic">Institutional Alpha</span>
             </h1>
             <p className="font-body-md text-muted-foreground max-w-2xl mx-auto">
-              Our desk partners and technical support teams are on standby to assist with your portfolio, algorithmic integrations, and partnership inquiries.
+              Our dedicated mutual fund specialists and investor support team are on standby to assist with your investment portfolio, SIP planning, and goal-oriented wealth creation.
             </p>
           </div>
         </section>
@@ -114,7 +117,7 @@ export default function ContactClient() {
                     <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center border border-secondary/30">
                       <span className="material-symbols-outlined text-secondary text-2xl">support_agent</span>
                     </div>
-                    <h3 className="font-headline-lg text-2xl md:text-3xl uppercase">Client & Tech Support</h3>
+                    <h3 className="font-headline-lg text-2xl md:text-3xl uppercase">Client & Investor Support</h3>
                   </div>
                   <span className="font-data-point text-[10px] md:text-xs text-[#00ff88] bg-[#00ff88]/10 border border-[#00ff88]/20 px-3 py-1 rounded-full flex items-center gap-2 font-bold uppercase tracking-widest">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#00ff88] animate-ping"></span>
@@ -123,7 +126,7 @@ export default function ContactClient() {
                 </div>
 
                 <p className="text-muted-foreground font-body-md mb-8 max-w-xl text-lg">
-                  Dedicated assistance for algorithmic API integration, mutual fund queries, and general execution inquiries.
+                  Dedicated guidance for mutual fund investments, goal-based portfolio planning, and end-to-end investor support.
                 </p>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 pt-6 border-t border-border/40">
@@ -146,6 +149,34 @@ export default function ContactClient() {
                       <span className="material-symbols-outlined text-sm text-secondary">call</span>
                       +91 9220556760
                     </a>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Office Address</span>
+                    <address className="not-italic">
+                      <a
+                        href="https://maps.google.com/?q=Unit-210,+JMD+REGENT+SQUARE,+MG+Road,+Gurugram,+Haryana-+122002"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body-md text-foreground hover:text-secondary transition-colors inline-flex items-start gap-2 leading-relaxed"
+                      >
+                        <span className="material-symbols-outlined text-sm text-secondary mt-1 shrink-0">location_on</span>
+                        <span>
+                          Unit-210, JMD REGENT SQUARE,<br />
+                          MG Road, Gurugram,<br />
+                          Haryana- 122002
+                        </span>
+                      </a>
+                    </address>
+                  </div>
+                  <div className="flex flex-col gap-2">
+                    <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Operational Hours</span>
+                    <div className="font-body-md text-foreground inline-flex items-start gap-2 leading-relaxed">
+                      <span className="material-symbols-outlined text-sm text-secondary mt-1 shrink-0">schedule</span>
+                      <span>
+                        MON - FRI: 9:00 AM - 5:00 PM (IST)<br />
+                        <span className="text-muted-foreground text-sm">Desk aligned with active market sessions</span>
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

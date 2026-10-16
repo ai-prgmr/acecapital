@@ -17,6 +17,14 @@ export default function ContactPage() {
     "url": "https://acecapitalenterprise.com/contact",
     "mainEntity": {
       "@type": "Organization",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Unit-210, JMD REGENT SQUARE, MG Road",
+        "addressLocality": "Gurugram",
+        "addressRegion": "Haryana",
+        "postalCode": "122002",
+        "addressCountry": "IN"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+91-9220556760",
