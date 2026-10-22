@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
+import { getAllBlogs } from '@/lib/blogs'
 
 export const dynamic = 'force-static';
-
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://acecapitalenterprise.com'
@@ -22,12 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '' ? 1 : 0.8,
   }))
 
-  const blogSlugs = [
-    '5-easy-way-to-master-candlestick-patterns',
-    'how-to-become-profitable-trader',
-    '5-best-railway-stocks-in-india-2025',
-    'master-the-market-with-smart-and-simple-trading-tactics',
-  ]
+  const blogSlugs = getAllBlogs().map((b) => b.slug)
 
   const blogPages = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blogs/${slug}`,

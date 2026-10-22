@@ -71,11 +71,17 @@ export default function Footer() {
                 <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">
                   Office Address
                 </p>
-                <address className="not-italic font-body-md text-on-surface leading-relaxed">
-                  Unit-210, JMD REGENT SQUARE,<br />
-                  MG Road, Gurugram,<br />
-                  Haryana- 122002
-                </address>
+                <a
+                  href="https://maps.app.goo.gl/LZXoshaFTQam6MYq8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-body-md text-foreground hover:text-secondary transition-colors inline-flex items-start gap-2 leading-relaxed"
+                >
+                  <address className="not-italic">
+                    Unit-210, JMD REGENT SQUARE,<br />
+                    MG Road, Gurugram,<br />
+                    Haryana- 122002
+                  </address></a>
               </div>
               <div>
                 <p className="font-section-label text-xs text-muted-foreground uppercase tracking-wider">

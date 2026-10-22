@@ -14,10 +14,7 @@
 6. [Careers & Institutional Hiring](#6-careers--institutional-hiring)
 7. [Contact Channels & Offices](#7-contact-channels--offices)
 8. [Market Insights & Educational Articles](#8-market-insights--educational-articles)
-    - [Article 1: 5 Easy Ways to Master Candlestick Patterns](#article-1-5-easy-ways-to-master-candlestick-patterns)
-    - [Article 2: How to Become a Profitable Trader in 180 Days](#article-2-how-to-become-a-profitable-trader-in-180-days)
-    - [Article 3: 5 Best Railway Stocks in India 2025](#article-3-5-best-railway-stocks-in-india-2025)
-    - [Article 4: Master the Market with Smart & Simple Trading Tactics](#article-4-master-the-market-with-smart--simple-trading-tactics)
+    - [How to Start a SIP in India: ₹500, KYC and Your First Installment](#how-to-start-a-sip-in-india-500-kyc-and-your-first-installment)
 9. [Regulatory Disclosures & Complaint Mechanisms](#9-regulatory-disclosures--complaint-mechanisms)
 
 ---
@@ -81,7 +78,7 @@ Ace Capital Enterprise provides goal-based mutual fund investment services acros
 - **SIP & Lump Sum:** Systematic Investment Plans (SIP) starting from ₹500/month or strategic lump sum deployments.
 - **Tax Planning (ELSS):** Equity Linked Savings Schemes under Section 80C (up to ₹1.5 Lakh annual deduction) with a 3-year lock-in.
 - **NRI Services:** Specialized investment guidance for NRIs via NRE/NRO accounts in compliance with FEMA rules and local AMC guidelines.
-- **Portfolio Tracking (DhanSetu):** Integrated portfolio viewing, transaction execution, SIP management, and account statements via DhanSetu mobile apps (iOS & Android) and web portal.
+- **Portfolio Tracking & Online Investing:** Integrated portfolio viewing, transaction execution, SIP management, and account statements via our web portal ([mf.acecapitalenterprise.com](https://mf.acecapitalenterprise.com)) and the DhanSetu mobile apps (iOS & Android).
 
 ### Frequently Asked Questions (Mutual Funds)
 
@@ -161,81 +158,20 @@ Ace Capital recruits quantitative researchers, high-frequency systems engineers,
 
 ## 8. Market Insights & Educational Articles
 
-### Article 1: 5 Easy Ways to Master Candlestick Patterns
+### How to Start a SIP in India: ₹500, KYC and Your First Installment
 
-Candlestick patterns provide visual insights into market sentiment, price action, and potential reversals.
+A practical roadmap for beginner investors to initiate mutual fund wealth creation:
 
-#### Anatomy of a Candlestick
-- **Body:** Difference between opening and closing price.
-- **Wicks (Shadows):** High and low price extremes during the session.
-- **Colors:** Green (bullish - close > open) and Red (bearish - close < open).
-
-#### Core Pattern Categories
-1. **Single Candlestick Patterns:**
-   - *Doji:* Open and close prices are nearly identical, showing indecision.
-   - *Hammer:* Bullish reversal pattern occurring after a downtrend with a long lower shadow.
-   - *Spinning Top:* Small body with equal wicks, signaling market equilibrium.
-2. **Double Candlestick Patterns:**
-   - *Bullish Engulfing:* Large green candle fully encloses previous small red candle.
-   - *Bearish Engulfing:* Large red candle fully encloses previous small green candle.
-   - *Tweezer Tops/Bottoms:* Consecutive candles sharing identical high or low levels.
-3. **Triple Candlestick Patterns:**
-   - *Morning Star:* Bullish 3-candle reversal (long red, small body, long green).
-   - *Evening Star:* Bearish 3-candle reversal at top of an uptrend.
-   - *Three White Soldiers / Three Black Crows:* Strong trend continuation signals.
-
-#### Step-by-Step Execution Rules
-1. Identify the pattern on the chart.
-2. Analyze overall market context (trend vs range).
-3. Confirm with volume and indicators (Moving Averages, RSI, VWAP).
-4. Enforce strict risk-reward ratios (> 2:1).
-
----
-
-### Article 2: How to Become a Profitable Trader in 180 Days
-
-Achieving trading profitability within 6 months requires a disciplined roadmap:
-
-#### Phase 1: Days 1–30 (Foundation & Paper Trading)
-- Master Indian market structure (NSE, BSE, F&O).
-- Select a primary trading style: Day Trading, Swing Trading, Position Trading, or Scalping.
-- Build a paper-trading track record to validate setup mechanics.
-
-#### Phase 2: Days 31–90 (Micro-Capital Live Testing)
-- Transition to real capital using minimal position sizes (e.g. single stock lots).
-- Maintain a comprehensive trading journal tracking entries, exits, risk-reward, and emotional state.
-- Cap per-trade risk to a maximum of 1%–2% of total trading equity.
-
-#### Phase 3: Days 91–180 (Execution Scaling & Auditing)
-- Conduct weekly performance reviews analyzing win rate, profit factor, and max drawdown.
-- Scale position sizes incrementally based on positive mathematical expectancy.
-- Utilize low-brokerage platforms (Zerodha, Upstox) and charting systems (TradingView).
-
----
-
-### Article 3: 5 Best Railway Stocks in India 2025
-
-The Indian railway sector is experiencing multi-year structural growth backed by government infrastructure budgets, electrification, and modernization.
-
-#### Top 5 Companies Analyzed
-1. **IRCTC (Indian Railway Catering & Tourism Corp):** Monopoly in online railway ticketing, catering services, Rail Neer packaged water, and luxury tourism.
-2. **RITES Ltd.:** Debt-free government engineering consultancy specializing in transport infrastructure with international project exposure and high dividend yields.
-3. **IRCON International:** Major public sector construction firm handling complex railway lines, bridges, highways, and metro projects.
-4. **Container Corporation of India (CONCOR):** Market leader in container logistics, multimodal freight transport, and cold-chain logistics hubs.
-5. **Titagarh Rail Systems:** Premier private manufacturer of freight wagons, Vande Bharat passenger coaches, metro trainsets, and steel bridges.
-
----
-
-### Article 4: Master the Market with Smart & Simple Trading Tactics
-
-Six low-risk intraday strategies for modern electronic markets:
-
-1. **Exponential Moving Average (EMA) Crossover:** Buy when 9-EMA crosses above 21-EMA; sell when 9-EMA crosses below 21-EMA.
-2. **Breakout Trading with Volume:** Identify consolidation resistance/support; execute upon high-volume break confirmed by VWAP.
-3. **Opening Range Breakout (ORB):** Mark the high and low of the first 15–30 minutes of trading; trade in the direction of the breakout with tight stop-loss.
-4. **RSI Reversal:** Utilize short-period RSI (7 or 9 period) to catch oversold (<30) bounces or overbought (>70) pullbacks.
-5. **VWAP (Volume Weighted Average Price) Anchor:** Use VWAP as an institutional benchmark; go long above VWAP and short below VWAP.
-6. **Scalping High-Liquidity Stocks:** Quick micro-tick trades executed with tight spreads and Level 2 orderbook depth.
+1. **Understanding SIP & Compounding:** Systematic Investment Plans (SIP) allow regular monthly investments starting as low as ₹500 in eligible mutual fund schemes. Consistent compounding over 10–20 years helps small regular sums build substantial long-term wealth.
+2. **Mandatory KYC Checklist:** Proof of identity and address requires a PAN card, Aadhaar card, bank account verification (IFSC/account number/cancelled cheque), and photograph/signature. Online paperless KYC can be completed seamlessly using Aadhaar OTP or video-based customer verification (V-CIP).
+3. **5-Step Execution Workflow:**
+   - *Platform Selection:* Choose between direct plans or regular plans guided by an AMFI-registered mutual fund distributor (ARN-113576) like Ace Capital Enterprise.
+   - *Account & KYC Registration:* Complete digital registration ensuring matching identity details across PAN and bank account records.
+   - *Scheme Selection:* Begin with diversified index funds (e.g. Nifty 50) or well-capitalized large-cap equity funds aligned with personal risk appetite. Live NAVs and fund metrics can be evaluated on our interactive Mutual Fund Screener.
+   - *Setting Amount & Date:* Start with an affordable amount (such as ₹500/month), ideally scheduled right after salary credit dates.
+   - *Bank Mandate & Auto-Debit:* Establish NACH / e-mandate via UPI AutoPay or Net Banking to automate monthly deductions.
+4. **Core Risk Principles:** Maintain an emergency fund (3–6 months living expenses), avoid emotional panic during market corrections, periodically review goals, and remember mutual funds carry market risks without guaranteed returns.
+5. **Investing with Ace Capital:** Start investing online directly through our dedicated web portal at [mf.acecapitalenterprise.com](https://mf.acecapitalenterprise.com) or manage and track your portfolio on the go with the **Dhan Setu** mobile application.
 
 ---
 

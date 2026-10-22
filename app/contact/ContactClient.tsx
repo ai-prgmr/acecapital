@@ -154,7 +154,7 @@ export default function ContactClient() {
                     <span className="font-section-label text-xs text-outline uppercase tracking-wider font-bold">Office Address</span>
                     <address className="not-italic">
                       <a
-                        href="https://maps.google.com/?q=Unit-210,+JMD+REGENT+SQUARE,+MG+Road,+Gurugram,+Haryana-+122002"
+                        href="https://maps.app.goo.gl/LZXoshaFTQam6MYq8"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-body-md text-foreground hover:text-secondary transition-colors inline-flex items-start gap-2 leading-relaxed"

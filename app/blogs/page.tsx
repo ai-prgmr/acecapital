@@ -1,68 +1,50 @@
 import { Metadata } from "next"
 import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
+import { getAllBlogs } from "@/lib/blogs"
 
 export const metadata: Metadata = {
-  title: "Ace Insights & Blogs | ACE CAPITAL ENTERPRISE",
-  description: "Explore market insights, quantitative research, latency optimizations, and macro trends analyzed by Ace Capital Enterprise desks.",
+  title: "Investment & Trading Insights | Ace Capital Enterprise",
+  description: "Read expert insights, mutual fund guides, trading strategies, and stock analysis to make smarter financial decisions with Ace Capital Enterprise.",
   alternates: {
     canonical: "/blogs",
+  },
+  openGraph: {
+    title: "Investment & Trading Insights | Ace Capital Enterprise",
+    description: "Read expert insights, mutual fund guides, trading strategies, and stock analysis to make smarter financial decisions with Ace Capital Enterprise.",
+    url: "https://acecapitalenterprise.com/blogs",
+    siteName: "Ace Capital Enterprise",
+    locale: "en_IN",
+    type: "website",
+    images: [
+      {
+        url: "/logo-acecapital-enterprise.webp",
+        width: 1200,
+        height: 630,
+        alt: "Ace Capital Enterprise Insights & Blogs",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Investment & Trading Insights | Ace Capital Enterprise",
+    description: "Read expert insights, mutual fund guides, trading strategies, and stock analysis to make smarter financial decisions with Ace Capital Enterprise.",
+    images: ["/logo-acecapital-enterprise.webp"],
   },
 }
 
 export default function Blogs() {
+  const blogs = getAllBlogs()
+
   const blogFAQs = [
     {
       question: "How frequently are research insights updated?",
-      answer: "Macro comments are published daily, whereas deep-dive quantitative papers and tech briefings are uploaded bi-weekly to match volatile market events.",
+      answer: "Market comments and educational articles are published regularly to help investors and traders stay ahead of evolving financial opportunities and mutual fund updates.",
     },
     {
       question: "Are these analyses financial advice?",
       answer: "No. All publications are for educational and institutional discussion purposes only and do not constitute direct trading recommendation or financial advice.",
     },
-  ]
-
-  const mockBlogs = [
-    {
-      title: "5 Easy Ways to Master Candlestick Patterns and Trade Smarter",
-      category: "Trading Strategy",
-      date: "December 5, 2024",
-      readTime: "3 min read",
-      summary: "Candlestick patterns are one of the most powerful tools in a trader’s arsenal, providing visual insights into market sentiment, trends, and potential reversals.",
-      author: "Ace Capital",
-      slug: "5-easy-way-to-master-candlestick-patterns",
-      image: "/blog-candlesticks.png",
-    },
-    {
-      title: "How to Become a Profitable Trader in 180 Days (6 Months)",
-      category: "Trading Strategy",
-      date: "December 16, 2024",
-      readTime: "8 min read",
-      summary: "Trading can be a highly rewarding career, but achieving profitability within six months requires a clear roadmap, discipline, and consistent effort. Master the essentials in 180 days.",
-      author: "Ace Capital",
-      slug: "how-to-become-profitable-trader",
-      image: "/blog-profitable.png",
-    },
-    {
-      title: "5 Best Railway Stocks in India 2025",
-      category: "Market Analysis",
-      date: "February 20, 2025",
-      readTime: "6 min read",
-      summary: "The Indian railway sector is set to witness substantial growth. If you’re considering tapping into this booming sector, here are the top five railway stocks in 2025.",
-      author: "Ace Capital",
-      slug: "5-best-railway-stocks-in-india-2025",
-      image: "/blog-railways.png",
-    },
-    {
-      title: "Master the Market with Smart & Simple Trading Tactics",
-      category: "Trading Strategy",
-      date: "June 3, 2025",
-      readTime: "7 min read",
-      summary: "Intraday trading can be one of the most exciting and rewarding experiences in the stock market — but it’s also one of the riskiest. Learn 6 low-risk strategies.",
-      author: "Ace Capital",
-      slug: "master-the-market-with-smart-and-simple-trading-tactics",
-      image: "/blog-intraday.png",
-    }
   ]
 
   const blogsSchema = {
@@ -72,8 +54,8 @@ export default function Blogs() {
         "@type": "WebPage",
         "@id": "https://acecapitalenterprise.com/blogs/#webpage",
         "url": "https://acecapitalenterprise.com/blogs",
-        "name": "Ace Insights & Blogs | ACE CAPITAL",
-        "description": "Explore market insights, quantitative research, latency optimizations, and macro trends analyzed by Ace Capital Enterprise desks.",
+        "name": "Investment & Trading Insights | Ace Capital Enterprise",
+        "description": "Read expert insights, mutual fund guides, trading strategies, and stock analysis to make smarter financial decisions with Ace Capital Enterprise.",
         "isPartOf": {
           "@type": "WebSite",
           "@id": "https://acecapitalenterprise.com/#website",
@@ -84,8 +66,8 @@ export default function Blogs() {
       {
         "@type": "Blog",
         "@id": "https://acecapitalenterprise.com/blogs/#blog",
-        "name": "Ace Insights & Blogs",
-        "description": "Explore market insights, quantitative research, latency optimizations, and macro trends analyzed by Ace Capital Enterprise desks.",
+        "name": "Ace Capital Enterprise Insights & Blogs",
+        "description": "Read expert insights, mutual fund guides, trading strategies, and stock analysis to make smarter financial decisions with Ace Capital Enterprise.",
         "publisher": {
           "@type": "Organization",
           "name": "Ace Capital Enterprise",
@@ -126,39 +108,23 @@ export default function Blogs() {
         <div className="absolute inset-0 z-0 opacity-30 border border-border/30 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
         <div className="ace-container w-full relative z-10 space-y-6">
           <span className="font-section-label text-section-label text-secondary uppercase tracking-[0.3em] block">
-            Institutional Research
+            Market Knowledge & Guides
           </span>
           <h1 className="font-display-hero text-4xl md:text-5xl lg:text-6xl text-foreground uppercase leading-tight">
             ACE <span className="text-secondary italic">INSIGHTS</span>
           </h1>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-            Factual market research, quantitative analysis, HFT technology blueprints, and macroeconomic forecasts directly from our trading floor.
+            Practical guides on mutual funds, SIP investing, and disciplined investment strategies from Ace Capital Enterprise.
           </p>
         </div>
       </section>
 
       {/* Blogs list section */}
       <section className="ace-section ace-container border-t border-border">
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-border pb-6 mb-12 gap-4">
-          <h2 className="font-headline-lg text-2xl uppercase text-foreground">Latest Commentary</h2>
-          {/* <div className="flex bg-surface-container-low p-1 border border-border rounded text-xs font-section-label">
-            {["All", "Quant Strategy", "Market Analysis", "Infrastructure"].map((cat, idx) => (
-              <button
-                key={idx}
-                className={`px-4 py-2 uppercase tracking-widest ${idx === 0
-                  ? "bg-secondary text-on-secondary-fixed font-bold rounded-sm"
-                  : "text-on-surface-variant hover:text-on-surface"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div> */}
-        </div>
 
         {/* Blogs list */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {mockBlogs.map((blog, idx) => (
+          {blogs.map((blog, idx) => (
             <Link
               key={idx}
               href={`/blogs/${blog.slug}`}
