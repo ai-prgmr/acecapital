@@ -2,6 +2,7 @@ import { Metadata } from "next"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { getAllBlogSlugs, getBlogBySlug } from "@/lib/blogs"
+import BlogReadTracker from "@/components/BlogReadTracker"
 
 // Static params generation for static export / static pages
 export async function generateStaticParams() {
@@ -111,6 +112,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <>
+      <BlogReadTracker post={post.title} category={post.category} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -180,6 +182,8 @@ export default async function BlogPostPage({ params }: PageProps) {
                 href="https://mf.acecapitalenterprise.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-track="start_investing"
+                data-location="blog"
                 className="bg-secondary text-white px-5 py-3 rounded text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity inline-flex items-center gap-1.5"
               >
                 <span>Invest on Web Portal</span>

@@ -135,6 +135,8 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-start gap-4 pt-4">
             <Link
               href="https://mf.acecapitalenterprise.com" target="_blank"
+              data-track="start_investing"
+              data-location="hero"
               className="w-full sm:w-auto button-primary px-8 py-3.5 text-sm text-center rounded-md hover:brightness-110 active:scale-95 transition-all"
             >
               Start Investing
@@ -379,6 +381,8 @@ export default function Home() {
               </h2>
               <Link
                 href="/contact"
+                data-track="nri_cta"
+                data-location="homepage_nri_section"
                 className="inline-block px-8 py-4 font-semibold text-sm hover:brightness-110 active:scale-95 transition-all text-center rounded-md border border-secondary text-secondary hover:bg-secondary hover:text-white whitespace-nowrap"
               >
                 Speak to an NRI Advisor
@@ -440,7 +444,14 @@ export default function Home() {
                 Download the Dhan Setu app to track your mutual funds, automate SIPs, and access institutional-grade insights on the go.
               </p>
               <div className="flex flex-wrap justify-center md:justify-start gap-4 pt-4">
-                <a href="https://apps.apple.com/in/app/dhan-setu/id6761404925" target="_blank" rel="noopener noreferrer" className="button-primary px-5 py-2.5 rounded-lg flex items-center gap-2">
+                <a
+                  href="https://apps.apple.com/in/app/dhan-setu/id6761404925"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-track="app_store"
+                  data-location="homepage_app_section"
+                  className="button-primary px-5 py-2.5 rounded-lg flex items-center gap-2"
+                >
                   <svg className="h-8 w-auto fill-current" viewBox="0 0 14 44" xmlns="http://www.w3.org/2000/svg">
                     <path d="m13.0729 17.6825a3.61 3.61 0 0 0 -1.7248 3.0365 3.5132 3.5132 0 0 0 2.1379 3.2223 8.394 8.394 0 0 1 -1.0948 2.2618c-.6816.9812-1.3943 1.9623-2.4787 1.9623s-1.3633-.63-2.613-.63c-1.2187 0-1.6525.6507-2.644.6507s-1.6834-.9089-2.4787-2.0243a9.7842 9.7842 0 0 1 -1.6628-5.2776c0-3.0984 2.014-4.7405 3.9969-4.7405 1.0535 0 1.9314.6919 2.5924.6919.63 0 1.6112-.7333 2.8092-.7333a3.7579 3.7579 0 0 1 3.1604 1.5802zm-3.7284-2.8918a3.5615 3.5615 0 0 0 .8469-2.22 1.5353 1.5353 0 0 0 -.031-.32 3.5686 3.5686 0 0 0 -2.3445 1.2084 3.4629 3.4629 0 0 0 -.8779 2.1585 1.419 1.419 0 0 0 .031.2892 1.19 1.19 0 0 0 .2169.0207 3.0935 3.0935 0 0 0 2.1586-1.1368z" />
                   </svg>
@@ -449,7 +460,14 @@ export default function Home() {
                     <span className="text-sm font-bold leading-none mt-1">App Store</span>
                   </div>
                 </a>
-                <a href="https://play.google.com/store/apps/details?id=com.dhan.app.setu" target="_blank" rel="noopener noreferrer" className="bg-foreground text-background px-5 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition-colors">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.dhan.app.setu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-track="google_play"
+                  data-location="homepage_app_section"
+                  className="bg-foreground text-background px-5 py-2.5 rounded-lg flex items-center gap-2 hover:opacity-90 transition-colors"
+                >
                   <svg className="h-8 w-auto" aria-hidden="true" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
                     <path fill="none" d="M0,0h40v40H0V0z"></path>
                     <g>
@@ -550,6 +568,8 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               href="https://mf.acecapitalenterprise.com" target="_blank"
+              data-track="start_investing"
+              data-location="bottom_cta"
               className="w-full sm:w-auto button-primary px-8 py-3.5 text-sm text-center rounded-md hover:brightness-110 active:scale-95 transition-all"
             >
               Start Investing

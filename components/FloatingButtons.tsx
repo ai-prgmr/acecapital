@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Image from "next/image"
 import { MessageCircle, X } from "lucide-react"
+import { trackGenerateLead, trackContactClick, trackNriCtaClick } from "@/lib/analytics"
 
 export default function FloatingButtons() {
   const [isOpen, setIsOpen] = useState(false)
@@ -33,6 +34,13 @@ export default function FloatingButtons() {
       })
       // When mode is no-cors, we don't get an ok response, so we assume success if no network error
       setSubmitted(true)
+      trackGenerateLead({
+        form_name: "ACE Quick Enquiry Form",
+        source_cta: formData.type || "Floating Assistant Avatar",
+      })
+      if (formData.type === "nri") {
+        trackNriCtaClick("floating_form_nri_option")
+      }
     } catch (error) {
       console.error("Submission error:", error)
     } finally {
@@ -48,6 +56,9 @@ export default function FloatingButtons() {
           href={whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactClick("whatsapp", { location: "floating_button", destination: whatsappUrl })}
+          data-track="whatsapp"
+          data-location="floating_button"
           className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-transform hover:scale-110 flex items-center justify-center"
           aria-label="Contact on WhatsApp"
         >

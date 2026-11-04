@@ -224,7 +224,13 @@ export default function MutualFundsContent() {
 
           <div className="mt-16 text-center">
             <h3 className="font-headline-md text-2xl uppercase text-foreground mb-4">Ready to start your journey?</h3>
-            <Link href="https://mf.acecapitalenterprise.com/" target="_blank" className="button-primary px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl inline-flex items-center gap-2 text-lg bg-primary text-primary-foreground transition-all">
+            <Link
+              href="https://mf.acecapitalenterprise.com/"
+              target="_blank"
+              data-track="start_investing"
+              data-location="mutual_funds_page"
+              className="button-primary px-10 py-4 rounded-full font-bold shadow-lg hover:shadow-xl inline-flex items-center gap-2 text-lg bg-primary text-primary-foreground transition-all"
+            >
               Start investing now
               <span className="text-2xl leading-none">→</span>
             </Link>

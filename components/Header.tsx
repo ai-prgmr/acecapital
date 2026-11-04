@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils"
 import { ArrowUpRight, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Script from "next/script"
+import { trackPortalLoginClick } from "@/lib/analytics"
 export default function Header() {
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
@@ -60,7 +61,15 @@ export default function Header() {
             <Link href="/screener" className="btn-shine bg-linear-to-r from-cyan-500 to-blue-500 px-4 py-2.5 text-md font-bold text-white border border-border rounded-full hover:bg-muted transition-colors group">
               <span className="relative z-10">ACE Screener</span>
             </Link>
-            <a href="https://mf.acecapitalenterprise.com" target="_blank" rel="noreferrer" className="button-primary px-4 py-2.5 text-md">
+            <a
+              href="https://mf.acecapitalenterprise.com"
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => trackPortalLoginClick("header_nav")}
+              data-track="portal_login"
+              data-location="header_nav"
+              className="button-primary px-4 py-2.5 text-md"
+            >
               Portal login <ArrowUpRight size={14} aria-hidden="true" />
             </a>
           </div>
@@ -115,7 +124,14 @@ export default function Header() {
                   href="https://mf.acecapitalenterprise.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="button-primary w-full py-3 justify-center text-sm" onClick={() => setIsOpen(false)}>
+                  data-track="portal_login"
+                  data-location="header_mobile_menu"
+                  className="button-primary w-full py-3 justify-center text-sm"
+                  onClick={() => {
+                    trackPortalLoginClick("header_mobile_menu")
+                    setIsOpen(false)
+                  }}
+                >
                   PORTAL LOGIN
                 </Link>
               </div>

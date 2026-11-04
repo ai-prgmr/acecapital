@@ -1,6 +1,7 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useRef, useEffect } from "react"
+import { trackCalculatorStart, trackCalculatorComplete } from "@/lib/analytics"
 
 export default function MutualFundsCalculator() {
   const [investmentType, setInvestmentType] = useState<"SIP" | "LUMPSUM">("SIP")
@@ -9,6 +10,29 @@ export default function MutualFundsCalculator() {
   const [lumpsumInvestment, setLumpsumInvestment] = useState(100000)
   const [horizonYears, setHorizonYears] = useState(18)
   const [annualReturn, setAnnualReturn] = useState(6)
+
+  const hasInteractedRef = useRef(false)
+  const isFirstMountRef = useRef(true)
+
+  useEffect(() => {
+    if (isFirstMountRef.current) {
+      isFirstMountRef.current = false
+      return
+    }
+
+    const currentAmount = investmentType === "SIP" ? monthlyInvestment : lumpsumInvestment
+
+    if (!hasInteractedRef.current) {
+      hasInteractedRef.current = true
+      trackCalculatorStart(investmentType, currentAmount, horizonYears)
+    }
+
+    const timer = setTimeout(() => {
+      trackCalculatorComplete(investmentType, currentAmount, horizonYears)
+    }, 1500)
+
+    return () => clearTimeout(timer)
+  }, [investmentType, monthlyInvestment, lumpsumInvestment, horizonYears, annualReturn])
   const calculations = useMemo(() => {
     const r = annualReturn / 100
     const i = r / 12

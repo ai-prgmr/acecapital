@@ -1,8 +1,9 @@
 // components/FullAMFIScreener.tsx
 "use client";
 
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useRef } from "react";
 import { parseFullAMFIData, AMFIFund } from "@/lib/amfi-parser";
+import { trackScreenerUse, trackScreenerResultClick } from "@/lib/analytics";
 
 type SortKey = "scheme" | "category" | "nav" | "r1m" | "r1y" | "r3y" | "r5y";
 type SortDirection = "asc" | "desc";
@@ -24,29 +25,50 @@ export default function FullAMFIScreener() {
         const cacheKey = `clean_amfi_data_v3_${today}`;
 
         if (!forceRefresh) {
-            const cached = localStorage.getItem(cacheKey);
-            if (cached) {
-                setAllFunds(JSON.parse(cached));
-                setLoading(false);
-                return;
+            try {
+                const cached = localStorage.getItem(cacheKey);
+                if (cached) {
+                    setAllFunds(JSON.parse(cached));
+                    setLoading(false);
+                    return;
+                }
+            } catch {
+                // Ignore localStorage read errors
             }
         }
 
         try {
             const data = await parseFullAMFIData();
             setAllFunds(data);
-            
-            // Clear old caches to save space
-            const keysToRemove = [];
-            for (let i = 0; i < localStorage.length; i++) {
-                const key = localStorage.key(i);
-                if (key === "clean_amfi_data_v2" || key?.startsWith("clean_amfi_data_v2_")) {
-                    keysToRemove.push(key);
+
+            // Clear all older AMFI caches to save space
+            try {
+                const keysToRemove: string[] = [];
+                for (let i = 0; i < localStorage.length; i++) {
+                    const key = localStorage.key(i);
+                    if (key && key.startsWith("clean_amfi_data_") && key !== cacheKey) {
+                        keysToRemove.push(key);
+                    }
+                }
+                keysToRemove.forEach((k) => localStorage.removeItem(k));
+
+                // Save today's fresh data
+                localStorage.setItem(cacheKey, JSON.stringify(data));
+            } catch {
+                // If storage quota exceeded, clear all old AMFI caches and retry once
+                try {
+                    for (let i = localStorage.length - 1; i >= 0; i--) {
+                        const key = localStorage.key(i);
+                        if (key && key.startsWith("clean_amfi_data_")) {
+                            localStorage.removeItem(key);
+                        }
+                    }
+                    localStorage.setItem(cacheKey, JSON.stringify(data));
+                } catch {
+                    // Gracefully continue with in-memory state without crashing
+                    console.warn("localStorage quota exceeded; using in-memory AMFI data.");
                 }
             }
-            keysToRemove.forEach(k => localStorage.removeItem(k));
-            
-            localStorage.setItem(cacheKey, JSON.stringify(data));
         } catch (err) {
             console.error("Failed parsing AMFI data", err);
         } finally {
@@ -158,8 +180,12 @@ export default function FullAMFIScreener() {
                     placeholder="Search by fund name or code..."
                     value={search}
                     onChange={(e) => {
-                        setSearch(e.target.value);
+                        const val = e.target.value;
+                        setSearch(val);
                         setCurrentPage(1);
+                        if (val.trim().length >= 3) {
+                            trackScreenerUse({ filter_type: "search", filter_value: val.trim(), fund_category: selectedCategory });
+                        }
                     }}
                     className="md:col-span-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm"
                 />
@@ -167,8 +193,10 @@ export default function FullAMFIScreener() {
                 <select
                     value={selectedCategory}
                     onChange={(e) => {
-                        setSelectedCategory(e.target.value);
+                        const val = e.target.value;
+                        setSelectedCategory(val);
                         setCurrentPage(1);
+                        trackScreenerUse({ filter_type: "category", filter_value: val, fund_category: val });
                     }}
                     className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm"
                 >
@@ -183,8 +211,10 @@ export default function FullAMFIScreener() {
                 <select
                     value={selectedAMC}
                     onChange={(e) => {
-                        setSelectedAMC(e.target.value);
+                        const val = e.target.value;
+                        setSelectedAMC(val);
                         setCurrentPage(1);
+                        trackScreenerUse({ filter_type: "amc", filter_value: val, fund_category: selectedCategory });
                     }}
                     className="px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm"
                 >
@@ -234,7 +264,11 @@ export default function FullAMFIScreener() {
                             </thead>
                             <tbody className="divide-y text-sm">
                                 {paginatedFunds.map((fund) => (
-                                    <tr key={fund.code} className="hover:bg-gray-50 transition-colors">
+                                    <tr
+                                        key={fund.code}
+                                        onClick={() => trackScreenerResultClick({ scheme_name: fund.scheme, fund_category: fund.category, amc: fund.amc })}
+                                        className="hover:bg-gray-50 transition-colors cursor-pointer"
+                                    >
                                         <td className="p-4 font-semibold text-gray-900">
                                             {fund.scheme}
                                             <div className="text-xs font-normal text-gray-400">{fund.amc}</div>

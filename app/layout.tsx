@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import FloatingButtons from "@/components/FloatingButtons"
+import AnalyticsListener from "@/components/AnalyticsListener"
 
 const libreBodoni = Libre_Bodoni({
   subsets: ["latin"],
@@ -115,7 +116,7 @@ export default function RootLayout({
                 "contactType": "customer service"
               },
               "sameAs": [
-                "https://www.facebook.com/profile.php?id=61566740426997",
+                "https://www.instagram.com/acecapitalent",
                 "https://x.com/acecapitalent",
                 "https://youtube.com/@acecapitalenterprise?si=kxXjdN6WXwNZHzN7",
                 "https://www.linkedin.com/company/ace-capital-enterprise/"
@@ -135,9 +136,12 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', 'G-KMWM36NR9Y');
+            gtag('config', 'G-KMWM36NR9Y', {
+              debug_mode: window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
+            });
           `}
         </Script>
+        <AnalyticsListener />
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <Header />
         <main id="main-content">{children}</main>

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { trackGenerateLead, trackNriCtaClick } from "@/lib/analytics"
 
 export default function ContactClient() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,14 @@ export default function ContactClient() {
         body: JSON.stringify(formData),
       })
       setSubmitted(true)
+      trackGenerateLead({
+        form_name: "Contact Us Form",
+        source_cta: formData.type || "Contact Page Form",
+        page: "/contact",
+      })
+      if (formData.type === "nri") {
+        trackNriCtaClick("contact_form_nri_option")
+      }
     } catch (error) {
       console.error("Submission error:", error)
     } finally {

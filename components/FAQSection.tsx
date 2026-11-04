@@ -2,6 +2,7 @@
 
 import React, { useState } from "react"
 import { cn } from "@/lib/utils"
+import { trackFaqExpand } from "@/lib/analytics"
 
 interface FAQItem {
   question: string
@@ -19,7 +20,11 @@ export default function FAQSection({ title, subtitle, items }: FAQSectionProps) 
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
 
   const toggleFAQ = (index: number) => {
-    setActiveIndex(activeIndex === index ? null : index)
+    const willOpen = activeIndex !== index
+    setActiveIndex(willOpen ? index : null)
+    if (willOpen && items[index]) {
+      trackFaqExpand(items[index].question)
+    }
   }
 
   // Generate FAQ JSON-LD Schema for AEO (Answer Engine Optimization)
