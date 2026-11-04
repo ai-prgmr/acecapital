@@ -248,11 +248,10 @@ export default function FullAMFIScreener() {
                                     key={item.key}
                                     type="button"
                                     onClick={() => handleSort(item.key)}
-                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1 transition-all whitespace-nowrap active:scale-95 ${
-                                        isActive
-                                            ? "bg-blue-600 text-white shadow-xs"
-                                            : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
-                                    }`}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1 transition-all whitespace-nowrap active:scale-95 ${isActive
+                                        ? "bg-blue-600 text-white shadow-xs"
+                                        : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                                        }`}
                                 >
                                     <span>{item.label}</span>
                                     {isActive ? (
@@ -421,8 +420,8 @@ export default function FullAMFIScreener() {
                                             {fund.scheme}
                                             <div className="text-xs font-normal text-gray-400">{fund.amc}</div>
                                         </td>
-                                        <td className="p-4 text-xs">
-                                            <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded border">{fund.category}</span>
+                                        <td className="p-4 text-xs ">
+                                            <span className=" text-gray-700">{fund.category}</span>
                                         </td>
                                         <td className="p-4 font-bold text-gray-900">₹{fund.nav?.toFixed(2)}</td>
                                         <td className={`p-4 font-medium text-xs ${fund.r1m !== null && fund.r1m > 0 ? 'text-green-600' : fund.r1m !== null && fund.r1m < 0 ? 'text-red-600' : 'text-gray-400'}`}>
