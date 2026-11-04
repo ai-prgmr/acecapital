@@ -93,9 +93,12 @@ export default function FullAMFIScreener() {
     }, [allFunds]);
 
     const handleSort = (key: SortKey) => {
-        let direction: SortDirection = "asc";
-        if (sortConfig && sortConfig.key === key && sortConfig.direction === "asc") {
-            direction = "desc";
+        const isNumeric = key !== "scheme" && key !== "category";
+        const defaultDirection: SortDirection = isNumeric ? "desc" : "asc";
+        let direction: SortDirection = defaultDirection;
+
+        if (sortConfig && sortConfig.key === key) {
+            direction = sortConfig.direction === "asc" ? "desc" : "asc";
         }
         setSortConfig({ key, direction });
     };
@@ -174,7 +177,7 @@ export default function FullAMFIScreener() {
             </div>
 
             {/* Filter Controls */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded-xl border border-gray-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 bg-gray-50 p-4 rounded-xl border border-gray-200">
                 <input
                     type="text"
                     placeholder="Search by fund name or code..."
@@ -187,7 +190,7 @@ export default function FullAMFIScreener() {
                             trackScreenerUse({ filter_type: "search", filter_value: val.trim(), fund_category: selectedCategory });
                         }
                     }}
-                    className="md:col-span-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm"
+                    className="sm:col-span-2 px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white text-sm"
                 />
 
                 <select
@@ -225,17 +228,162 @@ export default function FullAMFIScreener() {
                         </option>
                     ))}
                 </select>
+
+                {/* Mobile Quick-Sort Pill Bar */}
+                <div className="sm:col-span-2 md:hidden pt-1">
+                    <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none">
+                        <span className="text-[11px] font-bold text-gray-500 uppercase tracking-wider whitespace-nowrap mr-1">
+                            Sort by:
+                        </span>
+                        {[
+                            { key: "nav" as SortKey, label: "NAV" },
+                            { key: "r1m" as SortKey, label: "1M" },
+                            { key: "r1y" as SortKey, label: "1Y" },
+                            { key: "r3y" as SortKey, label: "3Y" },
+                            { key: "r5y" as SortKey, label: "5Y" },
+                        ].map((item) => {
+                            const isActive = sortConfig?.key === item.key;
+                            return (
+                                <button
+                                    key={item.key}
+                                    type="button"
+                                    onClick={() => handleSort(item.key)}
+                                    className={`px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1 transition-all whitespace-nowrap active:scale-95 ${
+                                        isActive
+                                            ? "bg-blue-600 text-white shadow-xs"
+                                            : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-300"
+                                    }`}
+                                >
+                                    <span>{item.label}</span>
+                                    {isActive ? (
+                                        <span className="font-bold text-[11px]">{sortConfig.direction === "asc" ? "↑" : "↓"}</span>
+                                    ) : (
+                                        <span className="text-gray-400 text-[10px]">↕</span>
+                                    )}
+                                </button>
+                            );
+                        })}
+                    </div>
+                </div>
             </div>
 
-            {/* Table Results */}
+            {/* Table / Cards Results */}
             {loading ? (
                 <div className="text-center py-20 text-gray-500">Loading active AMFI data...</div>
             ) : (
-                <div className="space-y-3">
+                <div className="space-y-4">
                     <div className="text-xs text-gray-500 text-right pb-2 border-b border-gray-200">
                         Last update Date: <b>{new Date(Date.now() - 86400000).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}</b>
                     </div>
-                    <div className="overflow-x-auto border rounded-xl bg-white shadow-sm">
+
+                    {/* Mobile Card List View (Visible on mobile/tablet) */}
+                    <div className="space-y-3 md:hidden">
+                        {paginatedFunds.map((fund) => (
+                            <div
+                                key={fund.code}
+                                onClick={() => trackScreenerResultClick({ scheme_name: fund.scheme, fund_category: fund.category, amc: fund.amc })}
+                                className="bg-white border border-gray-200 rounded-xl p-4 shadow-xs space-y-3 hover:border-blue-400 active:bg-gray-50 transition-all cursor-pointer"
+                            >
+                                <div>
+                                    <h3 className="font-semibold text-gray-900 text-sm leading-snug">
+                                        {fund.scheme}
+                                    </h3>
+                                    <div className="flex flex-wrap items-center gap-2 mt-1.5">
+                                        <span className="text-[11px] font-medium bg-gray-100 text-gray-700 px-2 py-0.5 rounded border border-gray-200">
+                                            {fund.category}
+                                        </span>
+                                        <span className="text-xs text-gray-500 font-normal">
+                                            {fund.amc}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* 5 Key Metrics Grid (NAV, 1M, 1Y, 3Y, 5Y) - Directly Tap to Sort */}
+                                <div className="grid grid-cols-5 gap-1 pt-2.5 border-t border-gray-100 text-center">
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleSort("nav");
+                                        }}
+                                        className={`p-1 rounded text-left transition-colors ${sortConfig?.key === "nav" ? "bg-blue-50 ring-1 ring-blue-300" : "hover:bg-gray-50"}`}
+                                    >
+                                        <span className="block text-[10px] uppercase font-bold text-gray-400 tracking-wider">
+                                            NAV {sortConfig?.key === "nav" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                                        </span>
+                                        <span className="text-xs font-bold text-gray-900 block truncate">₹{fund.nav?.toFixed(1)}</span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleSort("r1m");
+                                        }}
+                                        className={`p-1 rounded transition-colors ${sortConfig?.key === "r1m" ? "bg-blue-50 ring-1 ring-blue-300" : "hover:bg-gray-50"}`}
+                                    >
+                                        <span className="block text-[10px] uppercase font-bold text-gray-400 tracking-wider">
+                                            1M {sortConfig?.key === "r1m" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                                        </span>
+                                        <span className={`text-xs font-semibold block ${fund.r1m !== null && fund.r1m > 0 ? 'text-green-600' : fund.r1m !== null && fund.r1m < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r1m !== null ? `${fund.r1m}%` : '-'}
+                                        </span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleSort("r1y");
+                                        }}
+                                        className={`p-1 rounded transition-colors ${sortConfig?.key === "r1y" ? "bg-blue-50 ring-1 ring-blue-300" : "hover:bg-gray-50"}`}
+                                    >
+                                        <span className="block text-[10px] uppercase font-bold text-gray-400 tracking-wider">
+                                            1Y {sortConfig?.key === "r1y" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                                        </span>
+                                        <span className={`text-xs font-semibold block ${fund.r1y !== null && fund.r1y > 0 ? 'text-green-600' : fund.r1y !== null && fund.r1y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r1y !== null ? `${fund.r1y}%` : '-'}
+                                        </span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleSort("r3y");
+                                        }}
+                                        className={`p-1 rounded transition-colors ${sortConfig?.key === "r3y" ? "bg-blue-50 ring-1 ring-blue-300" : "hover:bg-gray-50"}`}
+                                    >
+                                        <span className="block text-[10px] uppercase font-bold text-gray-400 tracking-wider">
+                                            3Y {sortConfig?.key === "r3y" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                                        </span>
+                                        <span className={`text-xs font-semibold block ${fund.r3y !== null && fund.r3y > 0 ? 'text-green-600' : fund.r3y !== null && fund.r3y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r3y !== null ? `${fund.r3y}%` : '-'}
+                                        </span>
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            handleSort("r5y");
+                                        }}
+                                        className={`p-1 rounded transition-colors ${sortConfig?.key === "r5y" ? "bg-blue-50 ring-1 ring-blue-300" : "hover:bg-gray-50"}`}
+                                    >
+                                        <span className="block text-[10px] uppercase font-bold text-gray-400 tracking-wider">
+                                            5Y {sortConfig?.key === "r5y" && (sortConfig.direction === "asc" ? "↑" : "↓")}
+                                        </span>
+                                        <span className={`text-xs font-semibold block ${fund.r5y !== null && fund.r5y > 0 ? 'text-green-600' : fund.r5y !== null && fund.r5y < 0 ? 'text-red-600' : 'text-gray-400'}`}>
+                                            {fund.r5y !== null ? `${fund.r5y}%` : '-'}
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Desktop Table View (Hidden on mobile) */}
+                    <div className="hidden md:block overflow-x-auto border rounded-xl bg-white shadow-sm">
                         <table className="w-full text-left border-collapse">
                             <thead className="bg-gray-100 text-gray-700 text-xs uppercase tracking-wider border-b">
                                 <tr>
