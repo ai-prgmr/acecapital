@@ -1,12 +1,16 @@
+"use client"
 import Image from "next/image";
-
+import { usePathname } from "next/navigation";
 export default function InvestmentGoals() {
+  const path = usePathname();
   return (
     <section className="ace-section ace-container">
       <div className="text-center mb-12">
-        <h1 className="font-section-label text-section-label uppercase tracking-widest text-secondary">
+        {path == '/' ? <h2 className="font-section-label text-section-label uppercase tracking-widest text-secondary">
           INVEST WITH PURPOSE
-        </h1>
+        </h2> : <h1 className="font-section-label text-section-label uppercase tracking-widest text-secondary">
+          INVEST WITH PURPOSE
+        </h1>}
         <h2 className="font-headline-lg text-headline-lg mt-4 uppercase text-foreground">
           GOALS THAT DRIVE YOU
         </h2>

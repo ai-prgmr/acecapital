@@ -31,7 +31,7 @@ export default function Header() {
               className="flex items-center gap-2 hover:opacity-90 active:scale-95 transition-all"
               aria-label="Ace Capital Enterprise Home"
             >
-              <Image src="/logo-acecapital-enterprise.webp" alt="" height={150} width={150} />
+              <Image src="/logo-acecapital-enterprise.webp" alt="Mutual fund distributor Ace Capital Enterprise Gurugram Logo" height={150} width={150} />
             </Link>
 
             {/* Desktop Navigation Links */}
