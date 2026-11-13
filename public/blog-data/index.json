@@ -1,5 +1,19 @@
 [
   {
+    "slug": "sip-vs-lumpsum-which-suits-you",
+    "title": "SIP vs Lumpsum: Which Mutual Fund Investment Suits You?",
+    "seoTitle": "SIP vs Lumpsum: Which Suits You Best? | Ace Capital",
+    "seoDescription": "SIP vs Lumpsum: Which investment strategy suits you best? Compare returns, volatility, tax impact, and when to use STP for mutual funds in India.",
+    "category": "Mutual Funds",
+    "date": "October 29, 2026",
+    "readTime": "9 min read",
+    "summary": "Wondering whether to invest via SIP or Lumpsum? Compare market timing, rupee cost averaging, risk factors, and real return scenarios to make the right choice.",
+    "author": "Ace Capital Enterprise",
+    "image": "/blog-sip-vs-lumpsum.jpg",
+    "published": true,
+    "order": 1
+  },
+  {
     "slug": "how-to-start-sip",
     "title": "How to Start a SIP in India: ₹500, KYC and Your First Installment",
     "seoTitle": "How to Start a SIP in India with ₹500 | Ace Capital",
@@ -11,6 +25,6 @@
     "author": "Ace Capital",
     "image": "/blog-sip.png",
     "published": true,
-    "order": 1
+    "order": 2
   }
 ]
