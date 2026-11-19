@@ -9,6 +9,7 @@
 1. [Firm Overview & Philosophy](#1-firm-overview--philosophy)
 2. [Leadership & Team Structure](#2-leadership--team-structure)
 3. [Mutual Funds & Wealth Management](#3-mutual-funds--wealth-management)
+    - [Milestone-Driven Investment Goals Architecture](#milestone-driven-investment-goals-architecture)
 4. [Proprietary Trading & Auto Desk](#4-proprietary-trading--auto-desk)
 5. [Interactive Mutual Fund Screener](#5-interactive-mutual-fund-screener)
 6. [Careers & Institutional Hiring](#6-careers--institutional-hiring)
@@ -81,6 +82,15 @@ Ace Capital Enterprise provides goal-based mutual fund investment services acros
 - **Tax Planning (ELSS):** Equity Linked Savings Schemes under Section 80C (up to ₹1.5 Lakh annual deduction) with a 3-year lock-in.
 - **NRI Services:** Specialized investment guidance for NRIs via NRE/NRO accounts in compliance with FEMA rules and local AMC guidelines.
 - **Portfolio Tracking & Online Investing:** Integrated portfolio viewing, transaction execution, SIP management, and account statements via our web portal ([mf.acecapitalenterprise.com](https://mf.acecapitalenterprise.com)) and the DhanSetu mobile apps (iOS & Android).
+
+### Milestone-Driven Investment Goals Architecture
+
+Ace Capital structures mutual fund portfolios around 5 core real-life milestone goals:
+1. **Retirement Planning (15+ Years):** Long-term compounding to build a resilient, inflation-hedged corpus ensuring financial independence and steady post-retirement Systematic Withdrawal Plans (SWP).
+2. **Children's Higher Education (10–15 Years):** Countering 10–12% education inflation with disciplined equity compounding for prestigious university admissions.
+3. **Wealth Creation & Growth (7+ Years):** High-conviction multi-cap and flexi-cap equity strategies to systematically compound personal net worth.
+4. **Child's Marriage / Milestone Celebrations (5–10 Years):** Balanced asset allocation with progressive automated de-risking into hybrid and debt funds as target dates approach.
+5. **Portfolio Diversification & Capital Preservation (All-Weather / Ongoing):** Shielding capital from market drawdowns through strategic multi-asset, debt, and arbitrage fund allocations.
 
 ### Frequently Asked Questions (Mutual Funds)
 
@@ -168,10 +178,12 @@ Ace Capital recruits quantitative researchers, high-frequency systems engineers,
   - *Road & Airport Access:* Direct access off Mehrauli-Gurgaon Road (NH-148A), ~25 minutes drive from Indira Gandhi International Airport (DEL) via NH-48.
 - **Key In-Person & Regional Advisory Offerings:**
   - **CAS Portfolio Doctor:** In-person diagnostic review of consolidated account statements (CAMS / KFintech CAS) to detect fund overlap, excessive scheme proliferation, underperforming trailing alpha, high expense ratios, and capital gains tax liabilities.
+  - **Milestone-Driven Goal Planning for NCR Families:** Translating life objectives into disciplined mutual fund portfolios across Retirement, Children's Higher Education, Long-Term Wealth Creation, Milestone Celebrations, and Capital Preservation.
   - **Corporate & Executive SIP Structuring:** Tailored wealth architectures for technology leaders, corporate executives, and consulting professionals across DLF Cyber City and Golf Course Road.
   - **Strategic Lumpsum & STP Deployment:** Converting corporate annual bonuses, ESOP liquidity events, and property sale proceeds into disciplined STP transfers via low-volatility Liquid or Overnight funds.
   - **Corporate Treasury & Idle Cash Parking:** Ultra-short liquidity management and institutional mutual fund deployment for Delhi NCR startups, SMEs, and family businesses.
   - **Dedicated Cross-Border NRI Wealth Desk:** Compliant NRE/NRO mutual fund portfolios, FEMA regulatory advisory, inward remittance facilitation, and repatriation support for Indian diaspora across UAE/GCC, Singapore, UK, and North America.
+- **Consultation & Meeting Access:** Investors can schedule an in-person meeting at JMD Regent Square, MG Road or arrange a digital consultation directly via the web desk ([locations/gurugram](https://acecapitalenterprise.com/locations/gurugram)), phone (`+91-9220556760`), or email (`support@acecapitalenterprise.com`).
 
 ---
 

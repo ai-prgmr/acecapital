@@ -3,6 +3,7 @@ import Link from "next/link"
 import FAQSection from "@/components/FAQSection"
 import MutualFundsCalculator from "@/components/MutualFundsCalculator"
 import OpenContactModalButton from "@/components/OpenContactModalButton"
+import InvestmentGoals from "@/components/InvestmentGoals"
 
 export const metadata: Metadata = {
   title: "Mutual Fund Distributor in Gurugram & Delhi NCR | Ace Capital",
@@ -230,17 +231,6 @@ export default function GurugramLocationPage() {
               >
                 <span>View on Google Maps</span>
                 <span className="material-symbols-outlined text-sm text-secondary">open_in_new</span>
-              </a>
-
-              <a
-                href="https://mf.acecapitalenterprise.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-track="start_investing"
-                data-location="gurugram_hero"
-                className="text-secondary hover:text-foreground font-section-label text-xs uppercase tracking-widest px-4 py-4 text-center transition-colors inline-flex items-center justify-center gap-1.5"
-              >
-                <span>Invest Online &rarr;</span>
               </a>
             </div>
 
@@ -474,8 +464,18 @@ export default function GurugramLocationPage() {
           </div>
         </section>
 
+        {/* Concise Goal-Based Investing Section */}
+        <section className="ace-section bg-surface-container-lowest border-t border-border/40">
+          <InvestmentGoals
+            variant="compact"
+            label="Goal-Based Investing"
+            title="Milestone-Driven Portfolios for NCR Families"
+            subtitle="Every investment journey in Delhi NCR begins with a real-life milestone — structured systematically to protect capital and outpace inflation."
+          />
+        </section>
+
         {/* Free Portfolio Doctor / CAS Health Check Callout */}
-        <section className="ace-section bg-surface-container-lowest border-y border-border/40">
+        <section className="ace-section bg-background border-t border-border/40">
           <div className="ace-container">
             <div className="bg-card border border-secondary/40 rounded-3xl p-8 md:p-12 space-y-6">
               <div className="max-w-3xl space-y-3">
@@ -528,7 +528,7 @@ export default function GurugramLocationPage() {
         </section>
 
         {/* Interactive Growth Projection Tool */}
-        <section className="ace-section bg-background">
+        <section className="ace-section bg-surface-container-lowest border-t border-border/40">
           <div className="ace-container space-y-8">
             <div className="text-center max-w-2xl mx-auto space-y-2">
               <span className="font-section-label text-xs text-secondary uppercase tracking-widest font-bold block">
@@ -546,41 +546,6 @@ export default function GurugramLocationPage() {
           </div>
         </section>
 
-        {/* Contact & Consultation Desk CTA Section (Replaces redundant inline form) */}
-        <section id="contact-desk" className="ace-section bg-surface-container-lowest border-t border-border/40">
-          <div className="ace-container">
-            <div className="max-w-6xl mx-auto bg-card border border-border/80 rounded-3xl p-8 md:p-12 shadow-xl space-y-8 text-center">
-              <div className="space-y-3 max-w-2xl mx-auto">
-                <span className="font-section-label text-xs text-secondary uppercase tracking-widest font-bold block">
-                  Get in Touch • Delhi NCR &amp; Gurugram Desk
-                </span>
-                <h2 className="font-headline-lg text-3xl md:text-4xl uppercase text-foreground">
-                  Connect With An Ace Capital Advisor
-                </h2>
-                <p className="font-body-md text-muted-foreground text-sm leading-relaxed">
-                  Have questions about fresh SIPs, portfolio consolidation, or cross-border NRI wealth? Reach out via our quick consultation form, give us a call, or visit our office at JMD Regent Square, MG Road.
-                </p>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-                <OpenContactModalButton className="w-full sm:w-auto button-primary px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs md:text-sm text-center shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2">
-                  <span className="material-symbols-outlined text-sm">chat</span>
-                  <span>Open Quick Contact Form</span>
-                </OpenContactModalButton>
-
-                <Link
-                  href="/contact"
-                  className="w-full sm:w-auto bg-card border border-border text-foreground hover:border-secondary hover:text-secondary px-8 py-4 rounded-xl font-bold uppercase tracking-wider text-xs md:text-sm text-center transition-all flex items-center justify-center gap-2 shadow-sm"
-                >
-                  <span className="material-symbols-outlined text-sm">contact_support</span>
-                  <span>Go to Contact Desk Page</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Local Gurugram & Delhi NCR FAQ Section */}
         <FAQSection
           title="Gurugram &amp; Delhi NCR FAQs"
@@ -588,34 +553,30 @@ export default function GurugramLocationPage() {
           items={localFAQs}
         />
 
-        {/* Bottom Banner */}
-        <section className="bg-primary-container ace-section text-center">
-          <div className="ace-container space-y-4 max-w-3xl mx-auto">
-            <h2 className="font-display-hero text-2xl md:text-3xl uppercase text-foreground">
-              Ready to Align Your Investments with Reality?
+        {/* Final Desk Consultation Banner */}
+        <section className="bg-surface-container-lowest border-t border-border/40 ace-section text-center">
+          <div className="ace-container space-y-6 max-w-3xl mx-auto">
+            <span className="font-section-label text-xs text-secondary uppercase tracking-widest font-bold block">
+              Flagship Regional Desk • JMD Regent Square, MG Road
+            </span>
+            <h2 className="font-display-hero text-2xl sm:text-3xl md:text-4xl uppercase text-foreground leading-tight">
+              Ready to Align Your Investments with Clarity?
             </h2>
-            <p className="font-body-md text-primary text-sm">
-              Visit our office at JMD Regent Square, MG Road, Gurugram or connect with our desk online.
+            <p className="font-body-md text-muted-foreground text-sm sm:text-base max-w-2xl mx-auto leading-relaxed">
+              Visit our team in person at MG Road, Gurugram or connect via virtual consultation to structure your mutual funds with discipline.
             </p>
-            <div className="pt-2 flex flex-wrap justify-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <OpenContactModalButton className="w-full sm:w-auto button-primary px-8 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider shadow-lg hover:brightness-110 active:scale-95 transition-all flex items-center justify-center gap-2">
+                <span>Book In-Person Consultation</span>
+                <span className="material-symbols-outlined text-sm">calendar_today</span>
+              </OpenContactModalButton>
+
               <a
-                href="https://mf.acecapitalenterprise.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-track="start_investing"
-                data-location="gurugram_bottom_cta"
-                className="button-primary px-8 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider"
+                href="tel:+919220556760"
+                className="w-full sm:w-auto bg-card border border-border text-foreground hover:border-secondary hover:text-secondary px-7 py-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-sm transition-all"
               >
-                Start Investing Online
-              </a>
-              <a
-                href={gbpMapUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-card border border-border text-foreground hover:border-secondary px-6 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5"
-              >
-                <span>Google Maps Location</span>
-                <span className="material-symbols-outlined text-sm">open_in_new</span>
+                <span className="material-symbols-outlined text-sm text-secondary">phone_in_talk</span>
+                <span>Call Desk: +91 9220556760</span>
               </a>
             </div>
           </div>
