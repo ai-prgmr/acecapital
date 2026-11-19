@@ -39,6 +39,13 @@ export default function AnalyticsListener() {
         (interactiveEl.closest("footer") ? "footer" : "") ||
         window.location.pathname
 
+      // Action triggers (e.g. open floating contact modal)
+      if (interactiveEl.dataset.action === "open-contact-form") {
+        e.preventDefault()
+        window.dispatchEvent(new CustomEvent("open-ace-form"))
+        return
+      }
+
       // 1. Explicit data-track tags
       if (explicitTrack === "start_investing") {
         trackStartInvesting(location)

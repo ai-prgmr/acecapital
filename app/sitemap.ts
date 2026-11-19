@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mutual-funds-investments',
     '/blogs',
     '/screener',
+    '/locations/gurugram',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date().toISOString(),

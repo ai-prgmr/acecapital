@@ -76,7 +76,7 @@ export default function Footer() {
                   Office Address
                 </p>
                 <a
-                  href="https://maps.app.goo.gl/LZXoshaFTQam6MYq8"
+                  href="https://maps.app.goo.gl/vZMszKcxADBEVFzE7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="font-body-md text-foreground hover:text-secondary transition-colors inline-flex items-start gap-2 leading-relaxed"
@@ -188,6 +188,11 @@ export default function Footer() {
             <li>
               <Link href="/mutual-funds-investments" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
                 Mutual Funds & Investments
+              </Link>
+            </li>
+            <li>
+              <Link href="/locations/gurugram" className="font-body-md text-outline hover:text-secondary transition-colors text-sm">
+                Gurugram &amp; Delhi NCR Desk
               </Link>
             </li>
           </ul>

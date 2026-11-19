@@ -1,14 +1,26 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import { MessageCircle, X } from "lucide-react"
 import { trackGenerateLead, trackContactClick, trackNriCtaClick } from "@/lib/analytics"
+
+export function openAceContactModal() {
+  if (typeof window !== "undefined") {
+    window.dispatchEvent(new CustomEvent("open-ace-form"))
+  }
+}
 
 export default function FloatingButtons() {
   const [isOpen, setIsOpen] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  useEffect(() => {
+    const handleOpen = () => setIsOpen(true)
+    window.addEventListener("open-ace-form", handleOpen)
+    return () => window.removeEventListener("open-ace-form", handleOpen)
+  }, [])
   const [formData, setFormData] = useState({
     name: "",
     email: "",

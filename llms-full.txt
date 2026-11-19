@@ -12,9 +12,11 @@
 4. [Proprietary Trading & Auto Desk](#4-proprietary-trading--auto-desk)
 5. [Interactive Mutual Fund Screener](#5-interactive-mutual-fund-screener)
 6. [Careers & Institutional Hiring](#6-careers--institutional-hiring)
-7. [Contact Channels & Offices](#7-contact-channels--offices)
+7. [Contact Channels & Regional Flagship Office](#7-contact-channels--regional-flagship-office)
+    - [Gurugram & Delhi NCR Flagship Desk](#gurugram--delhi-ncr-flagship-desk)
 8. [Market Insights & Educational Articles](#8-market-insights--educational-articles)
     - [How to Start a SIP in India: ₹500, KYC and Your First Installment](#how-to-start-a-sip-in-india-500-kyc-and-your-first-installment)
+    - [SIP vs Lumpsum: Which Suits You Best?](#sip-vs-lumpsum-which-suits-you-best)
 9. [Regulatory Disclosures & Complaint Mechanisms](#9-regulatory-disclosures--complaint-mechanisms)
 
 ---
@@ -122,9 +124,10 @@ Ace Capital's proprietary trading desk is strictly separate and distinct from it
 
 ## 5. Interactive Mutual Fund Screener
 
-Ace Capital provides a live Mutual Fund Screener covering schemes across 14 Asset Management Companies in India:
-- **Coverage:** Axis Mutual Fund, HDFC Mutual Fund, ICICI Prudential Mutual Fund, SBI Mutual Fund, Nippon India Mutual Fund, Mirae Asset Mutual Fund, Parag Parikh Mutual Fund, UTI Mutual Fund, Kotak Mutual Fund, Aditya Birla Sun Life Mutual Fund, DSP Mutual Fund, Tata Mutual Fund, Motilal Oswal Mutual Fund, Quant Mutual Fund.
-- **Metrics Tracked:** Live NAV, 1-Year Returns, 3-Year CAGR, 5-Year CAGR, Expense Ratios, AUM (Assets Under Management), and Risk Ratings.
+Ace Capital provides a live Mutual Fund Screener directly parsing daily NAV and scheme performance metrics from the Association of Mutual Funds in India (AMFI):
+- **Coverage:** Comprehensive coverage across all active AMCs in India, including Axis, HDFC, ICICI Prudential, SBI, Nippon India, Mirae Asset, Parag Parikh, UTI, Kotak, Aditya Birla Sun Life, DSP, Tata, Motilal Oswal, Quant, Bandhan, Edelweiss, Canara Robeco, and more.
+- **Metrics Tracked:** Live NAV, 1-Month Return, 1-Year Return, 3-Year CAGR, 5-Year CAGR, Scheme Type, and Risk Categories.
+- **Optimized Experience:** Fully responsive layout with high-performance desktop sorting and dedicated mobile card views featuring quick-sort pill filters (NAV, 1M, 1Y, 3Y, 5Y) and touch-friendly column sorting.
 
 ---
 
@@ -145,14 +148,30 @@ Ace Capital recruits quantitative researchers, high-frequency systems engineers,
 
 ---
 
-## 7. Contact Channels & Offices
+## 7. Contact Channels & Regional Flagship Office
 
 - **Official Website:** [https://acecapitalenterprise.com](https://acecapitalenterprise.com)
 - **Investor & Client Support Email:** `support@acecapitalenterprise.com`
 - **Phone / Support Helpline:** `+91-9220556760`
-- **Office Address:** Unit-210, JMD REGENT SQUARE, MG Road, Gurugram, Haryana- 122002
+- **Corporate Headquarters & Office:** Unit-210, JMD REGENT SQUARE, MG Road, Gurugram, Haryana- 122002
 - **Support Hours:** Live support available during standard market hours (9:00 AM – 5:00 PM IST, Mon–Fri).
 - **Core Advisory & Investor Desk:** Dedicated mutual fund specialists and investor support team on standby to assist with investment portfolios, SIP planning, goal-oriented wealth creation, and end-to-end investor guidance.
+
+### Gurugram & Delhi NCR Flagship Desk
+
+- **Dedicated Page:** [https://acecapitalenterprise.com/locations/gurugram](https://acecapitalenterprise.com/locations/gurugram)
+- **Google Business Profile:** [https://maps.app.goo.gl/vZMszKcxADBEVFzE7](https://maps.app.goo.gl/vZMszKcxADBEVFzE7) (Coordinates: 28.4810425, 77.0850248)
+- **Geographic Territories Served:** Gurugram (DLF Phase 1–5, Cyber City, Golf Course Road, Golf Course Extension, Sohna Road), South Delhi (Vasant Kunj, Greater Kailash, Hauz Khas, Saket), Central/West Delhi, Noida / Greater Noida, Faridabad, and the wider Delhi NCR metropolitan corridor.
+- **Transit & Physical Connectivity:** 
+  - *Delhi Metro:* 3-minute walk (250m) from MG Road Metro Station (Yellow Line).
+  - *Rapid Metro / Cyber City:* 10–15 minutes from Cyber Hub / DLF Cyber City via Sikanderpur metro interchange.
+  - *Road & Airport Access:* Direct access off Mehrauli-Gurgaon Road (NH-148A), ~25 minutes drive from Indira Gandhi International Airport (DEL) via NH-48.
+- **Key In-Person & Regional Advisory Offerings:**
+  - **CAS Portfolio Doctor:** In-person diagnostic review of consolidated account statements (CAMS / KFintech CAS) to detect fund overlap, excessive scheme proliferation, underperforming trailing alpha, high expense ratios, and capital gains tax liabilities.
+  - **Corporate & Executive SIP Structuring:** Tailored wealth architectures for technology leaders, corporate executives, and consulting professionals across DLF Cyber City and Golf Course Road.
+  - **Strategic Lumpsum & STP Deployment:** Converting corporate annual bonuses, ESOP liquidity events, and property sale proceeds into disciplined STP transfers via low-volatility Liquid or Overnight funds.
+  - **Corporate Treasury & Idle Cash Parking:** Ultra-short liquidity management and institutional mutual fund deployment for Delhi NCR startups, SMEs, and family businesses.
+  - **Dedicated Cross-Border NRI Wealth Desk:** Compliant NRE/NRO mutual fund portfolios, FEMA regulatory advisory, inward remittance facilitation, and repatriation support for Indian diaspora across UAE/GCC, Singapore, UK, and North America.
 
 ---
 
@@ -172,6 +191,45 @@ A practical roadmap for beginner investors to initiate mutual fund wealth creati
    - *Bank Mandate & Auto-Debit:* Establish NACH / e-mandate via UPI AutoPay or Net Banking to automate monthly deductions.
 4. **Core Risk Principles:** Maintain an emergency fund (3–6 months living expenses), avoid emotional panic during market corrections, periodically review goals, and remember mutual funds carry market risks without guaranteed returns.
 5. **Investing with Ace Capital:** Start investing online directly through our dedicated web portal at [mf.acecapitalenterprise.com](https://mf.acecapitalenterprise.com) or manage and track your portfolio on the go with the **Dhan Setu** mobile application.
+
+### SIP vs Lumpsum: Which Suits You Best?
+
+- **Article URL:** [https://acecapitalenterprise.com/blogs/sip-vs-lumpsum-which-suits-you](https://acecapitalenterprise.com/blogs/sip-vs-lumpsum-which-suits-you)
+
+A definitive strategic guide comparing Systematic Investment Plans (SIP) versus one-time lumpsum mutual fund investing for Indian wealth creators:
+
+1. **Core Mechanisms Compared:**
+   - **Systematic Investment Plan (SIP):** Commits a fixed sum at regular periodic intervals (typically monthly). Automates investing directly from the investor's bank account, harnessing *Rupee Cost Averaging* (RCA)—accumulating more units when NAVs decline during market corrections and fewer units when markets rally—thereby neutralizing the temptation to time the market.
+   - **Lumpsum Investing:** Deploys the entire investable capital in a single tranche. Maximizes *time in the market* and begins compounding 100% of the corpus immediately from Day 1, which historically yields superior wealth when deployed at attractive market valuations or post-correction levels.
+
+2. **Performance Across Different Market Cycles:**
+   - **Bull Markets (Continuous Upswing):** Lumpsum investing clearly outperforms. Because prices trend upward, delaying capital deployment via SIP results in purchasing units at progressively higher NAVs.
+   - **Bear Markets (Protracted Downtrend):** SIP decisively outperforms. Entering via lumpsum near peak valuations results in painful drawdowns. SIP investors continue acquiring units at heavily discounted NAVs, which generates massive trailing alpha once the market recovers.
+   - **Volatile & Sideways Markets:** SIP provides unmatched behavioral peace of mind and mathematical advantage by averaging out the cost per unit across market swings without emotional stress.
+
+3. **Deploying Large Windfalls: The STP Solution:**
+   - For investors possessing substantial liquidity (annual corporate bonuses, ESOP liquidations, business dividends, or real estate proceeds), deploying 100% lumpsum into equity at all-time market highs risks acute psychological panic during an immediate pullback. Conversely, leaving funds in savings accounts (2.5–3.5%) results in guaranteed purchasing power erosion against inflation.
+   - **Systematic Transfer Plan (STP) Blueprint:** 
+     1. Park the lumpsum corpus into an ultra-low-volatility Liquid Fund or Overnight Fund (typically earning ~6.5–7.0% annualized return with high liquidity).
+     2. Set up an automated weekly or monthly STP rule to systematically transfer a fixed amount (e.g., over a 6 to 18-month tenure) into targeted diversified equity mutual funds.
+     3. *Outcome:* Capital remains safely parked earning steady debt yields while equity exposure is systematically scaled via rupee cost averaging.
+
+4. **Taxation Rules Under Finance Act 2024:**
+   - **Equity-Oriented Mutual Funds ($\ge 65\%$ domestic equity):**
+     - *Short-Term Capital Gains (STCG, holding period $\le 12$ months):* Taxed at 20% flat (plus applicable surcharge and 4% cess).
+     - *Long-Term Capital Gains (LTCG, holding period $> 12$ months):* Taxed at 12.5% flat on aggregate gains exceeding ₹1.25 Lakh per financial year (exemption raised from ₹1.0 Lakh).
+   - **Debt Mutual Funds (investments post-April 1, 2023):**
+     - Gains are taxed as Short-Term Capital Gains at the investor's applicable marginal income tax slab, regardless of holding period. Indexation benefits are no longer available.
+   - **The FIFO (First-In, First-Out) Rule for SIPs:**
+     - Crucial tax nuance: In a SIP, every monthly installment has its own distinct holding period clock. When redeeming units, tax authorities apply FIFO—the earliest acquired units are redeemed first. Units held for less than 12 months incur 20% STCG, whereas units held for over 12 months qualify for 12.5% LTCG.
+
+5. **Decision Matrix:**
+   - *Choose SIP:* Salaried professionals earning regular monthly income, beginner investors building initial financial discipline, and investors in volatile or fully-valued equity markets.
+   - *Choose Lumpsum:* Seasoned investors with high risk tolerance, deploying idle cash following deep market corrections or when valuation metrics (P/E, P/B) trade below historical averages.
+   - *Choose STP:* High-net-worth individuals, tech executives, or business owners receiving sudden lump sums seeking equity compounding without timing risk.
+
+6. **Implementation via Ace Capital:**
+   - Investors can analyze their projected SIP wealth creation using Ace Capital's interactive [Mutual Funds Calculator](https://acecapitalenterprise.com/mutual-funds-investments), complete 100% paperless KYC on [mf.acecapitalenterprise.com](https://mf.acecapitalenterprise.com), or consult an AMFI-registered advisor (ARN-113576) at the Gurugram regional desk.
 
 ---
 
